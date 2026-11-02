@@ -18,686 +18,200 @@ import {
 } from "react-icons/fa";
 
 const Contact = () => {
+  const contactItems = [
+    {
+      label: "Email",
+      value: profile.email,
+      href: `mailto:${profile.email}`,
+      icon: FaEnvelope,
+      action: true,
+    },
+    {
+      label: "Phone",
+      value: profile.phone,
+      href: `tel:${profile.phone.replace(/\s/g, "")}`,
+      icon: FaPhone,
+      action: true,
+    },
+    {
+      label: "Location",
+      value: profile.location,
+      icon: FaMapMarkerAlt,
+      action: false,
+    },
+  ];
+
+  const socialLinks = [
+    {
+      name: "GitHub",
+      description: "Explore my repositories",
+      href: profile.github,
+      icon: FaGithub,
+      iconStyle: "bg-white/[0.08] text-white",
+      hoverStyle: "hover:border-white/20 hover:bg-white/[0.04]",
+    },
+    {
+      name: "LinkedIn",
+      description: "Connect professionally",
+      href: profile.linkedin,
+      icon: FaLinkedin,
+      iconStyle: "bg-blue-500/15 text-blue-300",
+      hoverStyle: "hover:border-blue-400/25 hover:bg-blue-500/[0.06]",
+    },
+  ];
+
   return (
     <section
       id="contact"
-      className="
-        relative
-        overflow-hidden
-
-        bg-[#0a0f1e]
-
-        py-20
-        sm:py-24
-        lg:py-28
-      "
+      className="relative overflow-hidden bg-[#0a0f1e] py-24 sm:py-28"
     >
-      {/* =========================================
-          BACKGROUND DECORATION
-      ========================================== */}
+      {/* Background accents */}
+      <div className="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full bg-blue-500/[0.09] blur-[120px]" />
+      <div className="pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-cyan-500/[0.07] blur-[130px]" />
 
-      <div className="pointer-events-none absolute inset-0">
-        <div
-          className="
-            absolute
-            -left-40
-            top-20
-
-            h-80
-            w-80
-
-            rounded-full
-
-            bg-blue-500/60
-
-            blur-3xl
-          "
-        />
-
-        <div
-          className="
-            absolute
-            -right-40
-            bottom-20
-
-            h-80
-            w-80
-
-            rounded-full
-
-            bg-cyan-500/50
-
-            blur-3xl
-          "
-        />
-      </div>
-
-      {/* =========================================
-          CONTAINER
-      ========================================== */}
-
-      <div
-        className="
-          relative
-
-          mx-auto
-          w-full
-          max-w-7xl
-
-          px-6
-          sm:px-8
-          lg:px-10
-        "
-      >
-        {/* =======================================
-            SECTION TITLE
-        ======================================== */}
-
+      <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
+        {/* Section heading */}
         <Reveal>
           <SectionTitle
             subtitle="Contact"
-            title="Let's build something meaningful together."
-            description="Whether you are a recruiter, potential employer, collaborator, or simply want to connect, feel free to reach out. I am always open to discussing opportunities and meaningful projects."
+            title="Let's connect and create something meaningful."
+            description="Have an opportunity, a project idea, or simply want to connect? I'd be glad to hear from you and explore how we can work together."
           />
         </Reveal>
 
-        {/* =======================================
-            MAIN CONTACT GRID
-        ======================================== */}
-
-        <div
-          className="
-            mx-auto
-            mt-14
-
-            grid
-            max-w-6xl
-
-            gap-8
-
-            lg:grid-cols-[1.1fr_0.9fr]
-          "
-        >
-          {/* =====================================
-              LEFT — CONTACT INFORMATION
-          ====================================== */}
-
-          <Reveal x={-24} y={0}>
-            <Card
-              className="
-              relative
-              overflow-hidden
-
-              p-7
-              sm:p-8
-              lg:p-10
-
-              bg-white/[0.06]
-            "
-            >
-              {/* Top Accent */}
-
-              <div
-                className="
-                absolute
-                left-0
-                top-0
-
-                h-1
-                w-full
-
-                bg-gradient-to-r
-                from-blue-600
-                via-cyan-500
-                to-transparent
-              "
-              />
+        {/* Main contact layout */}
+        <div className="mx-auto mt-14 grid max-w-6xl gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-7">
+          {/* LEFT: Contact information */}
+          <Reveal x={-20} y={0}>
+            <Card className="relative h-full overflow-hidden rounded-3xl border border-white/[0.08] bg-gradient-to-br from-[#121d30] via-[#101827] to-[#0d1422] p-6 sm:p-8 lg:p-9">
+              {/* Top accent */}
+              <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-blue-500/80 via-cyan-400/70 to-transparent" />
 
               {/* Heading */}
-
-              <div className="max-w-xl">
-                <div
-                  className="
-                  inline-flex
-                  h-12
-                  w-12
-
-                  items-center
-                  justify-center
-
-                  rounded-2xl
-
-                  bg-blue-500/10
-
-                  text-blue-300
-                "
-                >
+              <div className="flex items-center gap-3">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-blue-400/15 bg-blue-400/[0.08] text-blue-300">
                   <FaEnvelope />
                 </div>
 
-                <h3
-                  className="
-                  mt-6
-
-                  text-2xl
-                  font-black
-                  tracking-tight
-
-                  text-white
-
-                  sm:text-3xl
-                "
-                >
-                  Get in touch
-                </h3>
-
-                <p
-                  className="
-                  mt-3
-
-                  text-sm
-                  leading-7
-
-                  text-slate-400
-
-                  sm:text-base
-                "
-                >
-                  I am currently open to entry-level opportunities in Web
-                  Development, Data Management, Data Analytics, and Information
-                  Systems, where I can contribute my skills and continue growing
-                  professionally.
-                </p>
-              </div>
-
-              {/* =================================
-                CONTACT ITEMS
-            ================================== */}
-
-              <div className="mt-8 space-y-4">
-                {/* Email */}
-
-                <a
-                  href={`mailto:${profile.email}`}
-                  className="
-                  group
-
-                  flex
-                  items-center
-                  gap-4
-
-                  rounded-2xl
-
-                  border
-                  border-white/10
-
-                  bg-white/5
-
-                  p-4
-
-                  transition-all
-                  duration-300
-
-                  hover:-translate-y-1
-                  hover:border-blue-500/25
-                  hover:bg-blue-500/10
-                  hover:shadow-md
-                "
-                >
-                  <div
-                    className="
-                    flex
-                    h-11
-                    w-11
-                    shrink-0
-
-                    items-center
-                    justify-center
-
-                    rounded-xl
-
-                    bg-white/[0.06]
-
-                    text-blue-300
-
-                    shadow-sm
-
-                    transition-transform
-                    duration-300
-
-                    group-hover:scale-105
-                  "
-                  >
-                    <FaEnvelope />
-                  </div>
-
-                  <div className="min-w-0">
-                    <p
-                      className="
-                      text-xs
-                      font-bold
-                      uppercase
-                      tracking-wider
-
-                      text-slate-500
-                    "
-                    >
-                      Email
-                    </p>
-
-                    <p
-                      className="
-                      mt-1
-
-                      truncate
-
-                      text-sm
-                      font-semibold
-
-                      text-slate-200
-
-                      sm:text-base
-                    "
-                    >
-                      {profile.email}
-                    </p>
-                  </div>
-
-                  <FaArrowRight
-                    className="
-                    ml-auto
-                    shrink-0
-
-                    text-slate-500
-
-                    transition-all
-                    duration-300
-
-                    group-hover:translate-x-1
-                    group-hover:text-blue-300
-                  "
-                  />
-                </a>
-
-                {/* Phone */}
-
-                <a
-                  href={`tel:${profile.phone.replace(/\s/g, "")}`}
-                  className="
-                  group
-
-                  flex
-                  items-center
-                  gap-4
-
-                  rounded-2xl
-
-                  border
-                  border-white/10
-
-                  bg-white/5
-
-                  p-4
-
-                  transition-all
-                  duration-300
-
-                  hover:-translate-y-1
-                  hover:border-blue-500/25
-                  hover:bg-blue-500/10
-                  hover:shadow-md
-                "
-                >
-                  <div
-                    className="
-                    flex
-                    h-11
-                    w-11
-                    shrink-0
-
-                    items-center
-                    justify-center
-
-                    rounded-xl
-
-                    bg-white/[0.06]
-
-                    text-blue-300
-
-                    shadow-sm
-                  "
-                  >
-                    <FaPhone />
-                  </div>
-
-                  <div>
-                    <p
-                      className="
-                      text-xs
-                      font-bold
-                      uppercase
-                      tracking-wider
-
-                      text-slate-500
-                    "
-                    >
-                      Phone
-                    </p>
-
-                    <p
-                      className="
-                      mt-1
-
-                      text-sm
-                      font-semibold
-
-                      text-slate-200
-
-                      sm:text-base
-                    "
-                    >
-                      {profile.phone}
-                    </p>
-                  </div>
-
-                  <FaArrowRight
-                    className="
-                    ml-auto
-                    shrink-0
-
-                    text-slate-500
-
-                    transition-all
-                    duration-300
-
-                    group-hover:translate-x-1
-                    group-hover:text-blue-300
-                  "
-                  />
-                </a>
-
-                {/* Location */}
-
-                <div
-                  className="
-                  flex
-                  items-center
-                  gap-4
-
-                  rounded-2xl
-
-                  border
-                  border-white/10
-
-                  bg-white/5
-
-                  p-4
-                "
-                >
-                  <div
-                    className="
-                    flex
-                    h-11
-                    w-11
-                    shrink-0
-
-                    items-center
-                    justify-center
-
-                    rounded-xl
-
-                    bg-white/[0.06]
-
-                    text-blue-300
-
-                    shadow-sm
-                  "
-                  >
-                    <FaMapMarkerAlt />
-                  </div>
-
-                  <div>
-                    <p
-                      className="
-                      text-xs
-                      font-bold
-                      uppercase
-                      tracking-wider
-
-                      text-slate-500
-                    "
-                    >
-                      Location
-                    </p>
-
-                    <p
-                      className="
-                      mt-1
-
-                      text-sm
-                      font-semibold
-
-                      text-slate-200
-
-                      sm:text-base
-                    "
-                    >
-                      {profile.location}
-                    </p>
-                  </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-300">
+                    Contact Information
+                  </p>
+                  <p className="mt-1 text-xs text-slate-500">
+                    Get in touch directly
+                  </p>
                 </div>
               </div>
 
-              {/* =================================
-                AVAILABILITY
-            ================================== */}
+              <h3 className="mt-8 text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                I'd love to hear from you.
+              </h3>
 
-              <div
-                className="
-                mt-6
+              <p className="mt-3 max-w-lg text-sm leading-7 text-slate-400">
+                Whether you're a recruiter, potential employer, or collaborator,
+                feel free to reach out through any of the following channels.
+              </p>
 
-                flex
-                items-start
-                gap-3
+              {/* Contact items */}
+              <div className="mt-8 space-y-3">
+                {contactItems.map((item) => {
+                  const Icon = item.icon;
 
-                rounded-2xl
+                  const content = (
+                    <>
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/[0.06] bg-white/[0.045] text-blue-300 transition-colors duration-300 group-hover:border-blue-400/20 group-hover:bg-blue-400/[0.10]">
+                        <Icon />
+                      </div>
 
-                border
-                border-emerald-500/25
+                      <div className="min-w-0 flex-1">
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                          {item.label}
+                        </p>
 
-                bg-emerald-500/10
+                        <p className="mt-1 truncate text-sm font-semibold text-slate-200 sm:text-base">
+                          {item.value}
+                        </p>
+                      </div>
 
-                p-4
-              "
-              >
-                <FaCheckCircle
-                  className="
-                  mt-0.5
-                  shrink-0
+                      {item.action && (
+                        <FaArrowRight className="ml-auto shrink-0 text-xs text-slate-500 transition-all duration-300 group-hover:translate-x-1 group-hover:text-blue-300" />
+                      )}
+                    </>
+                  );
 
-                  text-emerald-500
-                "
-                />
+                  return item.action ? (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      className="group flex items-center gap-4 rounded-2xl border border-white/[0.07] bg-white/[0.025] p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-400/25 hover:bg-blue-400/[0.045]"
+                    >
+                      {content}
+                    </a>
+                  ) : (
+                    <div
+                      key={item.label}
+                      className="flex items-center gap-4 rounded-2xl border border-white/[0.07] bg-white/[0.025] p-4"
+                    >
+                      {content}
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Availability */}
+              <div className="mt-7 flex items-start gap-3 rounded-2xl border border-emerald-400/15 bg-emerald-400/[0.055] p-4">
+                <span className="relative mt-1 flex h-2.5 w-2.5 shrink-0">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-40" />
+                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
+                </span>
 
                 <div>
-                  <p
-                    className="
-                    text-sm
-                    font-bold
-
-                    text-emerald-300
-                  "
-                  >
-                    Open to full-time roles, internships, collaborations, and
-                    Interested in opportunities related to web development, data
-                    management, and information systems.
+                  <p className="text-sm font-semibold text-emerald-300">
+                    Open to opportunities
                   </p>
-
-                  <p
-                    className="
-                    mt-1
-
-                    text-xs
-                    leading-5
-
-                    text-emerald-300/80
-                  "
-                  >
-                    Open to full-time roles, internships, collaborations, and
-                    professional opportunities.
+                  <p className="mt-1 text-xs leading-5 text-emerald-300/70">
+                    Available for full-time roles, internships, and professional
+                    collaborations.
                   </p>
                 </div>
               </div>
             </Card>
           </Reveal>
 
-          {/* =====================================
-              RIGHT — PROFILE / SOCIAL
-          ====================================== */}
-
-          <Reveal x={24} y={0} delay={0.1} className="space-y-6">
-            {/* Profile CTA */}
-
-            <Card
-              className="
-                relative
-                overflow-hidden
-
-                border-0
-
-                bg-slate-950
-
-                p-7
-                sm:p-8
-                lg:p-9
-
-                text-white
-              "
-            >
-              {/* Glow */}
-
-              <div
-                className="
-                  pointer-events-none
-
-                  absolute
-                  -right-24
-                  -top-24
-
-                  h-64
-                  w-64
-
-                  rounded-full
-
-                  bg-blue-500/20
-
-                  blur-3xl
-                "
-              />
-
-              <div
-                className="
-                  pointer-events-none
-
-                  absolute
-                  -bottom-24
-                  -left-24
-
-                  h-64
-                  w-64
-
-                  rounded-full
-
-                  bg-cyan-500/10
-
-                  blur-3xl
-                "
-              />
+          {/* RIGHT: Professional CTA and social profiles */}
+          <Reveal x={20} y={0} delay={0.1} className="flex flex-col gap-6">
+            {/* Professional CTA */}
+            <Card className="relative flex-1 overflow-hidden rounded-3xl border border-blue-400/15 bg-gradient-to-br from-[#142541] via-[#101b30] to-[#0c1424] p-6 text-white sm:p-8 lg:p-9">
+              {/* Decorative glow */}
+              <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-blue-500/[0.16] blur-[90px]" />
+              <div className="pointer-events-none absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-cyan-500/[0.09] blur-[90px]" />
 
               <div className="relative">
-                {/* Icon */}
-
-                <div
-                  className="
-                    flex
-                    h-12
-                    w-12
-
-                    items-center
-                    justify-center
-
-                    rounded-2xl
-
-                    bg-blue-500/10
-
-                    text-blue-400
-                  "
-                >
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-300/15 bg-blue-400/[0.10] text-blue-300">
                   <FaBriefcase />
                 </div>
 
-                <p
-                  className="
-                    mt-6
-
-                    text-xs
-                    font-bold
-                    uppercase
-                    tracking-[0.18em]
-
-                    text-blue-400
-                  "
-                >
+                <p className="mt-7 text-xs font-bold uppercase tracking-[0.18em] text-blue-300">
                   Professional Opportunity
                 </p>
 
-                <h3
-                  className="
-                    mt-2
-
-                    text-2xl
-                    font-black
-                    tracking-tight
-
-                    sm:text-3xl
-                  "
-                >
-                  Ready to contribute and grow.
+                <h3 className="mt-3 max-w-md text-2xl font-bold leading-tight tracking-tight text-white sm:text-3xl">
+                  Ready to contribute, learn, and grow.
                 </h3>
 
-                <p
-                  className="
-                    mt-4
-
-                    text-sm
-                    leading-7
-
-                    text-slate-500
-
-                    sm:text-base
-                  "
-                >
-                  As an Informatics Engineering graduate, I bring a foundation
-                  in web development, database management, information systems,
-                  and data processing. I am eager to contribute to a
-                  professional team, learn from real-world challenges, and
-                  continuously grow as a technology professional.
+                <p className="mt-4 text-sm leading-7 text-slate-400">
+                  As an Informatics Engineering graduate, I have a foundation in
+                  web development, database management, information systems, and
+                  data processing. I'm eager to apply these skills, contribute
+                  to a team, and develop through real-world challenges.
                 </p>
 
-                {/* Buttons */}
-
-                <div
-                  className="
-                    mt-7
-
-                    flex
-                    flex-col
-                    gap-3
-
-                    sm:flex-row
-                  "
-                >
-                  <Button href={`mailto:${profile.email}`}>Contact Me</Button>
+                {/* Main actions */}
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                  <Button href={`mailto:${profile.email}`}>
+                    <FaEnvelope />
+                    Contact Me
+                  </Button>
 
                   <Button href={profile.cv} variant="secondary">
                     <FaFileDownload />
@@ -707,316 +221,79 @@ const Contact = () => {
               </div>
             </Card>
 
-            {/* =================================
-                SOCIAL LINKS
-            ================================== */}
-
-            <Card
-              className="
-                p-6
-                sm:p-7
-
-                bg-white/[0.06]
-              "
-            >
+            {/* Social profiles */}
+            <Card className="rounded-3xl border border-white/[0.08] bg-gradient-to-br from-[#121d30] to-[#0d1422] p-6 sm:p-7">
               <div>
-                <p
-                  className="
-                    text-xs
-                    font-bold
-                    uppercase
-                    tracking-[0.16em]
-
-                    text-slate-500
-                  "
-                >
-                  Professional Profiles
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-300">
+                  Find Me Online
                 </p>
 
-                <h3
-                  className="
-                    mt-2
-
-                    text-xl
-                    font-extrabold
-
-                    text-white
-                  "
-                >
-                  Connect with me
+                <h3 className="mt-2 text-xl font-bold text-white">
+                  Professional Profiles
                 </h3>
+
+                <p className="mt-2 text-sm leading-6 text-slate-500">
+                  Explore my work and connect with me through these platforms.
+                </p>
               </div>
 
-              <div
-                className="
-                  mt-5
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                {socialLinks.map((social) => {
+                  const Icon = social.icon;
 
-                  grid
-                  gap-3
-
-                  sm:grid-cols-2
-                "
-              >
-                {/* GitHub */}
-
-                <a
-                  href={profile.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="
-                    group
-
-                    flex
-                    items-center
-                    gap-3
-
-                    rounded-xl
-
-                    border
-                    border-white/10
-
-                    p-4
-
-                    transition-all
-                    duration-300
-
-                    hover:-translate-y-1
-                    hover:border-white/15
-                    hover:bg-white/5
-                    hover:shadow-md
-                  "
-                >
-                  <div
-                    className="
-                      flex
-                      h-10
-                      w-10
-
-                      items-center
-                      justify-center
-
-                      rounded-xl
-
-                      bg-slate-900
-
-                      text-white
-                    "
-                  >
-                    <FaGithub />
-                  </div>
-
-                  <div>
-                    <p
-                      className="
-                        text-xs
-
-                        text-slate-500
-                      "
+                  return (
+                    <a
+                      key={social.name}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`group flex items-center gap-3 rounded-2xl border border-white/[0.07] bg-white/[0.025] p-4 transition-all duration-300 hover:-translate-y-0.5 ${social.hoverStyle}`}
                     >
-                      GitHub
-                    </p>
+                      <div
+                        className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${social.iconStyle}`}
+                      >
+                        <Icon />
+                      </div>
 
-                    <p
-                      className="
-                        text-sm
-                        font-bold
+                      <div className="min-w-0 flex-1">
+                        <p className="text-sm font-semibold text-slate-200">
+                          {social.name}
+                        </p>
+                        <p className="mt-1 text-[11px] text-slate-500">
+                          {social.description}
+                        </p>
+                      </div>
 
-                        text-slate-200
-                      "
-                    >
-                      View Projects
-                    </p>
-                  </div>
-
-                  <FaArrowRight
-                    className="
-                      ml-auto
-
-                      text-slate-500
-
-                      transition-transform
-                      duration-300
-
-                      group-hover:translate-x-1
-                    "
-                  />
-                </a>
-
-                {/* LinkedIn */}
-
-                <a
-                  href={profile.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="
-                    group
-
-                    flex
-                    items-center
-                    gap-3
-
-                    rounded-xl
-
-                    border
-                    border-white/10
-
-                    p-4
-
-                    transition-all
-                    duration-300
-
-                    hover:-translate-y-1
-                    hover:border-blue-500/25
-                    hover:bg-blue-500/10
-                    hover:shadow-md
-                  "
-                >
-                  <div
-                    className="
-                      flex
-                      h-10
-                      w-10
-
-                      items-center
-                      justify-center
-
-                      rounded-xl
-
-                      bg-blue-600
-
-                      text-white
-                    "
-                  >
-                    <FaLinkedin />
-                  </div>
-
-                  <div>
-                    <p
-                      className="
-                        text-xs
-
-                        text-slate-500
-                      "
-                    >
-                      LinkedIn
-                    </p>
-
-                    <p
-                      className="
-                        text-sm
-                        font-bold
-
-                        text-slate-200
-                      "
-                    >
-                      Connect with me
-                    </p>
-                  </div>
-
-                  <FaArrowRight
-                    className="
-                      ml-auto
-
-                      text-slate-500
-
-                      transition-transform
-                      duration-300
-
-                      group-hover:translate-x-1
-                    "
-                  />
-                </a>
+                      <FaArrowRight className="shrink-0 text-xs text-slate-500 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-blue-300" />
+                    </a>
+                  );
+                })}
               </div>
             </Card>
           </Reveal>
         </div>
 
-        {/* =======================================
-            BOTTOM CONTACT STRIP
-        ======================================== */}
+        {/* Closing statement */}
+        <Reveal>
+          <div className="mx-auto mt-14 max-w-6xl border-t border-white/[0.08] pt-7">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+                  Thank you for visiting
+                </p>
+                <p className="mt-1 text-sm text-slate-400">
+                  Looking forward to meaningful conversations and opportunities.
+                </p>
+              </div>
 
-        <Reveal
-          className="
-            mx-auto
-            mt-8
-            max-w-6xl
-
-            rounded-2xl
-
-            border
-            border-blue-500/25
-
-            bg-gradient-to-r
-            from-blue-500/10
-            via-white/[0.03]
-            to-cyan-500/10
-
-            p-6
-
-            sm:p-7
-          "
-        >
-          <div
-            className="
-              flex
-              flex-col
-              gap-4
-
-              sm:flex-row
-              sm:items-center
-              sm:justify-between
-            "
-          >
-            <div>
-              <p
-                className="
-                  text-xs
-                  font-bold
-                  uppercase
-                  tracking-[0.16em]
-
-                  text-blue-300
-                "
+              <a
+                href={`mailto:${profile.email}`}
+                className="inline-flex w-fit items-center gap-2 text-sm font-semibold text-blue-300 transition-colors hover:text-cyan-300"
               >
-                Akhmad Haris
-              </p>
-
-              <p
-                className="
-                  mt-1
-
-                  text-sm
-                  font-semibold
-
-                  text-slate-200
-                "
-              >
-                Fresh Graduate in Informatics Engineering
-              </p>
+                Let's talk
+                <FaArrowRight className="text-xs" />
+              </a>
             </div>
-
-            <a
-              href={`mailto:${profile.email}`}
-              className="
-                inline-flex
-                items-center
-                gap-2
-
-                text-sm
-                font-bold
-
-                text-blue-300
-
-                transition-colors
-                duration-300
-
-                hover:text-blue-300
-              "
-            >
-              {profile.email}
-
-              <FaArrowRight />
-            </a>
           </div>
         </Reveal>
       </div>

@@ -7,16 +7,17 @@ import { StaggerContainer, StaggerItem } from "../../common/Stagger";
 
 import projects from "../../../data/projects";
 
-import { FaLayerGroup, FaArrowDown } from "react-icons/fa";
+import { FaArrowRight, FaLayerGroup } from "react-icons/fa";
 
 const Projects = () => {
   const navigate = useNavigate();
 
+  const featuredProjects = projects.slice(0, 3);
+  const otherProjects = projects.slice(3);
+
   const handleViewDetails = (project) => {
-    // Simpan posisi scroll daftar proyek
     sessionStorage.setItem("projectsScrollPosition", String(window.scrollY));
 
-    // Buka halaman detail proyek
     navigate(`/projects/${project.slug}`, {
       state: {
         fromProjects: true,
@@ -24,271 +25,187 @@ const Projects = () => {
     });
   };
 
-  /*
-   * =========================================
-   * PROJECT DATA
-   * =========================================
-   */
-
-  const featuredProject = projects[0];
-
-  const otherProjects = projects.slice(1);
-
   return (
     <section
       id="projects"
       className="
-        relative
-        overflow-hidden
-
-        bg-[#05070d]
-
-        py-20
-        sm:py-24
-        lg:py-28
+        relative isolate overflow-hidden
+        bg-[#070a14]
+        py-20 sm:py-24 lg:py-28
       "
     >
-      {/* =========================================
-          BACKGROUND
-      ========================================== */}
-
-      <div className="pointer-events-none absolute inset-0">
+      {/* BACKGROUND */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
         <div
           className="
-            absolute
-            -left-40
-            top-0
-
-            h-96
-            w-96
-
-            rounded-full
-
-            bg-blue-500/60
-
-            blur-3xl
+            absolute -left-48 top-20
+            h-[420px] w-[420px]
+            rounded-full bg-blue-600/10
+            blur-[120px]
           "
         />
 
         <div
           className="
-            absolute
-            -right-40
-            bottom-0
-
-            h-96
-            w-96
-
-            rounded-full
-
-            bg-cyan-500/50
-
-            blur-3xl
+            absolute -right-48 top-[45%]
+            h-[420px] w-[420px]
+            rounded-full bg-cyan-500/[0.08]
+            blur-[120px]
           "
         />
 
         <div
           className="
-            absolute
-            inset-0
-
-            opacity-[0.025]
-
-            [background-image:linear-gradient(#0f172a_1px,transparent_1px),linear-gradient(90deg,#0f172a_1px,transparent_1px)]
-
-            [background-size:40px_40px]
+            absolute inset-0 opacity-[0.025]
+            [background-image:linear-gradient(#64748b_1px,transparent_1px),linear-gradient(90deg,#64748b_1px,transparent_1px)]
+            [background-size:48px_48px]
           "
         />
+
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
       </div>
 
-      {/* =========================================
-          CONTAINER
-      ========================================== */}
-
-      <div
-        className="
-          relative
-
-          mx-auto
-          w-full
-          max-w-7xl
-
-          px-6
-          sm:px-8
-          lg:px-10
-        "
-      >
-        {/* =======================================
-            TITLE
-        ======================================== */}
-
+      <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
+        {/* SECTION INTRO */}
         <Reveal>
-          <SectionTitle
-            subtitle="Projects"
-            title="Selected work & projects"
-            description="
-              A selection of projects that showcase my
-              experience in web development, information
-              systems, database management, and problem
-              solving.
-            "
-          />
+          <div className="max-w-3xl">
+            <SectionTitle
+              subtitle="Portfolio / Selected Work"
+              title="Projects that turn ideas into solutions."
+              description="
+                A collection of web applications and information
+                systems I've developed, focusing on practical
+                functionality, structured data, and user-oriented
+                solutions.
+              "
+            />
+          </div>
         </Reveal>
 
-        {/* =======================================
-            FEATURED PROJECT
-        ======================================== */}
-
-        {featuredProject && (
-          <Reveal className="mt-14">
-            {/* Label */}
-
-            <div
-              className="
-                mb-5
-
-                flex
-                items-center
-                gap-3
-              "
-            >
+        {/* PROJECT OVERVIEW */}
+        <Reveal delay={0.1}>
+          <div
+            className="
+              mt-10 flex flex-col gap-5
+              border-y border-white/[0.08]
+              py-5
+              sm:flex-row sm:items-center sm:justify-between
+            "
+          >
+            <div className="flex items-center gap-3">
               <div
                 className="
-                  flex
-                  h-9
-                  w-9
-
-                  items-center
-                  justify-center
-
-                  rounded-xl
-
-                  bg-blue-600
-
-                  text-white
-
-                  shadow-lg
-                  shadow-blue-500/20
+                  flex h-10 w-10 items-center justify-center
+                  rounded-xl border border-blue-400/15
+                  bg-blue-500/10 text-blue-300
                 "
               >
                 <FaLayerGroup className="text-sm" />
               </div>
 
               <div>
-                <p
-                  className="
-                    text-xs
-                    font-bold
-                    uppercase
-                    tracking-[0.16em]
-
-                    text-blue-300
-                  "
-                >
-                  Featured Project
+                <p className="text-sm font-semibold text-white">
+                  Selected Projects
                 </p>
-
-                <p
-                  className="
-                    mt-0.5
-
-                    text-sm
-
-                    text-slate-400
-                  "
-                >
-                  My highlighted work
+                <p className="mt-0.5 text-xs text-slate-500">
+                  A closer look at my development work
                 </p>
               </div>
             </div>
 
-            {/* Project Card */}
-
-            <ProjectCard
-              project={featuredProject}
-              featured
-              onViewDetails={() => handleViewDetails(featuredProject)}
-            />
-          </Reveal>
-        )}
-
-        {/* =======================================
-            OTHER PROJECTS
-        ======================================== */}
-
-        {otherProjects.length > 0 && (
-          <div className="mt-20">
-            <Reveal
-              className="
-                mb-8
-
-                flex
-                flex-col
-                gap-3
-
-                sm:flex-row
-                sm:items-end
-                sm:justify-between
-              "
-            >
+            <div className="flex items-center gap-6 sm:gap-8">
               <div>
-                <p
-                  className="
-                    text-xs
-                    font-bold
-                    uppercase
-                    tracking-[0.16em]
-
-                    text-slate-500
-                  "
-                >
-                  More Work
+                <p className="text-2xl font-bold tracking-tight text-white">
+                  {String(projects.length).padStart(2, "0")}
                 </p>
-
-                <h3
-                  className="
-                    mt-2
-
-                    text-2xl
-                    font-black
-                    tracking-tight
-
-                    text-white
-
-                    sm:text-3xl
-                  "
-                >
-                  Other Projects
-                </h3>
+                <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                  Projects
+                </p>
               </div>
 
-              <p
-                className="
-                  max-w-md
+              <div className="h-9 w-px bg-white/10" />
 
-                  text-sm
-                  leading-6
+              <div>
+                <p className="text-2xl font-bold tracking-tight text-white">
+                  2025–26
+                </p>
+                <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                  Development
+                </p>
+              </div>
+            </div>
+          </div>
+        </Reveal>
 
-                  text-slate-400
+        {/* FEATURED PROJECTS */}
+        {featuredProjects.length > 0 && (
+          <div className="mt-16 sm:mt-20">
+            <Reveal>
+              <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <div className="mb-3 flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-blue-400" />
+                    <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-blue-300">
+                      Featured Work
+                    </p>
+                  </div>
 
-                  sm:text-right
-                "
-              >
-                Other projects and experiments that I have worked on during my
-                learning and development journey.
-              </p>
+                  <h3 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                    Selected Projects
+                  </h3>
+                </div>
+
+                <p className="max-w-sm text-sm leading-6 text-slate-500 sm:text-right">
+                  A selection of projects that highlight my experience in
+                  building web-based systems and managing application data.
+                </p>
+              </div>
             </Reveal>
 
-            {/* Grid */}
+            <StaggerContainer
+              className="grid gap-6 md:grid-cols-2 xl:grid-cols-3"
+              stagger={0.1}
+            >
+              {featuredProjects.map((project) => (
+                <StaggerItem key={project.id}>
+                  <ProjectCard
+                    project={project}
+                    onViewDetails={() => handleViewDetails(project)}
+                  />
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
+        )}
+
+        {/* OTHER PROJECTS */}
+        {otherProjects.length > 0 && (
+          <div className="mt-20 sm:mt-24">
+            <Reveal>
+              <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <div className="mb-3 flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
+                    <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-cyan-300">
+                      Additional Work
+                    </p>
+                  </div>
+
+                  <h3 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                    More Projects
+                  </h3>
+                </div>
+
+                <p className="max-w-sm text-sm leading-6 text-slate-500 sm:text-right">
+                  Other applications developed through academic work and
+                  continuous learning.
+                </p>
+              </div>
+            </Reveal>
 
             <StaggerContainer
-              className="
-                grid
-                gap-7
-
-                md:grid-cols-2
-              "
-              stagger={0.12}
+              className="grid gap-6 md:grid-cols-2 xl:grid-cols-3"
+              stagger={0.1}
             >
               {otherProjects.map((project) => (
                 <StaggerItem key={project.id}>
@@ -302,123 +219,49 @@ const Projects = () => {
           </div>
         )}
 
-        {/* =======================================
-            EMPTY STATE
-        ======================================== */}
-
-        {projects.length === 1 && (
-          <div
-            className="
-              mt-10
-
-              flex
-              justify-center
-            "
-          >
-            <div
-              className="
-                inline-flex
-                items-center
-                gap-3
-
-                rounded-full
-
-                border
-                border-white/10
-
-                bg-white/[0.06]
-
-                px-5
-                py-3
-
-                text-sm
-                font-medium
-
-                text-slate-400
-
-                shadow-sm
-              "
-            >
-              <span
-                className="
-                  h-2
-                  w-2
-
-                  rounded-full
-
-                  bg-blue-500
-                "
-              />
-              More projects will be added soon.
-            </div>
+        {/* EMPTY STATE */}
+        {projects.length === 0 && (
+          <div className="mt-12 rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-12 text-center">
+            <FaLayerGroup className="mx-auto text-3xl text-slate-600" />
+            <p className="mt-4 text-sm text-slate-400">
+              Projects will be displayed here soon.
+            </p>
           </div>
         )}
 
-        {/* =======================================
-            CONTACT CTA
-        ======================================== */}
-
-        <div
-          className="
-            mt-16
-
-            flex
-            justify-center
-          "
-        >
-          <a
-            href="#contact"
-            className="
-              group
-
-              inline-flex
-              flex-col
-              items-center
-              gap-2
-
-              text-xs
-              font-semibold
-
-              text-slate-500
-
-              transition-colors
-              duration-300
-
-              hover:text-blue-300
-            "
-          >
-            <span>Interested in working together?</span>
-
-            <span
+        {/* BOTTOM CTA */}
+        <Reveal>
+          <div className="mt-20 border-t border-white/[0.08] pt-8 sm:mt-24">
+            <a
+              href="#contact"
               className="
-                flex
-                h-8
-                w-8
-
-                items-center
-                justify-center
-
-                rounded-full
-
-                border
-                border-white/10
-
-                bg-white/[0.06]
-
-                shadow-sm
-
-                transition-all
-                duration-300
-
-                group-hover:-translate-y-1
-                group-hover:border-blue-500/25
-                group-hover:text-blue-300
+                group flex flex-col gap-4
+                sm:flex-row sm:items-center sm:justify-between
               "
             >
-              <FaArrowDown className="text-xs" />
-            </span>
-          </a>
-        </div>
+              <div>
+                <p className="text-sm font-semibold text-white transition-colors group-hover:text-blue-300">
+                  Have a project or opportunity in mind?
+                </p>
+                <p className="mt-1 text-sm text-slate-500">
+                  Let's discuss how we can build something meaningful.
+                </p>
+              </div>
+
+              <span
+                className="
+                  inline-flex w-fit items-center gap-3
+                  text-sm font-semibold text-blue-300
+                  transition-all duration-300
+                  group-hover:gap-4
+                "
+              >
+                Get in touch
+                <FaArrowRight className="text-xs" />
+              </span>
+            </a>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

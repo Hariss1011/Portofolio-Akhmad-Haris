@@ -1,710 +1,431 @@
 import { motion } from "framer-motion";
-
-import profile from "../../../data/profile";
-
-import Button from "../../common/Button";
-import Badge from "../../common/Badge";
-import Card from "../../common/Card";
-import Counter from "../../common/Counter";
-import { StaggerContainer, StaggerItem } from "../../common/Stagger";
-
 import {
   FaGithub,
   FaLinkedin,
   FaEnvelope,
-  FaArrowDown,
+  FaArrowRight,
   FaMapMarkerAlt,
   FaCode,
+  FaDatabase,
 } from "react-icons/fa";
 
+import profile from "../../../data/profile";
+import Button from "../../common/Button";
+import Badge from "../../common/Badge";
+import Counter from "../../common/Counter";
+import { StaggerContainer, StaggerItem } from "../../common/Stagger";
+
 const Hero = () => {
-  const firstName = profile.name.split(" ")[0];
-  const lastName = profile.name.split(" ").slice(1).join(" ");
+  const socialLinks = [
+    {
+      icon: FaGithub,
+      href: profile.github,
+      label: "GitHub",
+    },
+    {
+      icon: FaLinkedin,
+      href: profile.linkedin,
+      label: "LinkedIn",
+    },
+    {
+      icon: FaEnvelope,
+      href: `mailto:${profile.email}`,
+      label: "Email",
+    },
+  ];
+
+  const stats = [
+    { value: 6, suffix: "", label: "Projects" },
+    { value: 15, suffix: "+", label: "Technologies" },
+    { value: 1, suffix: "", label: "Internship" },
+  ];
+
+  const nameParts = profile.name.trim().split(" ");
+  const firstName = nameParts[0];
+  const lastName = nameParts.slice(1).join(" ");
 
   return (
     <section
       id="home"
       className="
-        relative
-        overflow-hidden
-
-        bg-[#05070d]
-
-        pt-32
-        sm:pt-36
-        lg:pt-40
-
-        pb-20
-        sm:pb-24
-        lg:pb-28
+        relative isolate flex min-h-screen
+        items-center overflow-hidden
+        bg-[#080e1a]
+        px-5 pb-16 pt-28
+        sm:px-8
+        lg:px-12
       "
     >
-      {/* =========================================
-          BACKGROUND — mesh gradient + grid
-      ========================================== */}
-
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_80%_60%_at_50%_0%,black,transparent)]" />
-
-        <div className="glow-orb absolute -left-40 -top-20 h-[520px] w-[520px] bg-blue-600/25" />
-        <div className="glow-orb absolute right-[-220px] top-[10%] h-[480px] w-[480px] bg-cyan-500/20" />
-        <div className="glow-orb absolute left-1/2 bottom-[-260px] h-[420px] w-[420px] -translate-x-1/2 bg-blue-500/15" />
-      </div>
-
-      {/* =========================================
-          CONTAINER
-      ========================================== */}
+      {/* BACKGROUND */}
+      <div
+        aria-hidden="true"
+        className="
+          pointer-events-none absolute
+          -left-40 top-20
+          h-[420px] w-[420px]
+          rounded-full bg-blue-600/[0.08]
+          blur-[120px]
+        "
+      />
 
       <div
+        aria-hidden="true"
         className="
-          relative
+          pointer-events-none absolute
+          -right-40 bottom-0
+          h-[400px] w-[400px]
+          rounded-full bg-cyan-500/[0.06]
+          blur-[120px]
+        "
+      />
 
-          mx-auto
-          w-full
-          max-w-7xl
+      <div
+        aria-hidden="true"
+        className="
+          pointer-events-none absolute inset-0
+          bg-[linear-gradient(rgba(255,255,255,0.018)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.018)_1px,transparent_1px)]
+          bg-[size:64px_64px]
+          [mask-image:linear-gradient(to_bottom,black,transparent_85%)]
+        "
+      />
 
-          px-6
-          sm:px-8
-          lg:px-10
+      {/* MAIN CONTENT */}
+      <div
+        className="
+          relative z-10 mx-auto grid w-full
+          max-w-7xl items-center
+          gap-14
+          lg:grid-cols-[1.05fr_0.95fr]
+          lg:gap-16
         "
       >
-        <div
-          className="
-            grid
-            items-center
+        {/* LEFT: INTRODUCTION */}
+        <StaggerContainer className="order-2 lg:order-1" staggerChildren={0.12}>
+          {/* AVAILABILITY */}
+          <StaggerItem>
+            <Badge>
+              <span className="mr-2 inline-block h-2 w-2 rounded-full bg-emerald-400" />
+              Available for Opportunities
+            </Badge>
+          </StaggerItem>
 
-            gap-16
-            lg:grid-cols-[1.05fr_0.95fr]
-            lg:gap-10
-          "
-        >
-          {/* =====================================
-              LEFT CONTENT
-          ====================================== */}
+          {/* NAME */}
+          <StaggerItem>
+            <div className="mt-7">
+              <p className="mb-2 text-sm font-medium tracking-wide text-blue-400 sm:text-base">
+                Hello, I'm
+              </p>
 
-          <StaggerContainer
-            className="max-w-3xl"
-            stagger={0.12}
-            once
-            amount={0}
-          >
-            {/* Availability */}
-
-            <StaggerItem
-              className="
-                glass
-
-                inline-flex
-                items-center
-                gap-2
-
-                rounded-full
-
-                px-4
-                py-2
-
-                text-sm
-                font-semibold
-                text-emerald-300
-              "
-            >
-              <span
+              <h1
                 className="
-                  h-2
-                  w-2
-
-                  rounded-full
-
-                  bg-emerald-400
-
-                  shadow-[0_0_0_4px_rgba(52,211,153,0.15)]
-                "
-              />
-              Open to Opportunities
-            </StaggerItem>
-
-            {/* Heading */}
-
-            <StaggerItem
-              as="h1"
-              className="
-                mt-7
-
-                text-5xl
-                font-black
-                leading-[0.95]
-                tracking-[-0.04em]
-
-                text-white
-
-                sm:text-6xl
-
-                lg:text-7xl
-                xl:text-8xl
-              "
-            >
-              <span className="block">{firstName}</span>
-
-              <span className="mt-2 block text-gradient">{lastName}</span>
-            </StaggerItem>
-
-            {/* Title */}
-
-            <StaggerItem as="div" className="mt-7 flex items-center gap-3">
-              <span className="hidden h-px w-10 bg-blue-500/60 sm:block" />
-
-              <h2
-                className="
-                  text-lg
-                  font-semibold
-                  text-slate-400
-
-                  sm:text-xl
+                  text-5xl font-black
+                  leading-[1.08] tracking-tight
+                  text-white
+                  sm:text-6xl
+                  lg:text-7xl
+                  xl:text-[5.5rem]
                 "
               >
-                {profile.title}
-              </h2>
-            </StaggerItem>
+                <span className="block">{firstName}</span>
 
-            {/* Roles */}
+                {lastName && (
+                  <span
+                    className="
+                      mt-1 block
+                      bg-gradient-to-r
+                      from-blue-400
+                      via-cyan-300
+                      to-blue-500
+                      bg-clip-text
+                      text-transparent
+                    "
+                  >
+                    {lastName}
+                  </span>
+                )}
+              </h1>
+            </div>
+          </StaggerItem>
 
-            <StaggerItem
-              as="div"
+          {/* TITLE */}
+          <StaggerItem>
+            <p className="mt-6 text-lg font-semibold text-slate-200 sm:text-xl">
+              {profile.title}
+            </p>
+          </StaggerItem>
+
+          <StaggerItem>
+            <div className="mt-5 flex flex-wrap gap-2">
+              <span className="inline-flex items-center gap-2 rounded-full border border-blue-400/20 bg-blue-500/[0.08] px-3 py-1.5 text-xs font-medium text-blue-300 sm:text-sm">
+                <FaCode className="text-[11px]" />
+                Web Development
+              </span>
+
+              <span className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-500/[0.08] px-3 py-1.5 text-xs font-medium text-cyan-300 sm:text-sm">
+                <FaDatabase className="text-[11px]" />
+                Data Management
+              </span>
+            </div>
+          </StaggerItem>
+
+          {/* DESCRIPTION */}
+          <StaggerItem>
+            <p
               className="
-                mt-6
-
-                flex
-                flex-wrap
-                gap-2.5
-              "
-            >
-              {profile.roles.map((role, index) => (
-                <Badge key={role} color={index % 2 === 0 ? "blue" : "cyan"}>
-                  {role}
-                </Badge>
-              ))}
-            </StaggerItem>
-
-            {/* Description */}
-
-            <StaggerItem
-              as="p"
-              className="
-                mt-7
-                max-w-2xl
-
-                text-base
-                leading-7
-
+                mt-6 max-w-xl
+                text-sm leading-7
                 text-slate-400
-
-                sm:text-lg
-                sm:leading-8
+                sm:text-base sm:leading-8
               "
             >
               {profile.description}
-            </StaggerItem>
+            </p>
+          </StaggerItem>
 
-            {/* Buttons */}
-
-            <StaggerItem
-              as="div"
-              className="
-                mt-9
-
-                flex
-                flex-wrap
-                gap-3
-              "
-            >
-              <Button href={profile.cv}>Download CV </Button>
-
-              <Button href="#projects" variant="secondary">
-                View Projects
+          {/* ACTION BUTTONS */}
+          <StaggerItem>
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <Button
+                href={profile.cv}
+                variant="primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download CV
               </Button>
-            </StaggerItem>
 
-            {/* Social */}
+              <Button href="#projects" variant="outline" className="group">
+                Explore My Projects
+                <FaArrowRight className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+              </Button>
+            </div>
+          </StaggerItem>
 
-            <StaggerItem
-              as="div"
-              className="
-                mt-8
+          {/* SOCIAL LINKS */}
+          <StaggerItem>
+            <div className="mt-9 flex items-center gap-3">
+              <span className="mr-1 text-xs font-medium uppercase tracking-[0.18em] text-slate-600">
+                Connect
+              </span>
 
-                flex
-                items-center
-                gap-3
-              "
-            >
-              <a
-                href={profile.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                className="
-                  glass
-                  glass-hover
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
 
-                  flex
-                  h-11
-                  w-11
+                return (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target={social.label === "Email" ? undefined : "_blank"}
+                    rel={
+                      social.label === "Email"
+                        ? undefined
+                        : "noopener noreferrer"
+                    }
+                    aria-label={social.label}
+                    className="
+                      flex h-10 w-10 items-center
+                      justify-center rounded-xl
+                      border border-white/[0.08]
+                      bg-white/[0.03]
+                      text-slate-400
+                      transition-all duration-300
+                      hover:-translate-y-1
+                      hover:border-blue-400/30
+                      hover:bg-blue-500/10
+                      hover:text-blue-400
+                    "
+                  >
+                    <Icon size={16} />
+                  </a>
+                );
+              })}
+            </div>
+          </StaggerItem>
 
-                  items-center
-                  justify-center
+          {/* LOCATION */}
+          <StaggerItem>
+            <div className="mt-6 flex items-center gap-2 text-sm text-slate-500">
+              <FaMapMarkerAlt className="text-blue-400" />
+              <span>{profile.location}</span>
+            </div>
+          </StaggerItem>
 
-                  rounded-xl
-
-                  text-slate-300
-
-                  hover:text-white
-                "
-              >
-                <FaGithub />
-              </a>
-
-              <a
-                href={profile.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="
-                  glass
-                  glass-hover
-
-                  flex
-                  h-11
-                  w-11
-
-                  items-center
-                  justify-center
-
-                  rounded-xl
-
-                  text-slate-300
-
-                  hover:text-white
-                "
-              >
-                <FaLinkedin />
-              </a>
-
-              <a
-                href={`mailto:${profile.email}`}
-                aria-label="Email"
-                className="
-                  glass
-                  glass-hover
-
-                  flex
-                  h-11
-                  w-11
-
-                  items-center
-                  justify-center
-
-                  rounded-xl
-
-                  text-slate-300
-
-                  hover:text-white
-                "
-              >
-                <FaEnvelope />
-              </a>
-
-              <div
-                className="
-                  ml-2
-
-                  hidden
-                  items-center
-                  gap-2
-
-                  text-sm
-                  text-slate-500
-
-                  sm:flex
-                "
-              >
-                <FaMapMarkerAlt />
-                <span>{profile.location}</span>
-              </div>
-            </StaggerItem>
-
-            {/* Statistics */}
-
-            <StaggerItem
-              as="div"
-              className="
-                mt-12
-
-                grid
-                max-w-xl
-                grid-cols-3
-
-                gap-3
-              "
-            >
-              <div className="glass rounded-2xl px-4 py-5 text-center sm:text-left">
-                <Counter
-                  value={3}
-                  className="block text-2xl font-black tracking-tight text-white sm:text-3xl"
-                />
-                <p className="mt-1 text-xs font-medium text-slate-500 sm:text-sm">
-                  Projects
-                </p>
-              </div>
-
-              <div className="glass rounded-2xl px-4 py-5 text-center sm:text-left">
-                <Counter
-                  value={15}
-                  suffix="+"
-                  className="block text-2xl font-black tracking-tight text-white sm:text-3xl"
-                />
-                <p className="mt-1 text-xs font-medium text-slate-500 sm:text-sm">
-                  Technologies
-                </p>
-              </div>
-
-              <div className="glass rounded-2xl px-4 py-5 text-center sm:text-left">
-                <Counter
-                  value={1}
-                  className="block text-2xl font-black tracking-tight text-white sm:text-3xl"
-                />
-                <p className="mt-1 text-xs font-medium text-slate-500 sm:text-sm">
-                  Internship
-                </p>
-              </div>
-            </StaggerItem>
-          </StaggerContainer>
-
-          {/* =====================================
-              RIGHT CONTENT
-          ====================================== */}
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              duration: 0.8,
-              delay: 0.3,
-              ease: [0.21, 0.47, 0.32, 0.98],
-            }}
-            className="
-              relative
-
-              flex
-              min-h-[560px]
-
-              items-center
-              justify-center
-
-              lg:min-h-[680px]
-            "
-          >
-            {/* =================================
-                Code Card
-            ================================== */}
-
-            <Card
-              hover={false}
-              className="
-                absolute
-
-                left-0
-                top-2
-
-                z-10
-
-                hidden
-
-                w-[350px]
-
-                !bg-[#0a0f1e]
-
-                shadow-2xl
-
-                sm:block
-                lg:left-0
-                xl:left-4
-              "
-            >
-              {/* Window Header */}
-
-              <div
-                className="
-                  flex
-                  items-center
-                  gap-2
-
-                  border-b
-                  border-white/10
-
-                  p-6
-                  pb-4
-                "
-              >
-                <span className="h-3 w-3 rounded-full bg-red-500" />
-                <span className="h-3 w-3 rounded-full bg-yellow-500" />
-                <span className="h-3 w-3 rounded-full bg-green-500" />
-
-                <span className="ml-2 text-xs font-medium text-slate-500">
-                  developer.js
-                </span>
-              </div>
-
-              {/* Code */}
-
-              <pre
-                className="
-                  overflow-hidden
-
-                  p-6
-                  pt-5
-
-                  font-mono
-                  text-xs
-                  leading-6
-
-                  text-slate-300
-
-                  sm:text-sm
-                  sm:leading-7
-                "
-              >
-                <span className="text-purple-400">const</span>{" "}
-                <span className="text-cyan-300">developer</span>{" "}
-                <span className="text-white">=</span>{" "}
-                <span className="text-yellow-300">{"{"}</span>
-                {"\n"}
-                {"  "}
-                <span className="text-green-400">name</span>:{" "}
-                <span className="text-orange-300">"Akhmad Haris"</span>,{"\n"}
-                {"  "}
-                <span className="text-green-400">role</span>:{" "}
-                <span className="text-orange-300">"Web Developer"</span>,{"\n"}
-                {"  "}
-                <span className="text-green-400">interest</span>:{" "}
-                <span className="text-orange-300">"Data Analytics"</span>,{"\n"}
-                {"  "}
-                <span className="text-green-400">stack</span>: [
-                <span className="text-cyan-300">"React"</span>,{" "}
-                <span className="text-cyan-300">"Laravel"</span>
-                ],{"\n"}
-                {"  "}
-                <span className="text-green-400">status</span>:{" "}
-                <span className="text-emerald-400">"Available"</span>
-                {"\n"}
-                <span className="text-yellow-300">{"}"}</span>;
-              </pre>
-
-              {/* Code Footer */}
-
-              <div
-                className="
-                  flex
-                  items-center
-                  gap-2
-
-                  border-t
-                  border-white/10
-
-                  p-6
-                  pt-4
-
-                  text-xs
-                  text-slate-500
-                "
-              >
-                <FaCode className="text-blue-400" />
-                <span>Building digital solutions</span>
-              </div>
-            </Card>
-
-            {/* =================================
-                Profile Image
-            ================================== */}
-
+          {/* STATISTICS */}
+          <StaggerItem>
             <div
               className="
-                relative
-                z-20
+                mt-10 grid max-w-lg
+                grid-cols-3 gap-5
+                border-t border-white/[0.08]
+                pt-7
+              "
+            >
+              {stats.map((stat) => (
+                <div key={stat.label}>
+                  <div className="flex items-baseline gap-0.5">
+                    <Counter
+                      value={stat.value}
+                      className="
+                        text-2xl font-bold
+                        tracking-tight text-white
+                        sm:text-3xl
+                      "
+                    />
 
-                mt-20
+                    <span className="text-xl font-bold text-blue-400">
+                      {stat.suffix}
+                    </span>
+                  </div>
 
-                rounded-[2.5rem]
+                  <p className="mt-1.5 text-xs text-slate-500 sm:text-sm">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </StaggerItem>
+        </StaggerContainer>
 
-                bg-gradient-to-br
-                from-blue-500
-                to-cyan-400
+        {/* RIGHT: PROFILE VISUAL */}
+        <motion.div
+          initial={{ opacity: 0, y: 24, scale: 0.98 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.15,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="
+            relative order-1 mx-auto
+            w-full max-w-[340px]
+            sm:max-w-[390px]
+            lg:order-2 lg:max-w-[440px]
+          "
+        >
+          {/* SUBTLE BACKGROUND GLOW */}
+          <div
+            aria-hidden="true"
+            className="
+              absolute left-1/2 top-[42%]
+              h-[70%] w-[70%]
+              -translate-x-1/2 -translate-y-1/2
+              rounded-full bg-blue-500/[0.14]
+              blur-[100px]
+            "
+          />
 
-                p-1.5
+          {/* DECORATIVE FRAME */}
+          <div
+            aria-hidden="true"
+            className="
+              absolute -right-3 -top-3
+              h-full w-full
+              rounded-[2rem]
+              border border-blue-400/20
+              sm:-right-5 sm:-top-5
+            "
+          />
 
-                shadow-[0_30px_90px_rgba(34,211,238,0.25)]
-
-                sm:mt-28
+          {/* IMAGE CONTAINER */}
+          <div
+            className="
+              relative overflow-hidden
+              rounded-[1.75rem]
+              border border-white/[0.12]
+              bg-[#0b1424]
+              p-2
+              shadow-[0_30px_90px_rgba(0,0,0,0.4)]
+              sm:rounded-[2rem]
+              sm:p-2.5
+            "
+          >
+            <div
+              className="
+                relative aspect-[4/5]
+                overflow-hidden
+                rounded-[1.35rem]
+                bg-[#0c1729]
+                sm:rounded-[1.5rem]
               "
             >
               <img
                 src={profile.image}
-                alt={profile.name}
+                alt={`Portrait of ${profile.name}`}
+                fetchPriority="high"
                 className="
-                  h-[360px]
-                  w-[280px]
+                  h-full w-full
+                  object-cover object-center
+                  transition-transform duration-700
+                  hover:scale-[1.025]
+                "
+              />
 
-                  rounded-[2.2rem]
-
-                  border-4
-                  border-[#05070d]
-
-                  object-cover
-                  object-center
-
-                  sm:h-[430px]
-                  sm:w-[340px]
-
-                  lg:h-[460px]
-                  lg:w-[360px]
+              <div
+                aria-hidden="true"
+                className="
+                  pointer-events-none absolute inset-0
+                  bg-gradient-to-t
+                  from-[#05070d]/20
+                  via-transparent
+                  to-blue-950/[0.08]
                 "
               />
             </div>
+          </div>
 
-            {/* =================================
-                Floating Badges
-            ================================== */}
+          {/* PROFILE INFORMATION CARD */}
+          <div
+            className="
+              relative mt-5
+              overflow-hidden
+              rounded-2xl
+              border border-white/[0.09]
+              bg-[#0d1728]/90
+              px-5 py-4
+              shadow-[0_15px_40px_rgba(0,0,0,0.2)]
+              sm:mt-6 sm:px-6 sm:py-5
+            "
+          >
+            <div className="flex items-center justify-between gap-3">
+              <div className="min-w-0">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-blue-400 sm:text-xs">
+                  Personal Portfolio
+                </p>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5, y: 10 }}
-              animate={{ opacity: 1, scale: 1, y: [0, -8, 0] }}
-              transition={{
-                opacity: { duration: 0.5, delay: 0.9 },
-                scale: { duration: 0.5, delay: 0.9 },
-                y: {
-                  duration: 3.4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1.4,
-                },
-              }}
-              className="absolute right-0 top-16 z-30 hidden sm:block lg:right-0 xl:right-8"
-            >
-              <Badge color="cyan">⚛ React</Badge>
-            </motion.div>
+                <h2 className="mt-1.5 truncate text-lg font-bold tracking-tight text-white sm:text-xl">
+                  {profile.name}
+                </h2>
+              </div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5, y: 10 }}
-              animate={{ opacity: 1, scale: 1, y: [0, -8, 0] }}
-              transition={{
-                opacity: { duration: 0.5, delay: 1.05 },
-                scale: { duration: 0.5, delay: 1.05 },
-                y: {
-                  duration: 3.8,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1.55,
-                },
-              }}
-              className="absolute bottom-28 left-0 z-30 hidden sm:block xl:left-2"
-            >
-              <Badge color="blue">🚀 Laravel</Badge>
-            </motion.div>
+              <div
+                className="
+                  flex shrink-0 items-center gap-2
+                  rounded-full
+                  border border-emerald-400/15
+                  bg-emerald-400/[0.07]
+                  px-2.5 py-1.5
+                  sm:px-3
+                "
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5, y: 10 }}
-              animate={{ opacity: 1, scale: 1, y: [0, -8, 0] }}
-              transition={{
-                opacity: { duration: 0.5, delay: 1.2 },
-                scale: { duration: 0.5, delay: 1.2 },
-                y: {
-                  duration: 3.2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1.7,
-                },
-              }}
-              className="absolute right-0 top-1/2 z-30 hidden sm:block"
-            >
-              <Badge color="purple">🗄 MySQL</Badge>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5, y: 10 }}
-              animate={{ opacity: 1, scale: 1, y: [0, -8, 0] }}
-              transition={{
-                opacity: { duration: 0.5, delay: 1.35 },
-                scale: { duration: 0.5, delay: 1.35 },
-                y: {
-                  duration: 3.6,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1.85,
-                },
-              }}
-              className="absolute bottom-10 right-8 z-30 hidden sm:block"
-            >
-              <Badge color="cyan">📊 Excel</Badge>
-            </motion.div>
-
-            {/* Location card */}
-
-            <div
-              className="
-                glass
-
-                absolute
-                bottom-0
-                left-1/2
-                z-30
-
-                flex
-                -translate-x-1/2
-                items-center
-                gap-2
-
-                rounded-full
-
-                px-4
-                py-2
-
-                text-xs
-                font-semibold
-                text-slate-300
-
-                sm:hidden
-              "
-            >
-              <FaMapMarkerAlt className="text-blue-400" />
-              {profile.location}
+                <span className="text-[10px] font-medium text-emerald-300 sm:text-xs">
+                  Open to Work
+                </span>
+              </div>
             </div>
-          </motion.div>
-        </div>
 
-        {/* =========================================
-            SCROLL INDICATOR
-        ========================================== */}
+            <div className="mt-3 flex items-center justify-between gap-3 border-t border-white/[0.07] pt-3">
+              <p className="text-xs text-slate-400 sm:text-sm">
+                Web Development & Data
+              </p>
 
-        <div
-          className="
-            mt-16
-
-            hidden
-
-            flex-col
-            items-center
-            gap-2
-
-            text-xs
-            font-medium
-            uppercase
-            tracking-[0.2em]
-            text-slate-600
-
-            lg:flex
-          "
-        >
-          <span>Scroll to explore</span>
-          <FaArrowDown className="animate-bounce text-blue-400" />
-        </div>
+              <span className="text-[10px] font-medium uppercase tracking-wider text-slate-600">
+                Portfolio
+              </span>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

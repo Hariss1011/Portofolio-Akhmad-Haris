@@ -6,22 +6,22 @@ import Badge from "../../common/Badge";
 import Reveal from "../../common/Reveal";
 import { StaggerContainer, StaggerItem } from "../../common/Stagger";
 
-import { FaCode, FaChartLine, FaLightbulb, FaArrowRight } from "react-icons/fa";
+import { FaLightbulb, FaChartLine, FaCode, FaArrowRight } from "react-icons/fa";
 
 const highlightIcons = [FaLightbulb, FaChartLine, FaCode];
 
-const highlightStyles = [
+const highlightAccents = [
   {
-    icon: "bg-blue-500/10 border-blue-500/25 text-blue-300 group-hover:bg-blue-500/20",
-    glow: "group-hover:text-blue-500/10",
+    icon: "border-blue-400/20 bg-blue-400/10 text-blue-300",
+    line: "bg-blue-400",
   },
   {
-    icon: "bg-cyan-500/10 border-cyan-500/25 text-cyan-300 group-hover:bg-cyan-500/20",
-    glow: "group-hover:text-cyan-500/10",
+    icon: "border-cyan-400/20 bg-cyan-400/10 text-cyan-300",
+    line: "bg-cyan-400",
   },
   {
-    icon: "bg-purple-500/10 border-purple-500/25 text-purple-300 group-hover:bg-purple-500/20",
-    glow: "group-hover:text-purple-500/10",
+    icon: "border-violet-400/20 bg-violet-400/10 text-violet-300",
+    line: "bg-violet-400",
   },
 ];
 
@@ -30,42 +30,28 @@ const About = () => {
     <section
       id="about"
       className="
-        relative
-        overflow-hidden
-
+        relative overflow-hidden
         bg-[#070a14]
-
-        py-20
-        sm:py-24
-        lg:py-28
+        py-20 sm:py-24 lg:py-28
       "
     >
-      {/* =========================================
-          BACKGROUND
-      ========================================== */}
-
-      <div className="pointer-events-none absolute inset-0">
-        <div className="glow-orb absolute -left-40 top-20 h-72 w-72 bg-blue-600/15" />
-        <div className="glow-orb absolute -right-40 bottom-20 h-80 w-80 bg-cyan-500/10" />
+      {/* BACKGROUND */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 overflow-hidden"
+      >
+        <div className="absolute -left-48 top-24 h-80 w-80 rounded-full bg-blue-600/[0.09] blur-[120px]" />
+        <div className="absolute -right-48 bottom-10 h-80 w-80 rounded-full bg-cyan-500/[0.07] blur-[120px]" />
       </div>
 
-      {/* =========================================
-          CONTAINER
-      ========================================== */}
-
+      {/* CONTENT */}
       <div
         className="
-          relative
-          mx-auto
-
-          w-full
-          max-w-7xl
-
-          px-6
-          sm:px-8
-          lg:px-10
+          relative mx-auto w-full max-w-7xl
+          px-5 sm:px-8 lg:px-10
         "
       >
+        {/* SECTION TITLE */}
         <Reveal>
           <SectionTitle
             subtitle={about.subtitle}
@@ -74,96 +60,80 @@ const About = () => {
           />
         </Reveal>
 
-        {/* =======================================
-            BENTO GRID
-        ======================================== */}
-
+        {/* ABOUT LAYOUT */}
         <div
           className="
-            grid
-
-            gap-5
-
-            lg:grid-cols-3
-            lg:grid-rows-[auto_auto]
+            mt-12 grid items-stretch gap-5
+            lg:mt-16
+            lg:grid-cols-[1.2fr_0.8fr]
           "
         >
-          {/* =====================================
-              STORY CARD — spans 2 cols, 2 rows
-          ====================================== */}
-
-          <Reveal x={-24} y={0} className="lg:col-span-2 lg:row-span-2">
+          {/* MAIN STORY */}
+          <Reveal x={-20} y={0}>
             <Card
+              hover={false}
               className="
-                relative
-                h-full
-
-                p-7
-                sm:p-9
-                lg:p-10
+                relative h-full overflow-hidden
+                border-white/[0.08]
+                bg-[#0c1423]
+                p-6 sm:p-8 lg:p-9
               "
             >
-              {/* Accent */}
-
-              <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-blue-500 via-cyan-400 to-transparent" />
+              {/* TOP ACCENT */}
+              <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-blue-500 via-cyan-400 to-transparent" />
 
               <div className="relative">
-                {/* Label */}
-
-                <div className="mb-7 flex items-center gap-3">
+                {/* CARD LABEL */}
+                <div className="flex items-center gap-3">
                   <div
                     className="
-                      flex
-                      h-11
-                      w-11
-
-                      items-center
-                      justify-center
-
-                      rounded-xl
-
-                      bg-blue-500/10
-                      border
-                      border-blue-500/25
-
-                      text-blue-300
+                      flex h-11 w-11 shrink-0 items-center
+                      justify-center rounded-xl
+                      border border-blue-400/20
+                      bg-blue-400/10 text-blue-300
                     "
                   >
-                    <FaLightbulb />
+                    <FaLightbulb size={17} />
                   </div>
 
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-blue-400">
-                      My Journey
+                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-400 sm:text-xs">
+                      Professional Profile
                     </p>
-
-                    <h3 className="mt-1 text-xl font-bold tracking-tight text-white">
-                      From systems to insights
+                    <h3 className="mt-1 text-lg font-bold text-white sm:text-xl">
+                      A little about me
                     </h3>
                   </div>
                 </div>
 
-                {/* Paragraphs */}
-
-                <div className="space-y-5">
+                {/* STORY */}
+                <div className="mt-8 space-y-5">
                   {about.paragraphs.map((paragraph, index) => (
                     <p
                       key={index}
-                      className="text-base leading-8 text-slate-400"
+                      className="
+                        text-sm leading-7 text-slate-400
+                        sm:text-[15px] sm:leading-8
+                      "
                     >
                       {paragraph}
                     </p>
                   ))}
                 </div>
 
-                {/* Focus */}
+                {/* PROFESSIONAL FOCUS */}
+                <div className="mt-9 border-t border-white/[0.08] pt-7">
+                  <div className="flex flex-wrap items-center justify-between gap-3">
+                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
+                      Areas of Interest
+                    </p>
 
-                <div className="mt-9 border-t border-white/10 pt-7">
-                  <p className="mb-4 text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
-                    Current Focus
-                  </p>
+                    <span className="text-[10px] font-medium text-slate-600">
+                      Professional Focus
+                    </span>
+                  </div>
 
-                  <div className="flex flex-wrap gap-2">
+                  <div className="mt-4 flex flex-wrap gap-2">
                     {about.focus.map((item, index) => (
                       <Badge
                         key={item}
@@ -178,178 +148,145 @@ const About = () => {
             </Card>
           </Reveal>
 
-          {/* =====================================
-              HIGHLIGHT TILES — bento column
-          ====================================== */}
-
-          <StaggerContainer className="flex flex-col gap-5">
-            {about.highlights.map((item, index) => {
-              const Icon = highlightIcons[index];
-              const style = highlightStyles[index];
-
-              return (
-                <StaggerItem key={item.title} y={20}>
-                  <Card
-                    className="
-                      group
-                      relative
-
-                      p-6
-                    "
-                  >
-                    {/* Background number */}
-
-                    <span
-                      className={`
-                        pointer-events-none
-
-                        absolute
-                        right-4
-                        top-0
-
-                        text-7xl
-                        font-black
-
-                        text-white/[0.04]
-
-                        transition-colors
-                        duration-300
-
-                        ${style.glow}
-                      `}
-                    >
-                      {item.value}
-                    </span>
-
-                    {/* Icon */}
-
-                    <div
-                      className={`
-                        relative
-
-                        flex
-                        h-11
-                        w-11
-
-                        items-center
-                        justify-center
-
-                        rounded-xl
-
-                        border
-
-                        transition-all
-                        duration-300
-
-                        ${style.icon}
-                      `}
-                    >
-                      <Icon />
-                    </div>
-
-                    {/* Content */}
-
-                    <div className="relative mt-5">
-                      <h3 className="text-lg font-bold tracking-tight text-white">
-                        {item.title}
-                      </h3>
-
-                      <p className="mt-2 text-sm leading-6 text-slate-500">
-                        {item.description}
-                      </p>
-                    </div>
-
-                    {/* Arrow */}
-
-                    <div
-                      className="
-                        relative
-                        mt-5
-
-                        flex
-                        items-center
-                        gap-2
-
-                        text-xs
-                        font-semibold
-
-                        text-slate-600
-
-                        transition-all
-                        duration-300
-
-                        group-hover:gap-3
-                        group-hover:text-blue-300
-                      "
-                    >
-                      <span>Core value</span>
-                      <FaArrowRight />
-                    </div>
-                  </Card>
-                </StaggerItem>
-              );
-            })}
-          </StaggerContainer>
-        </div>
-
-        {/* =======================================
-            BOTTOM STATEMENT
-        ======================================== */}
-
-        <Reveal className="mt-5">
-          <Card
-            hover={false}
-            className="
-              relative
-
-              border-blue-500/20
-
-              bg-gradient-to-r
-              from-blue-500/10
-              via-transparent
-              to-cyan-400/10
-
-              p-7
-
-              sm:p-9
-            "
-          >
-            <div
-              className="
-                relative
-
-                flex
-                flex-col
-
-                gap-6
-
-                md:flex-row
-                md:items-center
-                md:justify-between
-              "
-            >
-              <div className="max-w-2xl">
+          {/* PROFESSIONAL HIGHLIGHTS */}
+          <div className="flex flex-col gap-5">
+            <Reveal y={16}>
+              <div className="mb-1">
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-blue-400">
-                  What I Bring
+                  What Defines Me
                 </p>
 
-                <h3 className="mt-2 text-2xl font-bold tracking-tight text-white sm:text-3xl">
-                  Technical skills with a willingness to keep learning.
+                <h3 className="mt-2 text-xl font-bold tracking-tight text-white sm:text-2xl">
+                  My Professional Strengths
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-400 sm:text-base">
-                  I am looking for an opportunity where I can contribute from
-                  day one while continuously developing my technical and
-                  professional capabilities.
+                <p className="mt-2 max-w-md text-sm leading-6 text-slate-500">
+                  The principles I bring when approaching projects,
+                  collaborating, and learning new things.
                 </p>
               </div>
+            </Reveal>
 
-              <div className="flex shrink-0 items-center gap-2 text-sm font-semibold text-white">
-                <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_0_5px_rgba(52,211,153,0.1)]" />
-                Open to opportunities
+            <StaggerContainer
+              className="flex flex-1 flex-col gap-3"
+              staggerChildren={0.1}
+            >
+              {about.highlights.map((item, index) => {
+                const Icon = highlightIcons[index] || FaLightbulb;
+                const accent =
+                  highlightAccents[index % highlightAccents.length];
+
+                return (
+                  <StaggerItem key={item.title} y={16}>
+                    <Card
+                      hover={false}
+                      className="
+                        group relative overflow-hidden
+                        border-white/[0.08]
+                        bg-[#0c1423]
+                        p-5 sm:p-6
+                        transition-all duration-300
+                        hover:border-white/[0.14]
+                        hover:bg-[#101b2d]
+                      "
+                    >
+                      <div className="flex items-start gap-4">
+                        {/* ICON */}
+                        <div
+                          className={`
+                            flex h-11 w-11 shrink-0
+                            items-center justify-center
+                            rounded-xl border
+                            ${accent.icon}
+                          `}
+                        >
+                          <Icon size={17} />
+                        </div>
+
+                        {/* TEXT */}
+                        <div className="min-w-0 flex-1">
+                          <div className="flex items-center justify-between gap-3">
+                            <h4 className="text-base font-bold text-white">
+                              {item.title}
+                            </h4>
+
+                            <span className="text-[10px] font-semibold tracking-widest text-slate-600">
+                              0{index + 1}
+                            </span>
+                          </div>
+
+                          <p className="mt-2 text-sm leading-6 text-slate-500">
+                            {item.description}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* BOTTOM ACCENT */}
+                      <div
+                        className={`
+                          absolute bottom-0 left-0 h-px w-0
+                          transition-all duration-500
+                          group-hover:w-full
+                          ${accent.line}
+                        `}
+                      />
+                    </Card>
+                  </StaggerItem>
+                );
+              })}
+            </StaggerContainer>
+          </div>
+        </div>
+
+        {/* BOTTOM STATEMENT */}
+        <Reveal y={16} className="mt-5">
+          <div
+            className="
+              flex flex-col gap-4
+              rounded-2xl
+              border border-blue-400/15
+              bg-gradient-to-r
+              from-blue-500/[0.09]
+              via-[#0c1423]
+              to-cyan-500/[0.06]
+              p-6 sm:flex-row sm:items-center
+              sm:justify-between sm:p-7
+            "
+          >
+            <div className="flex items-start gap-4">
+              <div
+                className="
+                  flex h-10 w-10 shrink-0 items-center
+                  justify-center rounded-xl
+                  border border-blue-400/20
+                  bg-blue-400/10 text-blue-300
+                "
+              >
+                <FaArrowRight size={15} />
+              </div>
+
+              <div>
+                <p className="text-sm font-bold text-white sm:text-base">
+                  Ready to turn knowledge into meaningful contributions.
+                </p>
+
+                <p className="mt-1 text-xs leading-6 text-slate-400 sm:text-sm">
+                  Interested in contributing to real projects while continuing
+                  to grow as a technology professional.
+                </p>
               </div>
             </div>
-          </Card>
+
+            <span
+              className="
+                flex shrink-0 items-center gap-2
+                text-xs font-semibold text-emerald-300
+              "
+            >
+              <span className="h-2 w-2 rounded-full bg-emerald-400" />
+              Open to Opportunities
+            </span>
+          </div>
         </Reveal>
       </div>
     </section>
