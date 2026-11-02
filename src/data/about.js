@@ -4,44 +4,45 @@ const about = {
   title: "Building technology with a practical mindset.",
 
   description:
-    "I am an Informatics Engineering graduate with a strong interest in Web Development, Data Analytics, and Information Systems. I enjoy combining technical skills with analytical thinking to build practical solutions that solve real-world problems.",
+    "An Informatics Engineering graduate interested in developing useful digital systems, managing data, and solving practical problems through technology.",
 
   paragraphs: [
-    "During my academic journey, I developed web-based information systems and gained hands-on experience in frontend development, backend development, relational databases, and system design. My final project involved developing a web-based village administration system to improve the efficiency of the certificate submission process.",
+    "I am an Informatics Engineering graduate from Universitas Dian Nuswantoro, with an academic background in Software Engineering and Data. My main interests are web application development, information systems, and data management.",
 
-    "I also gained practical experience through an IT Support internship, where I worked with users, identified technical issues, assisted with troubleshooting, and supported the use of information technology in a professional environment.",
+    "Throughout my academic journey, I have developed several web-based applications using Laravel, PHP, React.js, and MySQL. These projects have strengthened my understanding of database design, application development, system analysis, and the implementation of practical solutions.",
 
-    "Currently, I am strengthening my skills in Web Development and Data Analytics while expanding my knowledge of databases, SQL, Excel, and data visualization. I am interested in opportunities where I can contribute to real-world projects, solve practical problems, and continue growing as a technology professional.",
+    "I also gained professional experience through an internship at Bapperida Pekalongan. During the internship, I supported IT operations, assisted with data administration, worked with office applications, and contributed to web application development and maintenance.",
+
+    "I continue to strengthen my technical and analytical skills, particularly in Laravel, React.js, SQL, and Microsoft Excel. I am eager to apply my knowledge in a professional environment, contribute to meaningful projects, and grow as a technology professional.",
   ],
 
   highlights: [
     {
       value: "01",
-      title: "Problem Solver",
+      title: "System Development",
       description:
-        "Approaching technical challenges systematically and turning problems into practical solutions.",
+        "Developing functional web applications and information systems using Laravel, PHP, React.js, and MySQL.",
     },
-
     {
       value: "02",
-      title: "Data Driven",
+      title: "Data Management",
       description:
-        "Interested in transforming raw data into meaningful insights that support better decisions.",
+        "Organizing, processing, and analyzing data using SQL and Microsoft Excel to support reporting and information needs.",
     },
-
     {
       value: "03",
-      title: "Continuous Learner",
+      title: "Problem Solving",
       description:
-        "Continuously developing technical and analytical skills through projects, learning, and real-world practice.",
+        "Understanding practical challenges, analyzing requirements, and developing structured solutions through technology.",
     },
   ],
 
   focus: [
     "Web Development",
-    "Data Analytics",
+    "Data Management",
+    "SQL & Database",
     "Information Systems",
-    "Database Management",
+    "Database Administrator",
   ],
 };
 

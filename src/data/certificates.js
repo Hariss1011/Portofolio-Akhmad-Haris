@@ -1,16 +1,8 @@
-// ========================================
-// CERTIFICATES DATA
-// ========================================
-
 const certificates = [
-  // ========================================
-  // CERTIFICATE 1 — BNSP
-  // ========================================
-
   {
     id: 1,
 
-    title: "BNSP Competency Certification",
+    title: "Web Developer Competency Certification",
 
     issuer: "Badan Nasional Sertifikasi Profesi (BNSP)",
 
@@ -21,13 +13,9 @@ const certificates = [
     date: "2026",
 
     description:
-      "Professional competency certification demonstrating verified competence in the relevant information technology field.",
+      "Professional competency certification in Web Development, demonstrating competency in developing web-based applications and implementing software development practices.",
 
-    skills: [
-      "Information Technology",
-      "Software Development",
-      "Professional Competency",
-    ],
+    skills: ["Web Development", "Software Development", "Web Application"],
 
     credential: {
       id: "62010 21315 5 010199 2026",
@@ -38,19 +26,15 @@ const certificates = [
 
     certificateUrl: "/certificates/Sertifikat BNSP.pdf",
 
-    status: "Verified",
+    status: "Issued",
   },
-
-  // ========================================
-  // CERTIFICATE 2 — TOEFL
-  // ========================================
 
   {
     id: 2,
 
     title: "TOEFL Certificate",
 
-    issuer: "Center for Foreign Language Training",
+    issuer: "Center for Foreign Language Training (CFL-T), UDINUS",
 
     category: "Language",
 
@@ -59,7 +43,7 @@ const certificates = [
     date: "2026",
 
     description:
-      "English proficiency certification demonstrating competency in English language skills, including reading, listening, and grammar.",
+      "English language proficiency certificate with a TOEFL score of 470, reflecting competency in reading, listening, and English structure.",
 
     skills: ["English", "Reading", "Listening", "Grammar"],
 
@@ -72,12 +56,8 @@ const certificates = [
 
     certificateUrl: "/certificates/Sertifikat TOEFL.pdf",
 
-    status: "Verified",
+    status: "Issued",
   },
-
-  // ========================================
-  // CERTIFICATE 3 — CAREER WORKSHOP
-  // ========================================
 
   {
     id: 3,
@@ -98,7 +78,6 @@ const certificates = [
     skills: [
       "Career Development",
       "Information Technology",
-      "Career Guidance",
       "Professional Development",
     ],
 
@@ -112,7 +91,7 @@ const certificates = [
     certificateUrl:
       "/certificates/Sertifikat_Workshop_Bimbingan_Karir_TI-S1.pdf",
 
-    status: "Verified",
+    status: "Issued",
   },
 ];
 

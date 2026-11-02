@@ -204,9 +204,9 @@ const Contact = () => {
                 "
                 >
                   I am currently open to entry-level opportunities in Web
-                  Development, Data Analytics, Database Administration, and
-                  other technology-related roles where I can contribute and
-                  continue developing my skills.
+                  Development, Data Management, Data Analytics, and Information
+                  Systems, where I can contribute my skills and continue growing
+                  professionally.
                 </p>
               </div>
 
@@ -529,7 +529,8 @@ const Contact = () => {
                   "
                   >
                     Open to full-time roles, internships, collaborations, and
-                    professional opportunities.
+                    Interested in opportunities related to web development, data
+                    management, and information systems.
                   </p>
 
                   <p
@@ -676,11 +677,11 @@ const Contact = () => {
                     sm:text-base
                   "
                 >
-                  s a fresh graduate in Informatics Engineering, I bring a
-                  foundation in web development, databases, information systems,
-                  and data analysis. I am eager to contribute to a professional
-                  team, learn from real-world challenges, and continuously grow
-                  as a technology professional.
+                  As an Informatics Engineering graduate, I bring a foundation
+                  in web development, database management, information systems,
+                  and data processing. I am eager to contribute to a
+                  professional team, learn from real-world challenges, and
+                  continuously grow as a technology professional.
                 </p>
 
                 {/* Buttons */}

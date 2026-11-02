@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import SectionTitle from "../../common/SectionTitle";
 import ProjectCard from "./ProjectCard";
-import ProjectDetail from "./ProjectDetail";
 import Reveal from "../../common/Reveal";
 import { StaggerContainer, StaggerItem } from "../../common/Stagger";
 
@@ -11,22 +10,19 @@ import projects from "../../../data/projects";
 import { FaLayerGroup, FaArrowDown } from "react-icons/fa";
 
 const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
+  const navigate = useNavigate();
 
-  /*
-   * =========================================
-   * PROJECT DETAIL VIEW
-   * =========================================
-   */
+  const handleViewDetails = (project) => {
+    // Simpan posisi scroll daftar proyek
+    sessionStorage.setItem("projectsScrollPosition", String(window.scrollY));
 
-  if (selectedProject) {
-    return (
-      <ProjectDetail
-        project={selectedProject}
-        onClose={() => setSelectedProject(null)}
-      />
-    );
-  }
+    // Buka halaman detail proyek
+    navigate(`/projects/${project.slug}`, {
+      state: {
+        fromProjects: true,
+      },
+    });
+  };
 
   /*
    * =========================================
@@ -211,7 +207,7 @@ const Projects = () => {
             <ProjectCard
               project={featuredProject}
               featured
-              onViewDetails={() => setSelectedProject(featuredProject)}
+              onViewDetails={() => handleViewDetails(featuredProject)}
             />
           </Reveal>
         )}
@@ -298,7 +294,7 @@ const Projects = () => {
                 <StaggerItem key={project.id}>
                   <ProjectCard
                     project={project}
-                    onViewDetails={() => setSelectedProject(project)}
+                    onViewDetails={() => handleViewDetails(project)}
                   />
                 </StaggerItem>
               ))}

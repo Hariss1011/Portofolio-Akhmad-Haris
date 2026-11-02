@@ -1,4 +1,6 @@
-import Navbar from "../components/navbar/Navbar";
+import { useLayoutEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 import Hero from "../components/section/hero/Hero";
 import About from "../components/section/about/About";
 import Education from "../components/section/education/Education";
@@ -9,20 +11,36 @@ import Certificates from "../components/section/certificate/Certificates";
 import Contact from "../components/section/contact/Contact";
 
 const Home = () => {
+  const location = useLocation();
+
+  useLayoutEffect(() => {
+    const savedPosition = sessionStorage.getItem("projectsScrollPosition");
+
+    if (savedPosition !== null) {
+      window.scrollTo(0, Number(savedPosition));
+
+      sessionStorage.removeItem("projectsScrollPosition");
+    }
+  }, []);
+
+  useLayoutEffect(() => {
+    if (location.hash === "#projects") {
+      requestAnimationFrame(() => {
+        document.getElementById("projects")?.scrollIntoView();
+      });
+    }
+  }, [location.hash]);
+
   return (
     <>
-      <Navbar />
-
-      <main>
-        <Hero />
-        <About />
-        <Education />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Certificates />
-        <Contact />
-      </main>
+      <Hero />
+      <About />
+      <Education />
+      <Skills />
+      <Experience />
+      <Projects />
+      <Certificates />
+      <Contact />
     </>
   );
 };

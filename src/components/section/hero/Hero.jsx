@@ -120,7 +120,7 @@ const Hero = () => {
                   shadow-[0_0_0_4px_rgba(52,211,153,0.15)]
                 "
               />
-              Available for Work
+              Open to Opportunities
             </StaggerItem>
 
             {/* Heading */}
@@ -217,7 +217,7 @@ const Hero = () => {
                 gap-3
               "
             >
-              <Button href={profile.cv}>Download </Button>
+              <Button href={profile.cv}>Download CV </Button>
 
               <Button href="#projects" variant="secondary">
                 View Projects
@@ -347,8 +347,7 @@ const Hero = () => {
             >
               <div className="glass rounded-2xl px-4 py-5 text-center sm:text-left">
                 <Counter
-                  value={5}
-                  suffix="+"
+                  value={3}
                   className="block text-2xl font-black tracking-tight text-white sm:text-3xl"
                 />
                 <p className="mt-1 text-xs font-medium text-slate-500 sm:text-sm">
@@ -485,7 +484,7 @@ const Hero = () => {
                 <span className="text-green-400">role</span>:{" "}
                 <span className="text-orange-300">"Web Developer"</span>,{"\n"}
                 {"  "}
-                <span className="text-green-400">focus</span>:{" "}
+                <span className="text-green-400">interest</span>:{" "}
                 <span className="text-orange-300">"Data Analytics"</span>,{"\n"}
                 {"  "}
                 <span className="text-green-400">stack</span>: [

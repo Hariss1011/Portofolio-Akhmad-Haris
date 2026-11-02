@@ -1,7 +1,3 @@
-// ========================================
-// SKILLS DATA
-// ========================================
-
 import {
   SiReact,
   SiHtml5,
@@ -10,15 +6,10 @@ import {
   SiLaravel,
   SiPhp,
   SiMysql,
-  SiPython,
-  SiPandas,
-  SiNumpy,
   SiGit,
   SiGithub,
   SiPostman,
   SiXampp,
-  // SiPowerbi,
-  // SiTableau,
 } from "react-icons/si";
 
 import {
@@ -31,143 +22,75 @@ import {
   FaDesktop,
 } from "react-icons/fa";
 
-// ========================================
-// SKILL CATEGORIES
-// ========================================
-
 const skillCategories = [
-  // ========================================
-  // FRONTEND
-  // ========================================
-
   {
-    title: "Frontend",
+    title: "Frontend Development",
     color: "blue",
     icon: FaCode,
 
     description:
-      "Building responsive and interactive user interfaces with modern frontend technologies.",
+      "Building responsive and interactive user interfaces using modern frontend technologies.",
 
     skills: [
-      {
-        name: "React",
-        icon: SiReact,
-      },
-      {
-        name: "HTML5",
-        icon: SiHtml5,
-      },
-      {
-        name: "CSS3",
-        icon: FaCss3Alt,
-      },
-      {
-        name: "JavaScript",
-        icon: SiJavascript,
-      },
-      {
-        name: "Tailwind CSS",
-        icon: SiTailwindcss,
-      },
+      { name: "React.js", icon: SiReact },
+      { name: "JavaScript", icon: SiJavascript },
+      { name: "HTML5", icon: SiHtml5 },
+      { name: "CSS3", icon: FaCss3Alt },
+      { name: "Tailwind CSS", icon: SiTailwindcss },
     ],
   },
 
-  // ========================================
-  // BACKEND
-  // ========================================
-
   {
-    title: "Backend",
+    title: "Backend Development",
     color: "emerald",
     icon: FaServer,
 
     description:
-      "Developing web applications, backend systems, and APIs using Laravel and PHP.",
+      "Developing web applications and server-side functionality using PHP and Laravel.",
 
     skills: [
-      {
-        name: "Laravel",
-        icon: SiLaravel,
-      },
-      {
-        name: "PHP",
-        icon: SiPhp,
-      },
-      {
-        name: "REST API",
-        icon: FaCode,
-      },
+      { name: "Laravel", icon: SiLaravel },
+      { name: "PHP", icon: SiPhp },
+      { name: "MVC Architecture", icon: FaCode },
     ],
   },
 
-  // ========================================
-  // DATABASE
-  // ========================================
-
   {
-    title: "Database",
+    title: "Database Management",
     color: "orange",
     icon: FaDatabase,
 
     description:
-      "Designing, querying, and managing relational databases for web applications and data-driven systems.",
+      "Working with relational databases, SQL queries, and database structures for information systems.",
 
     skills: [
-      {
-        name: "MySQL",
-        icon: SiMysql,
-      },
-      {
-        name: "SQL",
-        icon: FaDatabase,
-      },
-      {
-        name: "Database Design",
-        icon: FaDatabase,
-      },
+      { name: "MySQL", icon: SiMysql },
+      { name: "SQL JOIN", icon: FaDatabase },
+      { name: "GROUP BY & Aggregation", icon: FaDatabase },
+      { name: "Database Design", icon: FaDatabase },
     ],
   },
 
-  // ========================================
-  // DATA ANALYTICS
-  // ========================================
-
   {
-    title: "Data Analytics",
+    title: "Data Management & Analysis",
     color: "purple",
     icon: FaChartLine,
 
     description:
-      "Processing, analyzing, and visualizing data to discover meaningful insights and support better decisions.",
+      "Processing, organizing, and summarizing data to support reporting and operational decision-making.",
 
     skills: [
-      {
-        name: "Python",
-        icon: SiPython,
-      },
-      {
-        name: "Pandas",
-        icon: SiPandas,
-      },
-      {
-        name: "NumPy",
-        icon: SiNumpy,
-      },
-      {
-        name: "Microsoft Excel",
-        icon: FaFileExcel,
-      },
+      { name: "Microsoft Excel", icon: FaFileExcel },
+      { name: "PivotTable", icon: FaFileExcel },
+      { name: "Excel Formulas", icon: FaFileExcel },
+      { name: "Data Reporting", icon: FaChartLine },
     ],
   },
 ];
 
-// ========================================
-// DEVELOPMENT & ANALYTICS TOOLS
-// ========================================
-
 const tools = [
   {
-    name: "VS Code",
+    name: "Visual Studio Code",
     icon: FaDesktop,
   },
   {
@@ -183,23 +106,10 @@ const tools = [
     icon: SiPostman,
   },
   {
-    name: "Power BI",
-    // icon: SiPowerbi,
-  },
-  {
-    name: "Tableau",
-    // icon: SiTableau,
-  },
-  {
     name: "XAMPP",
     icon: SiXampp,
   },
 ];
 
-// ========================================
-// EXPORT
-// ========================================
-
 export { skillCategories, tools };
-
 export default skillCategories;

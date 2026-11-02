@@ -2,7 +2,7 @@ const experience = [
   {
     company: "Bapperida Pekalongan",
 
-    role: "Information Technology Intern",
+    role: "IT Support & Data Administration Intern",
 
     type: "Internship",
 
@@ -11,23 +11,31 @@ const experience = [
     location: "Pekalongan, Central Java, Indonesia",
 
     description:
-      "Supported IT-related operational activities during an internship program, assisting staff with technical needs, troubleshooting, and the use of information technology systems in a professional work environment.",
+      "Supported information technology operations and administrative activities during an internship at Bapperida Pekalongan, including technical support, data administration, office reporting, and web application development and maintenance.",
 
     responsibilities: [
-      "Assisted staff with day-to-day technical issues and basic troubleshooting.",
-      "Provided support in the use of computers, software, and information technology systems.",
-      "Assisted with IT-related operational tasks to help ensure smooth day-to-day activities.",
-      "Communicated with staff to understand technical problems and provide appropriate assistance.",
-      "Supported the maintenance and proper use of technology resources within the organization.",
+      "Assisted staff with daily IT support activities and basic technical troubleshooting.",
+
+      "Supported data administration, data recording, and document management for operational activities.",
+
+      "Contributed to the development and maintenance of web-based applications using Laravel and PHP.",
+
+      "Assisted with MySQL database testing and validation to support application functionality.",
+
+      "Prepared and organized administrative reports using Microsoft Excel.",
+
+      "Communicated with staff to understand operational requirements and provide appropriate technical assistance.",
     ],
 
     skills: [
-      "Technical Support",
+      "IT Support",
+      "Data Administration",
+      "Laravel",
+      "PHP",
+      "MySQL",
+      "Microsoft Excel",
       "Troubleshooting",
-      "Information Systems",
-      "IT Operations",
-      "Problem Solving",
-      "User Support",
+      "Reporting",
     ],
   },
 ];

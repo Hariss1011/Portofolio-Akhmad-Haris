@@ -687,7 +687,9 @@ const Navbar = () => {
                   </a>
 
                   <a
-                    href="#"
+                    href={profile.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="
                       flex
                       items-center

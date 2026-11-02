@@ -4,7 +4,7 @@ const education = [
     shortName: "UDINUS",
 
     degree: "Bachelor of Computer Science",
-    field: "Informatics Engineering",
+    field: "Informatics Engineering - Software Engineering and Data (RPLD)",
 
     type: "Undergraduate",
 
@@ -15,13 +15,13 @@ const education = [
     status: "Graduated",
 
     description:
-      "Studied Informatics Engineering with a strong foundation in software development, information systems, database management, system analysis, and web application development.",
+      "Completed an undergraduate degree in Informatics Engineering with an academic focus on software engineering, data, web application development, database management, and information systems.",
 
     highlights: [
       "Software & Web Development",
       "Database & Information Systems",
       "System Analysis & Design",
-      "Data & Technology",
+      "Data Management & Processing",
     ],
 
     project:
