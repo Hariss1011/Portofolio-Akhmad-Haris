@@ -24,91 +24,57 @@ import {
 
 const skillCategories = [
   {
-    title: "Frontend Development",
+    key: "frontend",
     color: "blue",
     icon: FaCode,
-
-    description:
-      "Building responsive and interactive user interfaces using modern frontend technologies.",
-
     skills: [
-      { name: "React.js", icon: SiReact },
-      { name: "JavaScript", icon: SiJavascript },
-      { name: "HTML5", icon: SiHtml5 },
-      { name: "CSS3", icon: FaCss3Alt },
-      { name: "Tailwind CSS", icon: SiTailwindcss },
+      { key: "react", icon: SiReact },
+      { key: "javascript", icon: SiJavascript },
+      { key: "html", icon: SiHtml5 },
+      { key: "css", icon: FaCss3Alt },
+      { key: "tailwind", icon: SiTailwindcss },
     ],
   },
-
   {
-    title: "Backend Development",
+    key: "backend",
     color: "emerald",
     icon: FaServer,
-
-    description:
-      "Developing web applications and server-side functionality using PHP and Laravel.",
-
     skills: [
-      { name: "Laravel", icon: SiLaravel },
-      { name: "PHP", icon: SiPhp },
-      { name: "MVC Architecture", icon: FaCode },
+      { key: "laravel", icon: SiLaravel },
+      { key: "php", icon: SiPhp },
+      { key: "mvc", icon: FaCode },
     ],
   },
-
   {
-    title: "Database Management",
+    key: "database",
     color: "orange",
     icon: FaDatabase,
-
-    description:
-      "Working with relational databases, SQL queries, and database structures for information systems.",
-
     skills: [
-      { name: "MySQL", icon: SiMysql },
-      { name: "SQL JOIN", icon: FaDatabase },
-      { name: "GROUP BY & Aggregation", icon: FaDatabase },
-      { name: "Database Design", icon: FaDatabase },
+      { key: "mysql", icon: SiMysql },
+      { key: "sqlJoin", icon: FaDatabase },
+      { key: "groupBy", icon: FaDatabase },
+      { key: "databaseDesign", icon: FaDatabase },
     ],
   },
-
   {
-    title: "Data Management & Analysis",
+    key: "data",
     color: "purple",
     icon: FaChartLine,
-
-    description:
-      "Processing, organizing, and summarizing data to support reporting and operational decision-making.",
-
     skills: [
-      { name: "Microsoft Excel", icon: FaFileExcel },
-      { name: "PivotTable", icon: FaFileExcel },
-      { name: "Excel Formulas", icon: FaFileExcel },
-      { name: "Data Reporting", icon: FaChartLine },
+      { key: "excel", icon: FaFileExcel },
+      { key: "pivotTable", icon: FaFileExcel },
+      { key: "excelFormulas", icon: FaFileExcel },
+      { key: "dataReporting", icon: FaChartLine },
     ],
   },
 ];
 
 const tools = [
-  {
-    name: "Visual Studio Code",
-    icon: FaDesktop,
-  },
-  {
-    name: "Git",
-    icon: SiGit,
-  },
-  {
-    name: "GitHub",
-    icon: SiGithub,
-  },
-  {
-    name: "Postman",
-    icon: SiPostman,
-  },
-  {
-    name: "XAMPP",
-    icon: SiXampp,
-  },
+  { name: "Visual Studio Code", icon: FaDesktop },
+  { name: "Git", icon: SiGit },
+  { name: "GitHub", icon: SiGithub },
+  { name: "Postman", icon: SiPostman },
+  { name: "XAMPP", icon: SiXampp },
 ];
 
 export { skillCategories, tools };

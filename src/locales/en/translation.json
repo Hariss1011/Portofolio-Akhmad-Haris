@@ -31,66 +31,261 @@
     "downloadCV": "Download CV",
     "allRightsReserved": "All rights reserved."
   },
+
   "hero": {
-    "greeting": "Hi, I'm",
+    "welcome": "Welcome to my portfolio",
+    "greeting": "Hello, I'm",
+    "title": "Informatics Engineering Graduate",
+    "specialties": {
+      "web": "Web Development",
+      "data": "Data Management"
+    },
+    "description": "Informatics Engineering graduate from Universitas Dian Nuswantoro with a strong interest in web development, data management, and information systems. Experienced in developing web-based applications using Laravel, PHP, React.js, and MySQL, as well as processing and organizing data using SQL and Microsoft Excel. Passionate about building practical digital solutions and solving real-world problems through technology.",
+    "downloadCv": "Download CV",
+    "exploreProjects": "Explore Projects",
+    "location": "Cirebon, West Java, Indonesia",
+    "profileImageAlt": "Portrait of {{name}}",
+    "personalPortfolio": "Personal Portfolio",
+    "availability": "Open to Work",
+    "cardFocus": "Web Development & Data",
+    "cardLabel": "Portfolio",
     "role": "Web Development & Data Management Enthusiast",
-    "description": "An Informatics Engineering graduate interested in web development, information systems, database management, and data analysis. Passionate about building useful digital solutions and continuously improving technical skills.",
-    "availability": "Open to opportunities",
     "availabilityDescription": "Available for full-time roles, internships, and professional collaborations."
   },
   "about": {
-    "eyebrow": "Get to Know Me",
-    "title": "About Me",
-    "description": "I am an Informatics Engineering graduate with an interest in developing web-based applications and information systems. I enjoy understanding how technology and data can help solve real-world problems.",
-    "experienceTitle": "Internship Experience",
-    "experienceDescription": "During my internship at BAPPERIDA, I supported IT operations, data administration, and the development and maintenance of web-based applications.",
-    "capabilitiesTitle": "Core Capabilities",
-    "interestsTitle": "Areas of Interest"
+    "eyebrow": "ABOUT ME",
+    "title": "Background & Professional Experience",
+    "sectionLabel": "Profile / 01",
+    "profile": {
+      "label": "MY BACKGROUND",
+      "title": "Academic & Project Experience",
+      "paragraphs": [
+        "I am an Informatics Engineering graduate from Universitas Dian Nuswantoro, with an academic focus on Software Engineering and Data. My main interests include web application development, information systems, and data management.",
+        "Through academic and personal projects, I have developed web-based applications using Laravel, PHP, React.js, and MySQL. These experiences have strengthened my understanding of application development, database design, system analysis, and practical problem solving.",
+        "I also gained professional experience through an internship at Bapperida Pekalongan. During the internship, I supported IT operations, assisted with data administration, worked with office applications, and contributed to web application development and maintenance.",
+        "I continue to develop my technical and analytical skills, particularly in Laravel, React.js, SQL, and Microsoft Excel. I am interested in applying these capabilities in a professional environment while contributing to useful projects and business processes."
+      ]
+    },
+    "experienceNote": {
+      "type": "Internship",
+      "eyebrow": "Practical Experience",
+      "organization": "Bapperida Pekalongan",
+      "title": "IT Support & Data Administration",
+      "description": "Supported IT operations, data administration, office applications, and web application development and maintenance."
+    },
+    "capabilities": {
+      "eyebrow": "CORE CAPABILITIES",
+      "title": "Skills & Professional Focus",
+      "description": "Combining application development, data management, and analytical thinking to support practical business and information needs.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Web Development",
+          "description": "Developing web applications and information systems using Laravel, PHP, React.js, and MySQL.",
+          "tags": ["Laravel", "PHP", "React.js", "MySQL"]
+        },
+        {
+          "number": "02",
+          "title": "Data Management",
+          "description": "Organizing and working with structured data for information processing, analysis, and reporting.",
+          "tags": ["SQL", "Microsoft Excel", "Database"]
+        },
+        {
+          "number": "03",
+          "title": "Analytical Thinking",
+          "description": "Understanding requirements, examining problems, and developing structured and practical solutions.",
+          "tags": ["Problem Solving", "System Analysis"]
+        }
+      ]
+    },
+    "interests": {
+      "eyebrow": "AREAS OF INTEREST",
+      "title": "Professional Focus",
+      "items": [
+        "Web Development",
+        "Information Systems",
+        "Data Management",
+        "SQL & Database",
+        "Business Process Analysis"
+      ]
+    }
   },
+
   "education": {
-    "eyebrow": "Academic Background",
-    "title": "Education",
-    "degree": "Bachelor of Informatics Engineering",
+    "eyebrow": "EDUCATION",
+    "title": "Academic Background",
+    "subheading": "My academic foundation in software engineering, information systems, and data management.",
+    "universityLabel": "University",
     "university": "Universitas Dian Nuswantoro",
-    "focusTitle": "Academic Focus",
-    "focus": [
-      "Software Engineering",
-      "Web Application Development",
-      "Database Management",
-      "Information Systems"
+    "status": "Graduated",
+    "periodLabel": "Period",
+    "period": "2022 — 2026",
+    "gpa": "GPA",
+    "type": "Undergraduate",
+    "degree": "Bachelor of Computer Science",
+    "field": "Informatics Engineering — Software Engineering and Data (RPLD)",
+    "description": "Studied software engineering and data-oriented concepts, with practical experience in designing and developing web-based applications, managing relational databases, analyzing system requirements, and implementing information systems. Built a foundation in application development, database management, and structured problem-solving through academic coursework and project-based learning.",
+    "focusTitle": "Academic Foundation",
+    "highlights": [
+      "Software & Web Development",
+      "Database & Information Systems",
+      "System Analysis & Design",
+      "Data Management & Processing"
     ],
-    "gpa": "GPA"
+    "projectTitle": "Academic Project",
+    "project": "Developed web-based information systems through academic projects and a final project, covering requirements analysis, system design, database development, user interface design, and application implementation."
   },
   "skills": {
-    "eyebrow": "Technical Expertise",
-    "title": "Skills",
-    "description": "Technologies and tools I have used throughout my academic, internship, and personal projects.",
-    "frontend": "Frontend Development",
-    "backend": "Backend Development",
-    "database": "Database Management",
-    "tools": "Tools & Technologies"
+    "eyebrow": "TECHNICAL SKILLS",
+    "title": "Skills & Technologies",
+    "description": "Technical knowledge and tools I use to build web applications, manage databases, and support data-related tasks.",
+    "categoryLabel": "Skill Category",
+    "workspace": "WORKSPACE",
+    "toolsTitle": "Development Tools",
+    "toolsDescription": "Tools supporting my development and testing workflow.",
+    "categories": {
+      "frontend": {
+        "title": "Frontend Development",
+        "description": "Building responsive and interactive user interfaces using modern frontend technologies."
+      },
+      "backend": {
+        "title": "Backend Development",
+        "description": "Developing web applications and server-side functionality using PHP and Laravel."
+      },
+      "database": {
+        "title": "Database Management",
+        "description": "Working with relational databases, SQL queries, and database structures for information systems."
+      },
+      "data": {
+        "title": "Data Management & Analysis",
+        "description": "Processing, organizing, and summarizing data to support reporting and operational decision-making."
+      }
+    },
+    "items": {
+      "react": "React.js",
+      "javascript": "JavaScript",
+      "html": "HTML5",
+      "css": "CSS3",
+      "tailwind": "Tailwind CSS",
+      "laravel": "Laravel",
+      "php": "PHP",
+      "mvc": "MVC Architecture",
+      "mysql": "MySQL",
+      "sqlJoin": "SQL JOIN",
+      "groupBy": "GROUP BY & Aggregation",
+      "databaseDesign": "Database Design",
+      "excel": "Microsoft Excel",
+      "pivotTable": "PivotTable",
+      "excelFormulas": "Excel Formulas",
+      "dataReporting": "Data Reporting"
+    }
   },
   "experience": {
     "eyebrow": "Professional Journey",
-    "title": "Experience",
-    "position": "IT Support Intern",
-    "organization": "BAPPERIDA",
-    "description": "Supported information technology operations and administrative activities, including software installation, troubleshooting, data management, and web application development and maintenance."
+    "title": "Professional Experience",
+    "sectionDescription": "Practical experience gained through professional work, technical contributions, and collaboration in a real working environment.",
+    "organization": "Organization",
+    "type": "Internship",
+    "period": "Period",
+    "location": "Location",
+    "locationValue": "Pekalongan, Central Java, Indonesia",
+    "journey": "Professional Journey",
+    "position": "Position Held",
+    "role": "IT Support & Data Administration Intern",
+    "description": "Supported information technology operations and administrative activities during an internship at Bapperida Pekalongan, including technical support, data administration, office reporting, and web application development and maintenance.",
+    "responsibilitiesTitle": "Key Responsibilities",
+    "contributionAreas": "Areas of Contribution",
+    "responsibilities": [
+      "Assisted staff with daily IT support activities and basic technical troubleshooting.",
+      "Supported data administration, data recording, and document management for operational activities.",
+      "Contributed to the development and maintenance of web-based applications using Laravel and PHP.",
+      "Assisted with MySQL database testing and validation to support application functionality.",
+      "Prepared and organized administrative reports using Microsoft Excel.",
+      "Communicated with staff to understand operational requirements and provide appropriate technical assistance."
+    ],
+    "skillsTitle": "Skills & Technologies",
+    "empty": "Experience details will be added soon."
   },
   "certificates": {
     "eyebrow": "Learning & Recognition",
-    "title": "Certificates",
-    "bnsp": "BNSP Web Developer Certification",
-    "toefl": "TOEFL Certificate",
-    "workshop": "Workshop Certificate"
+    "title": "Certifications & Achievements",
+    "description": "Professional certifications and learning achievements that reflect my technical competencies, knowledge, and commitment to continuous development.",
+    "development": "Professional Development",
+    "verifiedRecords": "Verified learning and competency records",
+    "totalLabel": "Certificates & Achievements",
+    "issueYear": "Issue Year",
+    "typeLabel": "Certification Type",
+    "credentialId": "Credential ID",
+    "competencies": "Competencies",
+    "skillsCovered": "Skills Covered",
+    "viewCertificate": "View Certificate",
+    "preview": "Certificate Preview",
+    "recognition": "Professional Recognition",
+    "moreCredentials": "More Credentials",
+    "additionalTitle": "Additional Certificates",
+    "certificateCount": "Certificates",
+    "emptyTitle": "Certificates coming soon",
+    "emptyDescription": "Professional certifications and achievements will be displayed here.",
+    "status": {
+      "issued": "Issued"
+    },
+    "items": {
+      "bnsp": {
+        "title": "Web Developer Competency Certification",
+        "issuer": "Badan Nasional Sertifikasi Profesi (BNSP)",
+        "category": "Professional Certification",
+        "type": "Competency Certification",
+        "description": "Professional competency certification in Web Development, demonstrating competency in developing web-based applications and implementing software development practices.",
+        "skills": ["Web Development", "Software Development", "Web Application"]
+      },
+      "toefl": {
+        "title": "TOEFL Certificate",
+        "issuer": "Center for Foreign Language Training (CFL-T), UDINUS",
+        "category": "Language",
+        "type": "English Proficiency",
+        "description": "English language proficiency certificate with a TOEFL score of 470, reflecting competency in reading, listening, and English structure.",
+        "skills": ["English", "Reading", "Listening", "Grammar"]
+      },
+      "workshop": {
+        "title": "TI-S1 Career Guidance Workshop",
+        "issuer": "Faculty of Computer Science, Universitas Dian Nuswantoro",
+        "category": "Career Development",
+        "type": "Workshop Certificate",
+        "description": "Certificate of participation in the TI-S1 Career Guidance Workshop organized by the Faculty of Computer Science, Universitas Dian Nuswantoro, held from December 20, 2025 to January 26, 2026.",
+        "skills": [
+          "Career Development",
+          "Information Technology",
+          "Professional Development"
+        ]
+      }
+    }
   },
   "projects": {
     "eyebrow": "Selected Works",
     "title": "Projects",
+    "headingLine1": "Building solutions",
+    "headingLine2": "through meaningful projects.",
     "description": "A selection of applications and information systems I have developed to apply my technical skills and solve practical problems.",
     "featured": "Featured Projects",
     "moreProjects": "More Projects",
     "allProjects": "All Projects",
+    "totalProjects": "Total Projects",
+    "developmentPeriod": "Development Period",
+    "showcase": "Project Showcase",
+    "showcaseDescription": "Selected development work",
+    "exploreDescription": "Explore my work and implementations",
+    "featuredTitle": "Featured Projects",
+    "featuredDescription": "Core projects showcasing my experience in application development, database management, and information systems.",
+    "additionalTitle": "More Projects",
+    "additionalDescription": "Other applications and systems built through academic projects and independent development.",
+    "tools": "tools",
+    "screenshots": "application screenshots",
+    "previewUnavailable": "Project Preview",
+    "emptyTitle": "No projects available yet.",
+    "emptyDescription": "Projects will be displayed here soon.",
+    "ctaTitle": "Have a project or opportunity in mind?",
+    "ctaDescription": "I would be glad to discuss how I can contribute.",
+    "ctaButton": "Get in touch",
     "detail": {
       "overview": "Project Overview",
       "technologies": "Technology Stack",
@@ -98,7 +293,36 @@
       "process": "Development Process",
       "showcase": "Application Showcase",
       "challengeDescription": "Problems encountered during development.",
-      "solutionDescription": "Approaches implemented to address those challenges."
+      "solutionDescription": "Approaches implemented to address those challenges.",
+      "development": "Development",
+      "category": "Category",
+      "technology": "Technology",
+      "gallery": "Gallery",
+      "projectDetail": "Project Detail",
+      "caseStudy": "Project Case Study",
+      "viewSource": "View Source Code",
+      "openPreview": "Open project preview",
+      "applicationInterface": "Application Interface",
+      "clickToEnlarge": "Click preview to enlarge",
+      "overviewHeading": "Understanding the project.",
+      "overviewDescription": "The background, purpose, and direction behind this application.",
+      "technologyHeading": "Tools & Technologies",
+      "featuresHeading": "What the application can do.",
+      "featuresDescription": "Core functionalities developed to support the main workflows and user needs.",
+      "processHeading": "Challenges & solutions.",
+      "processDescription": "Problems encountered during development and the approaches used to solve them.",
+      "galleryHeading": "A closer look at the application.",
+      "galleryDescription": "Screenshots of the interfaces and features developed throughout the project.",
+      "screenshotLabel": "Application Screenshots",
+      "images": "Images",
+      "screenshot": "Screenshot",
+      "closingEyebrow": "Explore the project",
+      "closingTitle": "Interested in the implementation?",
+      "closingDescription": "Explore the source code to learn more about the structure, features, and development of this application.",
+      "imagePreview": "Project screenshot preview",
+      "closePreview": "Close image preview",
+      "previousImage": "Previous image",
+      "nextImage": "Next image"
     },
     "items": {
       "stockwise": {
@@ -311,24 +535,55 @@
       }
     }
   },
+
   "contact": {
-    "eyebrow": "Get in Touch",
-    "title": "Contact",
+    "eyebrow": "GET IN TOUCH",
+    "headingStart": "Let's start a ",
+    "headingAccent": "conversation.",
+    "description": "Have a job opportunity, a project idea, or simply want to connect? I'm open to meaningful conversations and opportunities to contribute, collaborate, and grow professionally.",
+    "getInTouch": "Get in Touch",
     "information": "Contact Information",
-    "getInTouch": "Get in touch directly",
-    "headline": "I'd love to hear from you.",
-    "description": "Whether you're a recruiter, potential employer, or collaborator, feel free to reach out through any of the following channels.",
+    "panelHeadline": "I'd be happy to hear from you.",
+    "panelDescription": "Whether you're a recruiter, potential employer, or collaborator, feel free to reach out through the contact details below.",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "location": "Location",
+    "availability": "Open to opportunities",
+    "availabilityDescription": "Open to suitable professional roles and collaborations.",
     "opportunity": "Professional Opportunity",
-    "opportunityHeadline": "Ready to contribute, learn, and grow.",
-    "opportunityDescription": "As an Informatics Engineering graduate, I have a foundation in web development, database management, information systems, and data processing. I'm eager to apply these skills, contribute to a team, and develop through real-world challenges.",
+    "opportunityHeadline": "Ready to contribute and make an impact.",
+    "opportunityDescription": "With a background in Informatics Engineering, I have experience and a foundation in web development, database management, information systems, and data processing. I'm eager to apply my skills, learn from new challenges, and contribute to a team.",
+    "contactButton": "Contact Me",
+    "downloadCv": "Download CV",
     "findOnline": "Find Me Online",
     "profiles": "Professional Profiles",
-    "profilesDescription": "Explore my work and connect with me through these platforms."
+    "profilesDescription": "Explore my work and connect with me through these platforms.",
+    "githubDescription": "Explore my projects and repositories.",
+    "linkedinDescription": "Connect with me professionally.",
+    "bottomNote": "Thank you for taking the time to explore my portfolio.",
+    "bottomAvailability": "Open to meaningful professional connections."
   },
+
   "footer": {
     "brand": "Building useful digital solutions through technology and continuous learning.",
+    "profession": "Informatics Engineering Graduate",
     "explore": "Explore",
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "about": "About",
+    "education": "Education",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "certificates": "Certificates",
     "contact": "Contact",
-    "copyright": "Designed and developed by Akhmad Haris."
+    "getInTouch": "Get in Touch",
+    "contactHeadline": "Let's connect.",
+    "contactDescription": "Have an opportunity or want to discuss a project? Feel free to reach out.",
+    "contactButton": "Contact Me",
+    "rights": "All rights reserved.",
+    "builtWith": "Built with React & Tailwind CSS.",
+    "backToHome": "Back to home",
+    "backToTop": "Back to top"
   }
 }

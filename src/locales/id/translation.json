@@ -31,66 +31,266 @@
     "downloadCV": "Unduh CV",
     "allRightsReserved": "Hak cipta dilindungi."
   },
+
   "hero": {
+    "welcome": "Selamat Datang di Portofolio Saya",
     "greeting": "Halo, saya",
-    "role": "Pengembangan Web & Pengelolaan Data",
-    "description": "Lulusan Teknik Informatika yang memiliki minat pada pengembangan web, sistem informasi, pengelolaan basis data, dan analisis data. Tertarik membangun solusi digital yang bermanfaat serta terus mengembangkan kemampuan teknis.",
-    "availability": "Terbuka untuk peluang",
+    "title": "Lulusan Teknik Informatika",
+    "specialties": {
+      "web": "Pengembangan Web",
+      "data": "Pengelolaan Data"
+    },
+    "description": "Lulusan Teknik Informatika dari Universitas Dian Nuswantoro yang memiliki minat pada pengembangan web, pengelolaan data, dan sistem informasi. Berpengalaman mengembangkan aplikasi berbasis web menggunakan Laravel, PHP, React.js, dan MySQL, serta mengolah dan mengelola data menggunakan SQL dan Microsoft Excel. Tertarik membangun solusi digital yang bermanfaat dan menyelesaikan permasalahan nyata melalui teknologi.",
+    "downloadCv": "Unduh CV",
+    "exploreProjects": "Jelajahi Proyek",
+    "location": "Cirebon, Jawa Barat, Indonesia",
+    "profileImageAlt": "Foto profil {{name}}",
+    "personalPortfolio": "Portofolio Pribadi",
+    "availability": "Terbuka untuk Peluang",
+    "cardFocus": "Pengembangan Web & Data",
+    "cardLabel": "Portofolio",
+    "role": "Tertarik pada Pengembangan Web & Pengelolaan Data",
     "availabilityDescription": "Tersedia untuk pekerjaan penuh waktu, program magang, dan kolaborasi profesional."
   },
   "about": {
-    "eyebrow": "Kenali Saya Lebih Dekat",
-    "title": "Tentang Saya",
-    "description": "Saya merupakan lulusan Teknik Informatika yang memiliki minat dalam pengembangan aplikasi berbasis web dan sistem informasi. Saya senang mempelajari bagaimana teknologi dan data dapat membantu menyelesaikan permasalahan di dunia nyata.",
-    "experienceTitle": "Pengalaman Magang",
-    "experienceDescription": "Selama menjalani magang di BAPPERIDA, saya mendukung operasional TI, administrasi data, serta pengembangan dan pemeliharaan aplikasi berbasis web.",
-    "capabilitiesTitle": "Kemampuan Utama",
-    "interestsTitle": "Bidang yang Diminati"
+    "eyebrow": "TENTANG SAYA",
+    "title": "Latar Belakang & Pengalaman Profesional",
+    "sectionLabel": "Profil / 01",
+    "profile": {
+      "label": "LATAR BELAKANG SAYA",
+      "title": "Pengalaman Akademik & Proyek",
+      "paragraphs": [
+        "Saya merupakan lulusan Teknik Informatika dari Universitas Dian Nuswantoro dengan fokus akademik pada Rekayasa Perangkat Lunak dan Data. Minat utama saya meliputi pengembangan aplikasi web, sistem informasi, dan pengelolaan data.",
+        "Melalui proyek akademik dan pribadi, saya telah mengembangkan aplikasi berbasis web menggunakan Laravel, PHP, React.js, dan MySQL. Pengalaman tersebut memperkuat pemahaman saya mengenai pengembangan aplikasi, perancangan basis data, analisis sistem, dan pemecahan masalah praktis.",
+        "Saya juga memperoleh pengalaman profesional melalui kegiatan magang di Bapperida Pekalongan. Selama magang, saya mendukung operasional TI, membantu administrasi data, menggunakan aplikasi perkantoran, serta berkontribusi dalam pengembangan dan pemeliharaan aplikasi web.",
+        "Saya terus mengembangkan kemampuan teknis dan analitis, khususnya dalam Laravel, React.js, SQL, dan Microsoft Excel. Saya tertarik menerapkan kemampuan tersebut di lingkungan profesional sekaligus berkontribusi dalam proyek dan proses bisnis yang bermanfaat."
+      ]
+    },
+    "experienceNote": {
+      "type": "Magang",
+      "eyebrow": "Pengalaman Praktis",
+      "organization": "Bapperida Pekalongan",
+      "title": "IT Support & Administrasi Data",
+      "description": "Mendukung operasional TI, administrasi data, penggunaan aplikasi perkantoran, serta pengembangan dan pemeliharaan aplikasi berbasis web."
+    },
+    "capabilities": {
+      "eyebrow": "KEMAMPUAN UTAMA",
+      "title": "Keahlian & Fokus Profesional",
+      "description": "Menggabungkan pengembangan aplikasi, pengelolaan data, dan pemikiran analitis untuk mendukung kebutuhan bisnis dan informasi secara praktis.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Pengembangan Web",
+          "description": "Mengembangkan aplikasi web dan sistem informasi menggunakan Laravel, PHP, React.js, dan MySQL.",
+          "tags": ["Laravel", "PHP", "React.js", "MySQL"]
+        },
+        {
+          "number": "02",
+          "title": "Pengelolaan Data",
+          "description": "Mengelola dan mengolah data terstruktur untuk kebutuhan pemrosesan informasi, analisis, dan pelaporan.",
+          "tags": ["SQL", "Microsoft Excel", "Basis Data"]
+        },
+        {
+          "number": "03",
+          "title": "Pemikiran Analitis",
+          "description": "Memahami kebutuhan, mengidentifikasi permasalahan, dan mengembangkan solusi yang terstruktur serta praktis.",
+          "tags": ["Pemecahan Masalah", "Analisis Sistem"]
+        }
+      ]
+    },
+    "interests": {
+      "eyebrow": "BIDANG YANG DIMINATI",
+      "title": "Fokus Profesional",
+      "items": [
+        "Pengembangan Web",
+        "Sistem Informasi",
+        "Pengelolaan Data",
+        "SQL & Basis Data",
+        "Analisis Proses Bisnis"
+      ]
+    }
   },
+
   "education": {
-    "eyebrow": "Latar Belakang Akademik",
-    "title": "Pendidikan",
-    "degree": "Sarjana Teknik Informatika",
+    "eyebrow": "PENDIDIKAN",
+    "title": "Latar Belakang Akademik",
+    "subheading": "Landasan akademik saya dalam bidang rekayasa perangkat lunak, sistem informasi, dan pengelolaan data.",
+    "universityLabel": "Universitas",
     "university": "Universitas Dian Nuswantoro",
-    "focusTitle": "Fokus Akademik",
-    "focus": [
-      "Rekayasa Perangkat Lunak",
-      "Pengembangan Aplikasi Web",
-      "Manajemen Basis Data",
-      "Sistem Informasi"
+    "status": "Lulus",
+    "periodLabel": "Periode",
+    "period": "2022 — 2026",
+    "gpa": "IPK",
+    "type": "Sarjana",
+    "degree": "Sarjana Komputer",
+    "field": "Teknik Informatika — Rekayasa Perangkat Lunak dan Data (RPLD)",
+    "description": "Mempelajari rekayasa perangkat lunak dan konsep yang berorientasi pada data, disertai pengalaman praktis dalam merancang dan mengembangkan aplikasi berbasis web, mengelola basis data relasional, menganalisis kebutuhan sistem, serta mengimplementasikan sistem informasi. Memiliki landasan dalam pengembangan aplikasi, manajemen basis data, dan pemecahan masalah secara terstruktur melalui perkuliahan dan pembelajaran berbasis proyek.",
+    "focusTitle": "Landasan Akademik",
+    "highlights": [
+      "Pengembangan Perangkat Lunak & Web",
+      "Basis Data & Sistem Informasi",
+      "Analisis & Perancangan Sistem",
+      "Pengelolaan & Pengolahan Data"
     ],
-    "gpa": "IPK"
+    "projectTitle": "Proyek Akademik",
+    "project": "Mengembangkan sistem informasi berbasis web melalui proyek akademik dan tugas akhir, mencakup analisis kebutuhan, perancangan sistem, pengembangan basis data, desain antarmuka pengguna, dan implementasi aplikasi."
   },
   "skills": {
-    "eyebrow": "Keahlian Teknis",
-    "title": "Keahlian",
-    "description": "Teknologi dan perangkat yang pernah saya gunakan dalam kegiatan akademik, magang, dan proyek pribadi.",
-    "frontend": "Pengembangan Frontend",
-    "backend": "Pengembangan Backend",
-    "database": "Manajemen Basis Data",
-    "tools": "Tools dan Teknologi"
+    "eyebrow": "KEAHLIAN TEKNIS",
+    "title": "Keahlian & Teknologi",
+    "description": "Pengetahuan teknis dan perangkat yang saya gunakan untuk membangun aplikasi web, mengelola basis data, dan mendukung pekerjaan terkait data.",
+    "categoryLabel": "Kategori Keahlian",
+    "workspace": "LINGKUNGAN KERJA",
+    "toolsTitle": "Tools Pengembangan",
+    "toolsDescription": "Perangkat yang mendukung alur kerja pengembangan dan pengujian aplikasi.",
+    "categories": {
+      "frontend": {
+        "title": "Pengembangan Frontend",
+        "description": "Membangun antarmuka pengguna yang responsif dan interaktif menggunakan teknologi frontend modern."
+      },
+      "backend": {
+        "title": "Pengembangan Backend",
+        "description": "Mengembangkan aplikasi web dan fungsionalitas sisi server menggunakan PHP dan Laravel."
+      },
+      "database": {
+        "title": "Manajemen Basis Data",
+        "description": "Mengelola basis data relasional, query SQL, dan struktur database untuk kebutuhan sistem informasi."
+      },
+      "data": {
+        "title": "Pengelolaan & Analisis Data",
+        "description": "Mengolah, mengorganisasi, dan merangkum data untuk mendukung pelaporan serta pengambilan keputusan operasional."
+      }
+    },
+    "items": {
+      "react": "React.js",
+      "javascript": "JavaScript",
+      "html": "HTML5",
+      "css": "CSS3",
+      "tailwind": "Tailwind CSS",
+      "laravel": "Laravel",
+      "php": "PHP",
+      "mvc": "Arsitektur MVC",
+      "mysql": "MySQL",
+      "sqlJoin": "SQL JOIN",
+      "groupBy": "GROUP BY & Agregasi",
+      "databaseDesign": "Perancangan Basis Data",
+      "excel": "Microsoft Excel",
+      "pivotTable": "PivotTable",
+      "excelFormulas": "Rumus Excel",
+      "dataReporting": "Pelaporan Data"
+    }
   },
+
   "experience": {
     "eyebrow": "Perjalanan Profesional",
-    "title": "Pengalaman",
-    "position": "IT Support Intern",
-    "organization": "BAPPERIDA",
-    "description": "Mendukung operasional teknologi informasi dan kegiatan administrasi, termasuk instalasi perangkat lunak, pemecahan masalah, pengelolaan data, serta pengembangan dan pemeliharaan aplikasi berbasis web."
+    "title": "Pengalaman Profesional",
+    "sectionDescription": "Pengalaman praktis yang diperoleh melalui pekerjaan profesional, kontribusi teknis, dan kolaborasi di lingkungan kerja.",
+    "organization": "Organisasi",
+    "type": "Magang",
+    "period": "Periode",
+    "location": "Lokasi",
+    "locationValue": "Pekalongan, Jawa Tengah, Indonesia",
+    "journey": "Perjalanan Profesional",
+    "position": "Posisi",
+    "role": "Staf Dukungan TI & Administrasi Data (Magang)",
+    "description": "Mendukung operasional teknologi informasi dan kegiatan administrasi selama menjalani magang di Bapperida Pekalongan, termasuk dukungan teknis, administrasi data, pelaporan perkantoran, serta pengembangan dan pemeliharaan aplikasi berbasis web.",
+    "responsibilitiesTitle": "Tanggung Jawab Utama",
+    "contributionAreas": "Bidang Kontribusi",
+    "responsibilities": [
+      "Membantu staf dalam kegiatan dukungan TI sehari-hari dan penanganan masalah teknis dasar.",
+      "Mendukung administrasi data, pencatatan data, dan pengelolaan dokumen untuk kegiatan operasional.",
+      "Berkontribusi dalam pengembangan dan pemeliharaan aplikasi berbasis web menggunakan Laravel dan PHP.",
+      "Membantu pengujian dan validasi database MySQL untuk mendukung fungsionalitas aplikasi.",
+      "Menyusun dan mengelola laporan administrasi menggunakan Microsoft Excel.",
+      "Berkomunikasi dengan staf untuk memahami kebutuhan operasional dan memberikan bantuan teknis yang sesuai."
+    ],
+    "skillsTitle": "Keahlian & Teknologi",
+    "empty": "Detail pengalaman akan segera ditambahkan."
   },
   "certificates": {
-    "eyebrow": "Pembelajaran dan Pengakuan",
-    "title": "Sertifikat",
-    "bnsp": "Sertifikasi BNSP Pengembang Web",
-    "toefl": "Sertifikat TOEFL",
-    "workshop": "Sertifikat Workshop"
+    "eyebrow": "Pembelajaran & Pengakuan",
+    "title": "Sertifikasi & Pencapaian",
+    "description": "Sertifikasi profesional dan pencapaian pembelajaran yang mencerminkan kompetensi teknis, pengetahuan, serta komitmen saya untuk terus berkembang.",
+    "development": "Pengembangan Profesional",
+    "verifiedRecords": "Catatan pembelajaran dan kompetensi yang telah diperoleh",
+    "totalLabel": "Sertifikat & Pencapaian",
+    "issueYear": "Tahun Terbit",
+    "typeLabel": "Jenis Sertifikat",
+    "credentialId": "Nomor Sertifikat",
+    "competencies": "Kompetensi",
+    "skillsCovered": "Keahlian yang Dipelajari",
+    "viewCertificate": "Lihat Sertifikat",
+    "preview": "Pratinjau Sertifikat",
+    "recognition": "Pengakuan Profesional",
+    "moreCredentials": "Sertifikat Lainnya",
+    "additionalTitle": "Sertifikat Tambahan",
+    "certificateCount": "Sertifikat",
+    "emptyTitle": "Sertifikat segera ditampilkan",
+    "emptyDescription": "Sertifikasi profesional dan pencapaian pembelajaran akan ditampilkan di sini.",
+    "status": {
+      "issued": "Diterbitkan"
+    },
+    "items": {
+      "bnsp": {
+        "title": "Sertifikasi Kompetensi Pengembang Web",
+        "issuer": "Badan Nasional Sertifikasi Profesi (BNSP)",
+        "category": "Sertifikasi Profesional",
+        "type": "Sertifikasi Kompetensi",
+        "description": "Sertifikasi kompetensi profesional di bidang Pengembangan Web yang menunjukkan kemampuan dalam mengembangkan aplikasi berbasis web dan menerapkan praktik pengembangan perangkat lunak.",
+        "skills": [
+          "Pengembangan Web",
+          "Pengembangan Perangkat Lunak",
+          "Aplikasi Web"
+        ]
+      },
+      "toefl": {
+        "title": "Sertifikat TOEFL",
+        "issuer": "Center for Foreign Language Training (CFL-T), UDINUS",
+        "category": "Bahasa",
+        "type": "Kemampuan Bahasa Inggris",
+        "description": "Sertifikat kemampuan bahasa Inggris dengan skor TOEFL 470 yang mencerminkan kemampuan dalam pemahaman bacaan, menyimak, dan tata bahasa Inggris.",
+        "skills": ["Bahasa Inggris", "Reading", "Listening", "Grammar"]
+      },
+      "workshop": {
+        "title": "Workshop Bimbingan Karier TI-S1",
+        "issuer": "Fakultas Ilmu Komputer, Universitas Dian Nuswantoro",
+        "category": "Pengembangan Karier",
+        "type": "Sertifikat Workshop",
+        "description": "Sertifikat partisipasi dalam Workshop Bimbingan Karier TI-S1 yang diselenggarakan oleh Fakultas Ilmu Komputer Universitas Dian Nuswantoro pada 20 Desember 2025 hingga 26 Januari 2026.",
+        "skills": [
+          "Pengembangan Karier",
+          "Teknologi Informasi",
+          "Pengembangan Profesional"
+        ]
+      }
+    }
   },
   "projects": {
     "eyebrow": "Karya Pilihan",
     "title": "Proyek",
+    "headingLine1": "Membangun solusi",
+    "headingLine2": "melalui proyek yang bermakna.",
     "description": "Kumpulan aplikasi dan sistem informasi yang saya kembangkan untuk menerapkan kemampuan teknis dan menyelesaikan permasalahan praktis.",
     "featured": "Proyek Unggulan",
     "moreProjects": "Proyek Lainnya",
     "allProjects": "Semua Proyek",
+    "totalProjects": "Total Proyek",
+    "developmentPeriod": "Periode Pengembangan",
+    "showcase": "Galeri Proyek",
+    "showcaseDescription": "Kumpulan hasil pengembangan",
+    "exploreDescription": "Jelajahi karya dan implementasi saya",
+    "featuredTitle": "Proyek Unggulan",
+    "featuredDescription": "Proyek utama yang menunjukkan pengalaman saya dalam pengembangan aplikasi, pengelolaan basis data, dan sistem informasi.",
+    "additionalTitle": "Proyek Lainnya",
+    "additionalDescription": "Aplikasi dan sistem lain yang dikembangkan melalui proyek akademik dan pengembangan mandiri.",
+    "tools": "teknologi",
+    "screenshots": "screenshot aplikasi",
+    "previewUnavailable": "Pratinjau Proyek",
+    "emptyTitle": "Belum ada proyek yang tersedia.",
+    "emptyDescription": "Proyek akan ditampilkan di sini.",
+    "ctaTitle": "Memiliki proyek atau peluang kerja sama?",
+    "ctaDescription": "Saya terbuka untuk berdiskusi mengenai kontribusi yang dapat saya berikan.",
+    "ctaButton": "Hubungi Saya",
     "detail": {
       "overview": "Gambaran Proyek",
       "technologies": "Teknologi yang Digunakan",
@@ -98,7 +298,36 @@
       "process": "Proses Pengembangan",
       "showcase": "Tampilan Aplikasi",
       "challengeDescription": "Permasalahan yang dihadapi selama proses pengembangan.",
-      "solutionDescription": "Pendekatan yang diterapkan untuk mengatasi tantangan tersebut."
+      "solutionDescription": "Pendekatan yang diterapkan untuk mengatasi tantangan tersebut.",
+      "development": "Pengembangan",
+      "category": "Kategori",
+      "technology": "Teknologi",
+      "gallery": "Galeri",
+      "projectDetail": "Detail Proyek",
+      "caseStudy": "Studi Kasus Proyek",
+      "viewSource": "Lihat Source Code",
+      "openPreview": "Buka pratinjau proyek",
+      "applicationInterface": "Antarmuka Aplikasi",
+      "clickToEnlarge": "Klik pratinjau untuk memperbesar",
+      "overviewHeading": "Mengenal proyek lebih dekat.",
+      "overviewDescription": "Latar belakang, tujuan, dan arah pengembangan aplikasi ini.",
+      "technologyHeading": "Tools dan Teknologi",
+      "featuresHeading": "Fungsi yang tersedia dalam aplikasi.",
+      "featuresDescription": "Fungsionalitas utama yang dikembangkan untuk mendukung alur kerja dan kebutuhan pengguna.",
+      "processHeading": "Tantangan dan solusi.",
+      "processDescription": "Permasalahan selama proses pengembangan beserta pendekatan yang digunakan untuk mengatasinya.",
+      "galleryHeading": "Melihat lebih dekat tampilan aplikasi.",
+      "galleryDescription": "Kumpulan screenshot antarmuka dan fitur yang dikembangkan dalam proyek ini.",
+      "screenshotLabel": "Screenshot Aplikasi",
+      "images": "Gambar",
+      "screenshot": "Screenshot",
+      "closingEyebrow": "Jelajahi proyek",
+      "closingTitle": "Ingin melihat implementasinya?",
+      "closingDescription": "Jelajahi source code untuk mengetahui lebih lanjut mengenai struktur, fitur, dan proses pengembangan aplikasi ini.",
+      "imagePreview": "Pratinjau screenshot proyek",
+      "closePreview": "Tutup pratinjau gambar",
+      "previousImage": "Gambar sebelumnya",
+      "nextImage": "Gambar berikutnya"
     },
     "items": {
       "stockwise": {
@@ -311,24 +540,55 @@
       }
     }
   },
+
   "contact": {
-    "eyebrow": "Mari Terhubung",
-    "title": "Kontak",
+    "eyebrow": "MARI TERHUBUNG",
+    "headingStart": "Mari mulai sebuah ",
+    "headingAccent": "percakapan.",
+    "description": "Apakah Anda memiliki peluang pekerjaan, ide proyek, atau sekadar ingin menjalin koneksi? Saya terbuka untuk percakapan, kolaborasi, dan kesempatan untuk berkontribusi serta berkembang secara profesional.",
+    "getInTouch": "Hubungi Saya",
     "information": "Informasi Kontak",
-    "getInTouch": "Hubungi saya secara langsung",
-    "headline": "Saya senang menerima pesan dari Anda.",
-    "description": "Jika Anda seorang recruiter, calon pemberi kerja, atau rekan kolaborasi, silakan hubungi saya melalui salah satu kanal berikut.",
+    "panelHeadline": "Saya senang menerima pesan dari Anda.",
+    "panelDescription": "Jika Anda seorang recruiter, calon pemberi kerja, atau rekan kolaborasi, silakan hubungi saya melalui informasi kontak berikut.",
+    "email": "Alamat Email",
+    "phone": "Nomor Telepon",
+    "location": "Lokasi",
+    "availability": "Terbuka untuk peluang",
+    "availabilityDescription": "Terbuka untuk posisi pekerjaan dan kolaborasi profesional yang sesuai.",
     "opportunity": "Peluang Profesional",
-    "opportunityHeadline": "Siap berkontribusi, belajar, dan berkembang.",
-    "opportunityDescription": "Sebagai lulusan Teknik Informatika, saya memiliki dasar kemampuan dalam pengembangan web, manajemen basis data, sistem informasi, dan pengolahan data. Saya ingin menerapkan kemampuan tersebut, berkontribusi dalam tim, dan terus berkembang melalui tantangan di dunia kerja.",
+    "opportunityHeadline": "Siap berkontribusi dan memberikan dampak positif.",
+    "opportunityDescription": "Dengan latar belakang Teknik Informatika, saya memiliki pengalaman dan dasar kemampuan dalam pengembangan web, manajemen basis data, sistem informasi, dan pengolahan data. Saya ingin menerapkan kemampuan tersebut, mempelajari tantangan baru, dan berkontribusi dalam sebuah tim.",
+    "contactButton": "Hubungi Saya",
+    "downloadCv": "Unduh CV",
     "findOnline": "Temukan Saya Secara Online",
     "profiles": "Profil Profesional",
-    "profilesDescription": "Lihat karya saya dan terhubung melalui platform berikut."
+    "profilesDescription": "Lihat karya saya dan terhubung melalui platform berikut.",
+    "githubDescription": "Lihat proyek dan repositori yang saya kembangkan.",
+    "linkedinDescription": "Terhubung dengan saya secara profesional.",
+    "bottomNote": "Terima kasih telah meluangkan waktu untuk melihat portofolio saya.",
+    "bottomAvailability": "Terbuka untuk menjalin koneksi profesional."
   },
+
   "footer": {
     "brand": "Membangun solusi digital yang bermanfaat melalui teknologi dan pembelajaran berkelanjutan.",
+    "profession": "Lulusan Teknik Informatika",
     "explore": "Jelajahi",
+    "quickLinks": "Tautan Cepat",
+    "home": "Beranda",
+    "about": "Tentang Saya",
+    "education": "Pendidikan",
+    "skills": "Keahlian",
+    "experience": "Pengalaman",
+    "projects": "Proyek",
+    "certificates": "Sertifikat",
     "contact": "Kontak",
-    "copyright": "Dirancang dan dikembangkan oleh Akhmad Haris."
+    "getInTouch": "Mari Terhubung",
+    "contactHeadline": "Mari menjalin koneksi.",
+    "contactDescription": "Memiliki peluang atau ingin berdiskusi mengenai proyek? Jangan ragu untuk menghubungi saya.",
+    "contactButton": "Hubungi Saya",
+    "rights": "Hak cipta dilindungi.",
+    "builtWith": "Dibangun menggunakan React & Tailwind CSS.",
+    "backToHome": "Kembali ke beranda",
+    "backToTop": "Kembali ke atas"
   }
 }

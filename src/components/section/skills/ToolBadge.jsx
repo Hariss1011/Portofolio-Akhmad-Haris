@@ -4,7 +4,7 @@ const ToolBadge = ({ tool }) => {
   return (
     <div
       className="
-        flex min-h-[48px] items-center gap-2.5
+        flex min-h-12 items-center gap-2.5
         rounded-xl border border-[#EAE9E2]
         bg-[#FAFAF7] px-3 py-2.5
         transition-all duration-200

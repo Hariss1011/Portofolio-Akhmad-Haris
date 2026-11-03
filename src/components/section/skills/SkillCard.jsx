@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 const colorClasses = {
   blue: {
     iconBg: "bg-[#EEE5DF]",
@@ -41,6 +43,7 @@ const colorClasses = {
 };
 
 const SkillCard = ({ category, index }) => {
+  const { t } = useTranslation();
   const color = colorClasses[category.color] || colorClasses.blue;
   const CategoryIcon = category.icon;
 
@@ -77,7 +80,7 @@ const SkillCard = ({ category, index }) => {
 
           <div className="min-w-0">
             <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#92948B]">
-              Skill Category
+              {t("skills.categoryLabel")}
             </p>
 
             <h3 className="mt-1 text-lg font-bold leading-tight tracking-tight text-[#292D26] sm:text-xl">
@@ -112,7 +115,7 @@ const SkillCard = ({ category, index }) => {
 
           return (
             <div
-              key={skill.name}
+              key={skill.key}
               className={`
                 flex min-w-0 items-center gap-2.5
                 rounded-xl border border-[#EEEEE9]

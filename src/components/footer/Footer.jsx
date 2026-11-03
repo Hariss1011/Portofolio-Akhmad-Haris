@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import profile from "../../data/profile";
 
 import {
@@ -10,17 +11,18 @@ import {
 } from "react-icons/fa";
 
 const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   const navigation = [
-    { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "Education", href: "#education" },
-    { label: "Skills", href: "#skills" },
-    { label: "Experience", href: "#experience" },
-    { label: "Projects", href: "#projects" },
-    { label: "Certificates", href: "#certificates" },
-    { label: "Contact", href: "#contact" },
+    { label: t("footer.home"), href: "#home" },
+    { label: t("footer.about"), href: "#about" },
+    { label: t("footer.education"), href: "#education" },
+    { label: t("footer.skills"), href: "#skills" },
+    { label: t("footer.experience"), href: "#experience" },
+    { label: t("footer.projects"), href: "#projects" },
+    { label: t("footer.certificates"), href: "#certificates" },
+    { label: t("footer.contact"), href: "#contact" },
   ];
 
   const socialLinks = [
@@ -43,15 +45,14 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#20231F] text-[#F8F7F3]">
-      {/* Main Footer */}
       <div className="mx-auto max-w-7xl px-5 pb-6 pt-10 sm:px-8 sm:pt-12 lg:px-10">
-        {/* Main Content */}
+        {/* Main Footer Content */}
         <div className="grid gap-9 border-b border-white/15 pb-9 md:grid-cols-[1.2fr_0.8fr] lg:grid-cols-[1.2fr_0.85fr_1fr] lg:gap-12">
           {/* Brand */}
           <div>
             <a
               href="#home"
-              aria-label="Back to home"
+              aria-label={t("footer.backToHome")}
               className="group inline-flex items-center gap-3"
             >
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#A45F45] text-sm font-extrabold text-white transition-colors duration-300 group-hover:bg-[#B87558]">
@@ -63,15 +64,13 @@ const Footer = () => {
                   {profile.name}
                 </p>
                 <p className="mt-0.5 text-xs text-[#C1C1B8]">
-                  Informatics Engineering Graduate
+                  {t("footer.profession")}
                 </p>
               </div>
             </a>
 
             <p className="mt-4 max-w-sm text-[13px] leading-6 text-[#C1C1B8]">
-              Interested in web development, data management, and information
-              systems. Continuously learning and building practical solutions
-              through technology.
+              {t("footer.brand")}
             </p>
 
             <div className="mt-4 flex flex-wrap items-center gap-2 text-xs text-[#C1C1B8]">
@@ -83,17 +82,14 @@ const Footer = () => {
             <div className="mt-5 flex items-center gap-2.5">
               {socialLinks.map((social) => {
                 const Icon = social.icon;
+                const isEmail = social.label === "Email";
 
                 return (
                   <a
                     key={social.label}
                     href={social.href}
-                    target={social.label === "Email" ? undefined : "_blank"}
-                    rel={
-                      social.label === "Email"
-                        ? undefined
-                        : "noopener noreferrer"
-                    }
+                    target={isEmail ? undefined : "_blank"}
+                    rel={isEmail ? undefined : "noopener noreferrer"}
                     aria-label={social.label}
                     title={social.label}
                     className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/20 bg-white/[0.06] text-[#E5E3DA] transition-all duration-300 hover:border-[#D49A7D] hover:bg-[#A45F45] hover:text-white"
@@ -108,11 +104,11 @@ const Footer = () => {
           {/* Navigation */}
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.17em] text-[#D49A7D]">
-              Explore
+              {t("footer.explore")}
             </p>
 
             <h3 className="mt-2 text-base font-semibold text-white">
-              Quick Links
+              {t("footer.quickLinks")}
             </h3>
 
             <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-3">
@@ -132,16 +128,15 @@ const Footer = () => {
           {/* Contact */}
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.17em] text-[#D49A7D]">
-              Get in Touch
+              {t("footer.getInTouch")}
             </p>
 
             <h3 className="mt-2 text-base font-semibold text-white">
-              Let's connect.
+              {t("footer.contactHeadline")}
             </h3>
 
             <p className="mt-3 text-[13px] leading-6 text-[#C1C1B8]">
-              Have an opportunity or want to discuss a project? Feel free to
-              reach out.
+              {t("footer.contactDescription")}
             </p>
 
             <a
@@ -158,7 +153,7 @@ const Footer = () => {
                 href={`mailto:${profile.email}`}
                 className="mt-5 inline-flex items-center gap-2 rounded-lg bg-[#A45F45] px-4 py-2.5 text-xs font-semibold text-white transition-colors duration-300 hover:bg-[#B87558]"
               >
-                Contact Me
+                {t("footer.contactButton")}
                 <FaArrowRight className="text-[10px]" />
               </a>
             </div>
@@ -171,20 +166,20 @@ const Footer = () => {
             <p className="text-xs text-[#D0CEC5]">
               © {currentYear}{" "}
               <span className="font-semibold text-white">{profile.name}</span>.
-              All rights reserved.
+              {` ${t("footer.rights")}`}
             </p>
 
             <p className="mt-1 text-[11px] text-[#AFAFA5]">
-              Built with React & Tailwind CSS.
+              {t("footer.builtWith")}
             </p>
           </div>
 
           <a
             href="#home"
-            aria-label="Back to top"
+            aria-label={t("footer.backToTop")}
             className="group inline-flex w-fit items-center gap-2 text-xs font-semibold text-[#D0CEC5] transition-colors duration-200 hover:text-white"
           >
-            Back to top
+            {t("footer.backToTop")}
             <span className="flex h-7 w-7 items-center justify-center rounded-lg border border-white/20 bg-white/[0.06] text-[#E8B49A] transition-all duration-300 group-hover:border-[#D49A7D] group-hover:bg-[#A45F45] group-hover:text-white">
               <FaArrowUp className="text-[10px]" />
             </span>

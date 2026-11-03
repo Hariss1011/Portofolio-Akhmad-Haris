@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import {
   FaArrowLeft,
@@ -44,14 +45,21 @@ const SectionHeading = ({ number, eyebrow, title, description }) => (
 );
 
 const ProjectDetail = ({ project, onClose }) => {
+  const { t } = useTranslation();
+
   const [activeImage, setActiveImage] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
+  const content = t(`projects.items.${project?.slug}`, {
+    returnObjects: true,
+  });
+
   const screenshots = project?.screenshots || [];
   const technologies = project?.technologies || [];
-  const features = project?.features || [];
-  const challenges = project?.challenges || [];
-  const solutions = project?.solutions || [];
+  const features = content?.features || [];
+  const challenges = content?.challenges || [];
+  const solutions = content?.solutions || [];
+  const screenshotTitles = content?.screenshots || [];
 
   const isCompleted = project?.status === "Completed";
 
@@ -108,23 +116,23 @@ const ProjectDetail = ({ project, onClose }) => {
   const projectFacts = [
     {
       icon: FaCalendarAlt,
-      label: "Development",
+      label: t("projects.detail.development"),
       value: project.year || "—",
     },
     {
       icon: FaLayerGroup,
-      label: "Category",
-      value: project.category || "—",
+      label: t("projects.detail.category"),
+      value: content.category || "—",
     },
     {
       icon: FaCode,
-      label: "Technology",
-      value: `${technologies.length} tools`,
+      label: t("projects.detail.technology"),
+      value: `${technologies.length} ${t("projects.tools")}`,
     },
     {
       icon: FaImage,
-      label: "Gallery",
-      value: `${screenshots.length} screenshots`,
+      label: t("projects.detail.gallery"),
+      value: `${screenshots.length} ${t("projects.screenshots")}`,
     },
   ];
 
@@ -141,11 +149,11 @@ const ProjectDetail = ({ project, onClose }) => {
             <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#DCDDD5] bg-white transition group-hover:border-[#A45F45] group-hover:bg-[#F7F0EB]">
               <FaArrowLeft className="text-xs" />
             </span>
-            Back to Projects
+            {t("common.backToProjects")}
           </button>
 
           <span className="hidden text-[10px] font-bold uppercase tracking-[0.2em] text-[#85877E] sm:block">
-            Portfolio / Project Detail
+            Portfolio / {t("projects.detail.projectDetail")}
           </span>
         </div>
       </header>
@@ -156,7 +164,7 @@ const ProjectDetail = ({ project, onClose }) => {
           <div className="order-2 lg:order-1">
             <div className="mb-5 flex flex-wrap items-center gap-3">
               <span className="rounded-md bg-[#F0E7E0] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.12em] text-[#A45F45]">
-                {project.category}
+                {content.category}
               </span>
 
               {project.status && (
@@ -170,27 +178,27 @@ const ProjectDetail = ({ project, onClose }) => {
                       isCompleted ? "bg-[#788B70]" : "bg-[#C69A50]"
                     }`}
                   />
-                  {project.status}
+                  {t(isCompleted ? "common.completed" : "common.inDevelopment")}
                 </span>
               )}
             </div>
 
             <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[#85877E]">
-              Project Case Study
+              {t("projects.detail.caseStudy")}
             </p>
 
             <h1 className="max-w-xl text-4xl font-bold leading-[1.08] tracking-tight text-[#242722] sm:text-5xl lg:text-[3.7rem]">
               {project.title}
             </h1>
 
-            {project.subtitle && (
+            {content.subtitle && (
               <p className="mt-4 text-lg font-medium leading-relaxed text-[#788B70] sm:text-xl">
-                {project.subtitle}
+                {content.subtitle}
               </p>
             )}
 
             <p className="mt-5 max-w-xl text-sm leading-7 text-[#686C63] sm:text-base">
-              {project.overview || project.description}
+              {content.overview}
             </p>
 
             <div className="mt-7 flex flex-wrap gap-3">
@@ -202,7 +210,7 @@ const ProjectDetail = ({ project, onClose }) => {
                   className="inline-flex items-center gap-2.5 rounded-lg bg-[#292D27] px-5 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#A45F45]"
                 >
                   <FaGithub className="text-base" />
-                  View Source Code
+                  {t("projects.detail.viewSource")}
                   <FaExternalLinkAlt className="text-[10px]" />
                 </a>
               )}
@@ -214,7 +222,7 @@ const ProjectDetail = ({ project, onClose }) => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 rounded-lg border border-[#DCDDD5] bg-white px-5 py-3 text-sm font-bold text-[#494D44] transition hover:-translate-y-0.5 hover:border-[#A45F45] hover:text-[#A45F45]"
                 >
-                  Live Preview
+                  {t("common.liveDemo")}
                   <FaArrowRight className="text-xs" />
                 </a>
               )}
@@ -229,19 +237,19 @@ const ProjectDetail = ({ project, onClose }) => {
                 onClick={() => screenshots[0]?.src && openImage(0)}
                 disabled={!screenshots[0]?.src}
                 className="group relative block w-full overflow-hidden rounded-xl bg-[#EAEAE2]"
-                aria-label="Open project preview"
+                aria-label={t("projects.detail.openPreview")}
               >
                 {screenshots[0]?.src ? (
                   <img
                     src={screenshots[0].src}
-                    alt={screenshots[0].title || project.title}
+                    alt={screenshotTitles[0] || project.title}
                     className="aspect-[16/10] w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.015]"
                   />
                 ) : (
                   <div className="flex aspect-[16/10] flex-col items-center justify-center gap-3 text-[#85877E]">
                     <FaLaptopCode className="text-4xl text-[#A45F45]/70" />
                     <span className="text-sm font-medium">
-                      Project preview unavailable
+                      {t("projects.previewUnavailable")}
                     </span>
                   </div>
                 )}
@@ -255,7 +263,8 @@ const ProjectDetail = ({ project, onClose }) => {
 
               <div className="flex items-center justify-between gap-3 px-2 pt-3">
                 <span className="text-xs font-medium text-[#686C63]">
-                  {screenshots[0]?.title || "Application Interface"}
+                  {screenshotTitles[0] ||
+                    t("projects.detail.applicationInterface")}
                 </span>
 
                 <span className="text-[10px] font-bold tracking-widest text-[#A45F45]">
@@ -267,7 +276,7 @@ const ProjectDetail = ({ project, onClose }) => {
             </div>
 
             <p className="mt-2 text-right text-[10px] text-[#A0A197]">
-              Click preview to enlarge
+              {t("projects.detail.clickToEnlarge")}
             </p>
           </div>
         </section>
@@ -305,7 +314,7 @@ const ProjectDetail = ({ project, onClose }) => {
           })}
         </section>
 
-        {/* 01 OVERVIEW - EDITORIAL LAYOUT */}
+        {/* 01 PROJECT OVERVIEW */}
         <section className="grid gap-7 py-10 sm:py-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-14">
           <div>
             <div className="mb-3 flex items-center gap-3">
@@ -314,27 +323,27 @@ const ProjectDetail = ({ project, onClose }) => {
               </span>
               <span className="h-px w-7 bg-[#C9A797]" />
               <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#85877E]">
-                Project Overview
+                {t("common.projectOverview")}
               </span>
             </div>
 
             <h2 className="max-w-sm text-3xl font-bold leading-tight tracking-tight text-[#242722] sm:text-4xl">
-              Understanding the project.
+              {t("projects.detail.overviewHeading")}
             </h2>
 
             <p className="mt-4 max-w-sm text-sm leading-7 text-[#73766D]">
-              The background, purpose, and direction behind this application.
+              {t("projects.detail.overviewDescription")}
             </p>
           </div>
 
           <div className="relative border-l-2 border-[#C9A797] pl-5 sm:pl-7">
             <p className="whitespace-pre-line text-sm leading-8 text-[#55594F] sm:text-base sm:leading-8">
-              {project.description || project.overview}
+              {content.description}
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-2">
               <span className="rounded-md bg-[#EDEFE8] px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-[#687B5F]">
-                {project.category}
+                {content.category}
               </span>
               <span className="rounded-md bg-white px-3 py-1.5 text-[10px] font-semibold text-[#73766D] ring-1 ring-[#E3E2DA]">
                 {project.year}
@@ -343,7 +352,7 @@ const ProjectDetail = ({ project, onClose }) => {
           </div>
         </section>
 
-        {/* 02 TECHNOLOGY - FULL WIDTH STRIP */}
+        {/* 02 TECHNOLOGY */}
         {technologies.length > 0 && (
           <section className="border-y border-[#DCDDD5] py-7">
             <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
@@ -354,12 +363,12 @@ const ProjectDetail = ({ project, onClose }) => {
                   </span>
                   <span className="h-px w-7 bg-[#C9A797]" />
                   <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#85877E]">
-                    Technology Stack
+                    {t("common.technologyStack")}
                   </span>
                 </div>
 
                 <h2 className="text-xl font-bold text-[#242722]">
-                  Tools & Technologies
+                  {t("projects.detail.technologyHeading")}
                 </h2>
               </div>
 
@@ -377,14 +386,14 @@ const ProjectDetail = ({ project, onClose }) => {
           </section>
         )}
 
-        {/* 03 KEY FEATURES - COMPACT EDITORIAL LIST */}
+        {/* 03 FEATURES */}
         {features.length > 0 && (
           <section className="py-10 sm:py-12">
             <SectionHeading
               number="03"
-              eyebrow="Key Features"
-              title="What the application can do."
-              description="Core functionalities developed to support the main workflows and user needs."
+              eyebrow={t("common.keyFeatures")}
+              title={t("projects.detail.featuresHeading")}
+              description={t("projects.detail.featuresDescription")}
             />
 
             <div className="grid overflow-hidden rounded-xl border border-[#E3E2DA] bg-white sm:grid-cols-2">
@@ -404,11 +413,9 @@ const ProjectDetail = ({ project, onClose }) => {
                     {String(index + 1).padStart(2, "0")}
                   </span>
 
-                  <div className="min-w-0 pt-0.5">
-                    <p className="text-sm font-semibold leading-6 text-[#3D4139] sm:text-[15px]">
-                      {feature}
-                    </p>
-                  </div>
+                  <p className="min-w-0 pt-0.5 text-sm font-semibold leading-6 text-[#3D4139] sm:text-[15px]">
+                    {feature}
+                  </p>
 
                   <FaCheck className="ml-auto mt-2 shrink-0 text-[10px] text-[#788B70]" />
                 </div>
@@ -417,35 +424,33 @@ const ProjectDetail = ({ project, onClose }) => {
           </section>
         )}
 
-        {/* 04 DEVELOPMENT PROCESS - CLEAR CHALLENGE & SOLUTION TABLE */}
+        {/* 04 CHALLENGES & SOLUTIONS */}
         {(challenges.length > 0 || solutions.length > 0) && (
           <section className="border-t border-[#DCDDD5] py-10 sm:py-12">
             <SectionHeading
               number="04"
-              eyebrow="Development Process"
-              title="Challenges & solutions."
-              description="Problems encountered during development and the approaches used to solve them."
+              eyebrow={t("common.developmentProcess")}
+              title={t("projects.detail.processHeading")}
+              description={t("projects.detail.processDescription")}
             />
 
             <div className="overflow-hidden rounded-xl border border-[#D8D8CF] bg-white">
-              {/* TABLE HEADER */}
               <div className="grid grid-cols-2 bg-[#292D27]">
                 <div className="flex items-center gap-2.5 px-4 py-4 sm:px-6">
                   <FaExclamationCircle className="shrink-0 text-sm text-[#D6A28B]" />
                   <span className="text-xs font-bold uppercase tracking-[0.12em] text-white sm:text-sm">
-                    Challenges
+                    {t("common.challenges")}
                   </span>
                 </div>
 
                 <div className="flex items-center gap-2.5 border-l border-white/15 px-4 py-4 sm:px-6">
                   <FaLightbulb className="shrink-0 text-sm text-[#B6C9A9]" />
                   <span className="text-xs font-bold uppercase tracking-[0.12em] text-white sm:text-sm">
-                    Solutions
+                    {t("common.solutions")}
                   </span>
                 </div>
               </div>
 
-              {/* TABLE ROWS */}
               {Array.from({
                 length: Math.max(challenges.length, solutions.length),
               }).map((_, index) => (
@@ -459,7 +464,6 @@ const ProjectDetail = ({ project, onClose }) => {
                       : ""
                   }`}
                 >
-                  {/* CHALLENGE */}
                   <div className="px-4 py-5 sm:px-6 sm:py-6">
                     <div className="mb-3 flex items-center gap-2">
                       <span className="text-[11px] font-bold tracking-wider text-[#A45F45]">
@@ -473,7 +477,6 @@ const ProjectDetail = ({ project, onClose }) => {
                     </p>
                   </div>
 
-                  {/* SOLUTION */}
                   <div className="border-l border-[#DCDDD5] px-4 py-5 sm:px-6 sm:py-6">
                     <div className="mb-3 flex items-center gap-2">
                       <span className="text-[11px] font-bold tracking-wider text-[#788B70]">
@@ -492,22 +495,23 @@ const ProjectDetail = ({ project, onClose }) => {
           </section>
         )}
 
-        {/* 05 APPLICATION SHOWCASE - CONSISTENT GALLERY */}
+        {/* 05 SCREENSHOT GALLERY */}
         {screenshots.length > 0 && (
           <section className="border-t border-[#DCDDD5] py-10 sm:py-12">
             <SectionHeading
               number="05"
-              eyebrow="Application Showcase"
-              title="A closer look at the application."
-              description="Screenshots of the interfaces and features developed throughout the project."
+              eyebrow={t("common.applicationShowcase")}
+              title={t("projects.detail.galleryHeading")}
+              description={t("projects.detail.galleryDescription")}
             />
 
             <div className="mb-5 flex items-center justify-between">
               <span className="text-xs font-semibold text-[#73766D]">
-                Application Screenshots
+                {t("projects.detail.screenshotLabel")}
               </span>
               <span className="text-xs font-bold text-[#A45F45]">
-                {String(screenshots.length).padStart(2, "0")} Images
+                {String(screenshots.length).padStart(2, "0")}{" "}
+                {t("projects.detail.images")}
               </span>
             </div>
 
@@ -523,14 +527,18 @@ const ProjectDetail = ({ project, onClose }) => {
                     {screenshot.src ? (
                       <img
                         src={screenshot.src}
-                        alt={screenshot.title || `Screenshot ${index + 1}`}
+                        alt={
+                          screenshotTitles[index] || `Screenshot ${index + 1}`
+                        }
                         loading="lazy"
                         className="h-full w-full rounded-md object-contain transition-transform duration-500 group-hover:scale-[1.025]"
                       />
                     ) : (
                       <div className="flex flex-col items-center gap-2 text-[#85877E]">
                         <FaLaptopCode className="text-3xl" />
-                        <span className="text-xs">Image unavailable</span>
+                        <span className="text-xs">
+                          {t("projects.previewUnavailable")}
+                        </span>
                       </div>
                     )}
 
@@ -541,7 +549,8 @@ const ProjectDetail = ({ project, onClose }) => {
 
                   <div className="flex min-h-14 items-center justify-between gap-3 px-4 py-3">
                     <span className="text-xs font-semibold leading-5 text-[#494D44] sm:text-sm">
-                      {screenshot.title || `Screenshot ${index + 1}`}
+                      {screenshotTitles[index] ||
+                        `${t("projects.detail.screenshot")} ${index + 1}`}
                     </span>
 
                     <span className="shrink-0 text-[10px] font-bold tracking-wider text-[#A45F45]">
@@ -559,16 +568,15 @@ const ProjectDetail = ({ project, onClose }) => {
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div className="max-w-2xl">
               <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#D6A28B]">
-                Explore the project
+                {t("projects.detail.closingEyebrow")}
               </p>
 
               <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
-                Interested in the implementation?
+                {t("projects.detail.closingTitle")}
               </h2>
 
               <p className="mt-3 text-sm leading-7 text-white/65">
-                Explore the source code to learn more about the structure,
-                features, and development of this application.
+                {t("projects.detail.closingDescription")}
               </p>
             </div>
 
@@ -593,7 +601,7 @@ const ProjectDetail = ({ project, onClose }) => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-lg bg-[#A45F45] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#BD795B]"
                 >
-                  Live Demo
+                  {t("common.liveDemo")}
                   <FaArrowRight className="text-xs" />
                 </a>
               )}
@@ -609,12 +617,12 @@ const ProjectDetail = ({ project, onClose }) => {
           onClick={() => setLightboxOpen(false)}
           role="dialog"
           aria-modal="true"
-          aria-label="Project screenshot preview"
+          aria-label={t("projects.detail.imagePreview")}
         >
           <button
             type="button"
             onClick={() => setLightboxOpen(false)}
-            aria-label="Close image preview"
+            aria-label={t("projects.detail.closePreview")}
             className="absolute right-5 top-5 z-20 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white transition hover:bg-[#A45F45]"
           >
             <FaTimes />
@@ -628,7 +636,7 @@ const ProjectDetail = ({ project, onClose }) => {
                   event.stopPropagation();
                   previousImage();
                 }}
-                aria-label="Previous image"
+                aria-label={t("projects.detail.previousImage")}
                 className="absolute left-3 z-20 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white transition hover:bg-[#A45F45] sm:left-8"
               >
                 <FaChevronLeft />
@@ -640,7 +648,7 @@ const ProjectDetail = ({ project, onClose }) => {
                   event.stopPropagation();
                   nextImage();
                 }}
-                aria-label="Next image"
+                aria-label={t("projects.detail.nextImage")}
                 className="absolute right-3 z-20 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white transition hover:bg-[#A45F45] sm:right-8"
               >
                 <FaChevronRight />
@@ -654,13 +662,13 @@ const ProjectDetail = ({ project, onClose }) => {
           >
             <img
               src={screenshots[activeImage].src}
-              alt={screenshots[activeImage].title || project.title}
+              alt={screenshotTitles[activeImage] || project.title}
               className="max-h-[78vh] max-w-full rounded-lg object-contain shadow-2xl"
             />
 
             <div className="mt-5 flex w-full max-w-5xl items-center justify-between gap-4 text-sm">
               <span className="font-medium text-white">
-                {screenshots[activeImage].title || project.title}
+                {screenshotTitles[activeImage] || project.title}
               </span>
 
               <span className="shrink-0 text-xs text-white/60">

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import profile from "../../../data/profile";
 
 import {
@@ -13,23 +14,25 @@ import {
 } from "react-icons/fa";
 
 const Contact = () => {
+  const { t } = useTranslation();
+
   const contactItems = [
     {
-      label: "Email Address",
+      label: t("contact.email"),
       value: profile.email,
       href: `mailto:${profile.email}`,
       icon: FaEnvelope,
       action: true,
     },
     {
-      label: "Phone Number",
+      label: t("contact.phone"),
       value: profile.phone,
-      href: `tel:${profile.phone.replace(/\s/g, "")}`,
+      href: `tel:${profile.phone.replace(/\s/g, "").replace(/-/g, "")}`,
       icon: FaPhone,
       action: true,
     },
     {
-      label: "Location",
+      label: t("contact.location"),
       value: profile.location,
       icon: FaMapMarkerAlt,
       action: false,
@@ -39,13 +42,13 @@ const Contact = () => {
   const socialLinks = [
     {
       name: "GitHub",
-      description: "Explore my projects and repositories",
+      description: t("contact.githubDescription"),
       href: profile.github,
       icon: FaGithub,
     },
     {
       name: "LinkedIn",
-      description: "Connect with me professionally",
+      description: t("contact.linkedinDescription"),
       href: profile.linkedin,
       icon: FaLinkedin,
     },
@@ -72,23 +75,22 @@ const Contact = () => {
           className="mb-12 max-w-3xl sm:mb-14"
         >
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#A45F45]">
-            Contact
+            {t("contact.eyebrow")}
           </p>
 
           <h2 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-[#242722] sm:text-4xl lg:text-5xl">
-            Let's start a<span className="text-[#A45F45]"> conversation.</span>
+            {t("contact.headingStart")}
+            <span className="text-[#A45F45]">{t("contact.headingAccent")}</span>
           </h2>
 
           <p className="mt-5 max-w-2xl text-sm leading-7 text-[#62665D] sm:text-base">
-            Have a job opportunity, a project idea, or simply want to connect?
-            I'm open to meaningful conversations and opportunities to
-            contribute, collaborate, and grow professionally.
+            {t("contact.description")}
           </p>
         </motion.div>
 
         {/* Main Contact Layout */}
         <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr] lg:gap-6">
-          {/* LEFT: Main Contact Panel */}
+          {/* Main Contact Panel */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -98,34 +100,33 @@ const Contact = () => {
             className="relative overflow-hidden rounded-[28px] bg-[#292D27] p-6 text-white sm:p-9 lg:p-10"
           >
             {/* Decorative Accent */}
-            <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full border border-white/6" />
-            <div className="pointer-events-none absolute -right-10 -top-10 h-44 w-44 rounded-full border border-white/6" />
+            <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full border border-white/10" />
+            <div className="pointer-events-none absolute -right-10 -top-10 h-44 w-44 rounded-full border border-white/10" />
 
             <div className="relative">
               {/* Panel Label */}
               <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/9 text-[#D5A28A]">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-[#D5A28A]">
                   <FaEnvelope className="text-base" />
                 </div>
 
                 <div>
                   <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#D5A28A]">
-                    Get in Touch
+                    {t("contact.getInTouch")}
                   </p>
-                  <p className="mt-1 text-xs text-white/50">
-                    Contact information
+                  <p className="mt-1 text-xs text-white/55">
+                    {t("contact.information")}
                   </p>
                 </div>
               </div>
 
               {/* Panel Heading */}
               <h3 className="mt-9 max-w-md text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
-                I'd be happy to hear from you.
+                {t("contact.panelHeadline")}
               </h3>
 
               <p className="mt-4 max-w-lg text-sm leading-7 text-white/65">
-                Whether you're a recruiter, potential employer, or collaborator,
-                feel free to reach out through the contact details below.
+                {t("contact.panelDescription")}
               </p>
 
               {/* Contact Information */}
@@ -135,16 +136,16 @@ const Contact = () => {
 
                   const content = (
                     <>
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/8 text-[#D5A28A] transition-colors duration-300 group-hover:bg-[#A45F45] group-hover:text-white">
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-[#D5A28A] transition-colors duration-300 group-hover:bg-[#A45F45] group-hover:text-white">
                         <Icon className="text-base" />
                       </div>
 
                       <div className="min-w-0 flex-1">
-                        <p className="text-[11px] font-semibold uppercase tracking-[0.13em] text-white/45">
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.13em] text-white/50">
                           {item.label}
                         </p>
 
-                        <p className="mt-1 wrap-break-word text-sm font-semibold text-white/90 sm:text-base">
+                        <p className="mt-1 break-all text-sm font-semibold text-white/90 sm:text-base">
                           {item.value}
                         </p>
                       </div>
@@ -159,14 +160,14 @@ const Contact = () => {
                     <a
                       key={item.label}
                       href={item.href}
-                      className="group flex items-center gap-4 rounded-2xl border border-white/8 bg-white/[0.035] p-4 transition-all duration-300 hover:border-[#D5A28A]/40 hover:bg-white/[0.07]"
+                      className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition-all duration-300 hover:border-[#D5A28A]/40 hover:bg-white/[0.08]"
                     >
                       {content}
                     </a>
                   ) : (
                     <div
                       key={item.label}
-                      className="flex items-center gap-4 rounded-2xl border border-white/8 bg-white/[0.035] p-4"
+                      className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4"
                     >
                       {content}
                     </div>
@@ -175,7 +176,7 @@ const Contact = () => {
               </div>
 
               {/* Availability */}
-              <div className="mt-8 flex items-start gap-3 border-t border-white/12 pt-6">
+              <div className="mt-8 flex items-start gap-3 border-t border-white/15 pt-6">
                 <span className="relative mt-1.5 flex h-2.5 w-2.5 shrink-0">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#91A687] opacity-40" />
                   <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#91A687]" />
@@ -183,17 +184,17 @@ const Contact = () => {
 
                 <div>
                   <p className="text-sm font-semibold text-[#B5C6A9]">
-                    Open to opportunities
+                    {t("contact.availability")}
                   </p>
-                  <p className="mt-1 text-xs leading-6 text-white/50">
-                    Open to suitable professional roles and collaborations.
+                  <p className="mt-1 text-xs leading-6 text-white/55">
+                    {t("contact.availabilityDescription")}
                   </p>
                 </div>
               </div>
             </div>
           </motion.div>
 
-          {/* RIGHT: Professional Opportunity & Social Links */}
+          {/* Professional Opportunity & Social Links */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -209,18 +210,15 @@ const Contact = () => {
               </div>
 
               <p className="mt-7 text-xs font-bold uppercase tracking-[0.17em] text-[#A45F45]">
-                Professional Opportunity
+                {t("contact.opportunity")}
               </p>
 
               <h3 className="mt-3 max-w-md text-2xl font-bold leading-tight tracking-tight text-[#242722] sm:text-3xl">
-                Ready to contribute and make an impact.
+                {t("contact.opportunityHeadline")}
               </h3>
 
               <p className="mt-4 text-sm leading-7 text-[#62665D]">
-                With a background in Informatics Engineering, I have experience
-                and a foundation in web development, database management,
-                information systems, and data processing. I'm eager to apply my
-                skills, learn from new challenges, and contribute to a team.
+                {t("contact.opportunityDescription")}
               </p>
 
               {/* Main Actions */}
@@ -230,7 +228,7 @@ const Contact = () => {
                   className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#A45F45] px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#8F503A] hover:shadow-lg hover:shadow-[#A45F45]/15"
                 >
                   <FaEnvelope />
-                  Contact Me
+                  {t("contact.contactButton")}
                 </a>
 
                 <a
@@ -240,7 +238,7 @@ const Contact = () => {
                   className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[#DCD8CF] bg-[#F8F7F3] px-5 py-3 text-sm font-semibold text-[#34382F] transition-all duration-300 hover:border-[#A45F45]/40 hover:bg-[#F3E9E2]"
                 >
                   <FaFileDownload />
-                  Download CV
+                  {t("contact.downloadCv")}
                 </a>
               </div>
             </div>
@@ -249,15 +247,15 @@ const Contact = () => {
             <div className="rounded-[28px] border border-[#E8E4DB] bg-white p-6 sm:p-8">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.17em] text-[#A45F45]">
-                  Find Me Online
+                  {t("contact.findOnline")}
                 </p>
 
                 <h3 className="mt-2 text-xl font-bold tracking-tight text-[#242722]">
-                  Professional Profiles
+                  {t("contact.profiles")}
                 </h3>
 
                 <p className="mt-2 text-sm leading-6 text-[#777A71]">
-                  Explore my work and connect with me through these platforms.
+                  {t("contact.profilesDescription")}
                 </p>
               </div>
 
@@ -305,12 +303,10 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="mt-10 flex flex-col gap-2 border-t border-[#E5E1D8] pt-6 sm:flex-row sm:items-center sm:justify-between"
         >
-          <p className="text-xs text-[#85877E]">
-            Thank you for taking the time to explore my portfolio.
-          </p>
+          <p className="text-xs text-[#85877E]">{t("contact.bottomNote")}</p>
 
           <p className="text-xs font-medium text-[#62665D]">
-            Open to meaningful professional connections.
+            {t("contact.bottomAvailability")}
           </p>
         </motion.div>
       </div>

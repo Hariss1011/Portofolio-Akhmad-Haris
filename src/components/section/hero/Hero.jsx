@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import {
   FaArrowRight,
@@ -13,6 +14,8 @@ import {
 import profile from "../../../data/profile";
 
 const Hero = () => {
+  const { t } = useTranslation();
+
   const nameParts = profile.name.trim().split(" ");
   const firstName = nameParts.shift();
   const lastName = nameParts.join(" ");
@@ -61,12 +64,12 @@ const Hero = () => {
           <div className="mb-7 inline-flex items-center gap-3">
             <span className="h-px w-9 bg-[#B66E4E]" />
             <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[#8B624F] sm:text-sm">
-              Welcome to my portfolio
+              {t("hero.welcome")}
             </span>
           </div>
 
           <p className="mb-3 text-lg font-medium text-[#77796F] sm:text-xl">
-            Hello, I'm
+            {t("hero.greeting")}
           </p>
 
           <h1 className="max-w-3xl text-[3.2rem] font-semibold leading-[1.05] tracking-[-0.055em] text-[#242722] sm:text-6xl lg:text-[4.7rem] xl:text-[5.2rem]">
@@ -78,7 +81,7 @@ const Hero = () => {
           {/* PROFESSIONAL TITLE */}
           <div className="mt-7">
             <p className="text-lg font-semibold tracking-tight text-[#34382F] sm:text-xl">
-              {profile.title}
+              {t("hero.title")}
             </p>
           </div>
 
@@ -86,45 +89,45 @@ const Hero = () => {
           <div className="mt-5 flex flex-wrap gap-2">
             <span
               className="
-      inline-flex items-center gap-2
-      rounded-full
-      border border-[#B66E4E]/20
-      bg-[#B66E4E]/[0.07]
-      px-3 py-1.5
-      text-xs font-semibold text-[#A35F43]
-      sm:text-sm
-    "
+                inline-flex items-center gap-2
+                rounded-full
+                border border-[#B66E4E]/20
+                bg-[#B66E4E]/[0.07]
+                px-3 py-1.5
+                text-xs font-semibold text-[#A35F43]
+                sm:text-sm
+              "
             >
               <FaCode className="text-[11px]" />
-              Web Development
+              {t("hero.specialties.web")}
             </span>
 
             <span
               className="
-      inline-flex items-center gap-2
-      rounded-full
-      border border-[#788B70]/25
-      bg-[#788B70]/[0.09]
-      px-3 py-1.5
-      text-xs font-semibold text-[#667C5D]
-      sm:text-sm
-    "
+                inline-flex items-center gap-2
+                rounded-full
+                border border-[#788B70]/25
+                bg-[#788B70]/[0.09]
+                px-3 py-1.5
+                text-xs font-semibold text-[#667C5D]
+                sm:text-sm
+              "
             >
               <FaDatabase className="text-[11px]" />
-              Data Management
+              {t("hero.specialties.data")}
             </span>
           </div>
 
           {/* DESCRIPTION */}
           <p
             className="
-    mt-6 max-w-xl
-    text-sm leading-7
-    text-[#666A61]
-    sm:text-base sm:leading-8
-  "
+              mt-6 max-w-xl
+              text-sm leading-7
+              text-[#666A61]
+              sm:text-base sm:leading-8
+            "
           >
-            {profile.description}
+            {t("hero.description")}
           </p>
 
           {/* Main actions */}
@@ -135,14 +138,14 @@ const Hero = () => {
               className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-[#B66E4E] px-6 py-3 text-sm font-semibold text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-[#9F5D40] hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B66E4E] focus-visible:ring-offset-2"
             >
               <FaDownload className="text-xs" />
-              Download CV
+              {t("hero.downloadCv")}
             </a>
 
             <a
               href="#projects"
               className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-lg border border-[#D8D6CE] bg-transparent px-6 py-3 text-sm font-semibold text-[#34382F] transition duration-300 hover:border-[#B66E4E] hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B66E4E] focus-visible:ring-offset-2"
             >
-              Explore Projects
+              {t("hero.exploreProjects")}
               <FaArrowRight className="text-xs transition-transform duration-300 group-hover:translate-x-1" />
             </a>
           </div>
@@ -169,7 +172,7 @@ const Hero = () => {
 
             <div className="flex items-center gap-2 text-sm text-[#77796F]">
               <FaMapMarkerAlt className="text-[#B66E4E]" />
-              <span>{profile.location}</span>
+              <span>{t("hero.location")}</span>
             </div>
           </div>
         </motion.div>
@@ -190,7 +193,7 @@ const Hero = () => {
             <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-[#E9E5DC] shadow-[0_24px_60px_rgba(50,45,36,0.12)]">
               <img
                 src={profile.image}
-                alt={`Portrait of ${profile.name}`}
+                alt={t("hero.profileImageAlt", { name: profile.name })}
                 className="h-full w-full object-cover object-center"
                 fetchPriority="high"
               />
@@ -199,20 +202,20 @@ const Hero = () => {
             {/* PROFILE INFORMATION CARD */}
             <div
               className="
-    relative mt-5
-    overflow-hidden
-    rounded-2xl
-    border border-[#4B5047]
-    bg-[#34382F]
-    px-5 py-4
-    shadow-[0_15px_40px_rgba(50,45,36,0.13)]
-    sm:mt-6 sm:px-6 sm:py-5
-  "
+                relative mt-5
+                overflow-hidden
+                rounded-2xl
+                border border-[#4B5047]
+                bg-[#34382F]
+                px-5 py-4
+                shadow-[0_15px_40px_rgba(50,45,36,0.13)]
+                sm:mt-6 sm:px-6 sm:py-5
+              "
             >
               <div className="flex items-center justify-between gap-3">
                 <div className="min-w-0">
                   <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#D9A58D] sm:text-xs">
-                    Personal Portfolio
+                    {t("hero.personalPortfolio")}
                   </p>
 
                   <h2 className="mt-1.5 truncate text-lg font-bold tracking-tight text-[#F8F7F3] sm:text-xl">
@@ -222,29 +225,29 @@ const Hero = () => {
 
                 <div
                   className="
-        flex shrink-0 items-center gap-2
-        rounded-full
-        border border-[#A8B89C]/25
-        bg-[#A8B89C]/10
-        px-2.5 py-1.5
-        sm:px-3
-      "
+                    flex shrink-0 items-center gap-2
+                    rounded-full
+                    border border-[#A8B89C]/25
+                    bg-[#A8B89C]/10
+                    px-2.5 py-1.5
+                    sm:px-3
+                  "
                 >
                   <span className="h-1.5 w-1.5 rounded-full bg-[#A8B89C]" />
 
                   <span className="text-[10px] font-medium text-[#C5D2BB] sm:text-xs">
-                    Open to Work
+                    {t("hero.availability")}
                   </span>
                 </div>
               </div>
 
               <div className="mt-3 flex items-center justify-between gap-3 border-t border-white/10 pt-3">
                 <p className="text-xs text-[#D0D0C7] sm:text-sm">
-                  Web Development & Data
+                  {t("hero.cardFocus")}
                 </p>
 
                 <span className="text-[10px] font-medium uppercase tracking-wider text-[#A5A69C]">
-                  Portfolio
+                  {t("hero.cardLabel")}
                 </span>
               </div>
             </div>

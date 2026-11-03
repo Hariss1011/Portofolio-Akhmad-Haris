@@ -1,35 +1,47 @@
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import SkillCard from "./SkillCard";
 import ToolBadge from "./ToolBadge";
 import { skillCategories, tools } from "../../../data/skills";
 
 const Skills = () => {
+  const { t } = useTranslation();
+
+  const translatedCategories = skillCategories.map((category) => ({
+    ...category,
+    title: t(`skills.categories.${category.key}.title`),
+    description: t(`skills.categories.${category.key}.description`),
+    skills: category.skills.map((skill) => ({
+      ...skill,
+      name: t(`skills.items.${skill.key}`),
+    })),
+  }));
+
   return (
     <section id="skills" className="bg-[#F8F7F3] py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         {/* SECTION HEADING */}
         <div className="mb-9 sm:mb-11">
           <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#A45F45]">
-            TECHNICAL SKILLS
+            {t("skills.eyebrow")}
           </p>
 
           <div className="mt-3 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
             <h2 className="text-3xl font-bold tracking-tight text-[#242722] sm:text-4xl">
-              Skills & Technologies
+              {t("skills.title")}
             </h2>
 
             <p className="max-w-md text-sm leading-6 text-[#62665D]">
-              Technical knowledge and tools I use to build web applications,
-              manage databases, and support data-related tasks.
+              {t("skills.description")}
             </p>
           </div>
         </div>
 
         {/* SKILL CATEGORIES */}
         <div className="grid gap-4 lg:grid-cols-2 lg:gap-5">
-          {skillCategories.map((category, index) => (
+          {translatedCategories.map((category, index) => (
             <motion.div
-              key={category.title}
+              key={category.key}
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.12 }}
@@ -55,16 +67,16 @@ const Skills = () => {
 
                 <div>
                   <p className="text-[10px] font-bold uppercase tracking-[0.17em] text-[#A45F45]">
-                    WORKSPACE
+                    {t("skills.workspace")}
                   </p>
                   <h3 className="mt-0.5 text-lg font-bold tracking-tight text-[#242722]">
-                    Development Tools
+                    {t("skills.toolsTitle")}
                   </h3>
                 </div>
               </div>
 
               <p className="mt-2 text-xs leading-5 text-[#74776E]">
-                Tools supporting my development and testing workflow.
+                {t("skills.toolsDescription")}
               </p>
             </div>
 

@@ -4,8 +4,15 @@ import {
   FaExternalLinkAlt,
   FaCalendarAlt,
 } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const CertificateCard = ({ certificate, index = 0 }) => {
+  const { t } = useTranslation();
+
+  const content = t(`certificates.items.${certificate.translationKey}`, {
+    returnObjects: true,
+  });
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 20 }}
@@ -20,7 +27,7 @@ const CertificateCard = ({ certificate, index = 0 }) => {
           <div className="flex h-full w-full items-center justify-center overflow-hidden bg-white p-2 shadow-[0_8px_25px_rgba(36,39,34,0.10)]">
             <img
               src={certificate.image}
-              alt={`Certificate preview: ${certificate.title}`}
+              alt={`${t("certificates.preview")}: ${content.title}`}
               loading="lazy"
               className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.025]"
             />
@@ -29,14 +36,14 @@ const CertificateCard = ({ certificate, index = 0 }) => {
           <div className="flex h-full w-full flex-col items-center justify-center border border-[#E6E3DA] bg-white">
             <FaCertificate className="text-3xl text-[#A45F45]" />
             <span className="mt-3 text-[10px] font-bold uppercase tracking-widest text-[#92948B]">
-              Certificate
+              {t("certificates.preview")}
             </span>
           </div>
         )}
 
-        {certificate.status && (
+        {certificate.statusKey && (
           <span className="absolute right-4 top-4 rounded-full border border-[#DCE5D8] bg-[#F0F4ED] px-3 py-1.5 text-[10px] font-semibold text-[#617758]">
-            {certificate.status}
+            {t(`certificates.status.${certificate.statusKey}`)}
           </span>
         )}
       </div>
@@ -45,20 +52,20 @@ const CertificateCard = ({ certificate, index = 0 }) => {
       <div className="flex flex-1 flex-col p-6 sm:p-7">
         <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.14em] text-[#A45F45]">
           <FaCertificate className="shrink-0" />
-          <span>{certificate.category}</span>
+          <span>{content.category}</span>
         </div>
 
         <h3 className="mt-3 text-lg font-bold leading-snug text-[#292D27] transition-colors duration-200 group-hover:text-[#A45F45]">
-          {certificate.title}
+          {content.title}
         </h3>
 
         <p className="mt-2 text-xs font-semibold leading-5 text-[#788B70]">
-          {certificate.issuer}
+          {content.issuer}
         </p>
 
-        {certificate.description && (
+        {content.description && (
           <p className="mt-4 text-sm leading-6 text-[#62665D]">
-            {certificate.description}
+            {content.description}
           </p>
         )}
 
@@ -70,21 +77,21 @@ const CertificateCard = ({ certificate, index = 0 }) => {
             </span>
           )}
 
-          {certificate.type && (
+          {content.type && (
             <span className="rounded-md bg-[#F3F1EB] px-2.5 py-1.5 text-[11px] font-medium text-[#62665D]">
-              {certificate.type}
+              {content.type}
             </span>
           )}
         </div>
 
-        {certificate.skills?.length > 0 && (
+        {content.skills?.length > 0 && (
           <div className="mt-5 border-t border-[#EAE7DF] pt-5">
             <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#92948B]">
-              Skills Covered
+              {t("certificates.skillsCovered")}
             </p>
 
             <div className="mt-3 flex flex-wrap gap-2">
-              {certificate.skills.map((skill, idx) => (
+              {content.skills.map((skill, idx) => (
                 <span
                   key={`${skill}-${idx}`}
                   className="rounded-md border border-[#E5E2D9] bg-[#F8F7F3] px-2.5 py-1.5 text-[11px] font-medium text-[#555A50]"
@@ -101,7 +108,7 @@ const CertificateCard = ({ certificate, index = 0 }) => {
           {certificate.credential?.id && (
             <div className="mb-4">
               <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#92948B]">
-                Credential ID
+                {t("certificates.credentialId")}
               </p>
               <p className="mt-1 break-all font-mono text-xs text-[#555A50]">
                 {certificate.credential.id}
@@ -114,10 +121,10 @@ const CertificateCard = ({ certificate, index = 0 }) => {
               href={certificate.certificateUrl}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`View certificate: ${certificate.title}`}
+              aria-label={`${t("certificates.viewCertificate")}: ${content.title}`}
               className="inline-flex items-center gap-2 text-sm font-semibold text-[#A45F45] transition-colors hover:text-[#788B70]"
             >
-              View Certificate
+              {t("certificates.viewCertificate")}
               <FaExternalLinkAlt className="text-[10px] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           )}
