@@ -1,179 +1,199 @@
 import {
   FaBriefcase,
-  FaMapMarkerAlt,
   FaCalendarAlt,
-  FaArrowRight,
+  FaMapMarkerAlt,
+  FaCheck,
 } from "react-icons/fa";
 
+import { motion } from "framer-motion";
 import experience from "../../../data/experience";
-import SectionTitle from "../../common/SectionTitle";
-import Reveal from "../../common/Reveal";
 
 const Experience = () => {
   return (
     <section
       id="experience"
-      className="relative overflow-hidden bg-[#0a0f1e] py-24 sm:py-28"
+      className="relative overflow-hidden bg-[#F8F7F3] py-20 sm:py-24"
     >
-      {/* Background accents */}
-      <div className="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full bg-blue-600/[0.07] blur-[120px]" />
-      <div className="pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-cyan-500/[0.05] blur-[130px]" />
+      <div className="pointer-events-none absolute -right-32 top-24 h-80 w-80 rounded-full bg-[#788B70]/[0.07] blur-[110px]" />
 
       <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
-        <SectionTitle
-          subtitle="Experience"
-          title="Where I've Gained Practical Experience"
-          description="A look at how I've applied my technical knowledge, contributed to real work, and continued developing professionally."
-        />
+        {/* Section Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-2xl"
+        >
+          <div className="mb-4 flex items-center gap-3">
+            <span className="h-px w-8 bg-[#A45F45]" />
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#A45F45]">
+              Experience
+            </span>
+          </div>
 
-        <div className="mt-16">
+          <h2 className="text-3xl font-bold tracking-tight text-[#242722] sm:text-4xl lg:text-[42px]">
+            Professional Experience
+          </h2>
+
+          <p className="mt-4 max-w-xl text-sm leading-7 text-[#62665D] sm:text-base">
+            Practical experience gained through professional work, technical
+            contributions, and collaboration in a real working environment.
+          </p>
+        </motion.div>
+
+        {/* Experience Content */}
+        <div className="mt-12 space-y-8">
           {experience.length > 0 ? (
             experience.map((item, index) => (
-              <Reveal key={`${item.company}-${index}`}>
-                <article className="relative grid grid-cols-1 gap-8 py-10 first:pt-0 last:pb-0 lg:grid-cols-12 lg:gap-12">
-                  {/* Left: Experience metadata */}
-                  <aside className="lg:col-span-3">
-                    <div className="flex items-center gap-3">
-                      <span className="font-mono text-sm font-semibold tracking-widest text-blue-400">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <span className="h-px w-10 bg-blue-500/40" />
-                      <span className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-                        Experience
-                      </span>
+              <motion.article
+                key={`${item.company}-${index}`}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.12 }}
+                transition={{ duration: 0.65, delay: index * 0.1 }}
+                className="grid overflow-hidden rounded-2xl border border-[#E6E3DA] bg-white shadow-[0_12px_40px_rgba(36,39,34,0.045)] lg:grid-cols-[290px_minmax(0,1fr)]"
+              >
+                {/* Left: Experience Information */}
+                <aside className="relative flex flex-col bg-[#292D27] p-7 text-white sm:p-8">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-sm font-semibold tracking-widest text-[#D5A58E]">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    <span className="rounded-full border border-white/15 bg-white/[0.07] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-[#E8C5B3]">
+                      {item.type}
+                    </span>
+                  </div>
+
+                  <div className="mt-10">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/45">
+                      Organization
+                    </p>
+
+                    <h3 className="mt-3 text-2xl font-bold leading-snug tracking-tight text-white">
+                      {item.company}
+                    </h3>
+
+                    <div className="mt-5 h-px w-12 bg-[#B66E4E]" />
+                  </div>
+
+                  <div className="mt-8 space-y-6">
+                    <div className="flex items-start gap-3">
+                      <FaCalendarAlt className="mt-1 shrink-0 text-sm text-[#D5A58E]" />
+
+                      <div>
+                        <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/45">
+                          Period
+                        </p>
+                        <p className="mt-1.5 text-sm font-medium leading-relaxed text-white/90">
+                          {item.period}
+                        </p>
+                      </div>
                     </div>
 
-                    <div className="mt-6 space-y-4">
-                      <div className="flex items-start gap-3">
-                        <FaCalendarAlt className="mt-1 shrink-0 text-sm text-blue-400" />
-                        <div>
-                          <p className="text-[11px] font-medium uppercase tracking-wider text-slate-500">
-                            Period
-                          </p>
-                          <p className="mt-1 text-sm font-medium leading-relaxed text-slate-300">
-                            {item.period}
-                          </p>
-                        </div>
-                      </div>
+                    <div className="flex items-start gap-3">
+                      <FaMapMarkerAlt className="mt-1 shrink-0 text-sm text-[#D5A58E]" />
 
-                      <div className="flex items-start gap-3">
-                        <FaMapMarkerAlt className="mt-1 shrink-0 text-sm text-blue-400" />
-                        <div>
-                          <p className="text-[11px] font-medium uppercase tracking-wider text-slate-500">
-                            Location
-                          </p>
-                          <p className="mt-1 text-sm leading-relaxed text-slate-300">
-                            {item.location}
-                          </p>
-                        </div>
+                      <div>
+                        <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/45">
+                          Location
+                        </p>
+                        <p className="mt-1.5 text-sm leading-relaxed text-white/90">
+                          {item.location}
+                        </p>
                       </div>
                     </div>
+                  </div>
 
-                    {item.type && (
-                      <span className="mt-6 inline-flex rounded-full border border-blue-400/20 bg-blue-400/[0.07] px-3 py-1.5 text-xs font-medium text-blue-300">
-                        {item.type}
-                      </span>
-                    )}
-                  </aside>
-
-                  {/* Right: Main experience content */}
-                  <div className="lg:col-span-9">
-                    <div className="border-b border-white/[0.08] pb-7">
-                      <div className="flex flex-wrap items-center gap-2 text-sm text-slate-400">
-                        <FaBriefcase className="text-blue-400" />
-                        <span>Professional Experience</span>
-                      </div>
-
-                      <h3 className="mt-4 text-2xl font-bold leading-tight tracking-tight text-white sm:text-3xl">
-                        {item.role}
-                      </h3>
-
-                      <p className="mt-2 text-base font-semibold text-blue-300 sm:text-lg">
-                        {item.company}
-                      </p>
-
-                      <p className="mt-5 max-w-3xl text-sm leading-7 text-slate-400 sm:text-[15px]">
-                        {item.description}
-                      </p>
+                  <div className="mt-10 border-t border-white/10 pt-5">
+                    <div className="flex items-center gap-2 text-xs font-medium text-white/55">
+                      <FaBriefcase className="text-[#D5A58E]" />
+                      <span>Professional Journey</span>
                     </div>
+                  </div>
 
-                    {/* Responsibilities */}
-                    {item.responsibilities?.length > 0 && (
-                      <div className="py-7">
-                        <h4 className="text-xs font-bold uppercase tracking-[0.16em] text-slate-300">
+                  <div className="pointer-events-none absolute -bottom-16 -right-12 h-40 w-40 rounded-full border border-white/[0.06]" />
+                </aside>
+
+                {/* Right: Main Information */}
+                <div className="min-w-0 p-7 sm:p-9 lg:p-10">
+                  {/* Role */}
+                  <div className="border-b border-[#EAE7DF] pb-7">
+                    <p className="text-[11px] font-bold uppercase tracking-[0.17em] text-[#A45F45]">
+                      Position Held
+                    </p>
+
+                    <h3 className="mt-3 text-2xl font-bold leading-tight tracking-tight text-[#292D27] sm:text-3xl">
+                      {item.role}
+                    </h3>
+
+                    <p className="mt-4 max-w-2xl text-sm leading-7 text-[#62665D] sm:text-[15px]">
+                      {item.description}
+                    </p>
+                  </div>
+
+                  {/* Responsibilities */}
+                  {item.responsibilities?.length > 0 && (
+                    <div className="py-7">
+                      <div className="flex flex-wrap items-center justify-between gap-3">
+                        <h4 className="text-sm font-bold text-[#292D27]">
                           Key Responsibilities
                         </h4>
 
-                        <div className="mt-5 space-y-4">
-                          {item.responsibilities.map((responsibility, idx) => (
-                            <div key={idx} className="group flex gap-4">
-                              <span className="mt-0.5 shrink-0 font-mono text-xs text-blue-400/80">
-                                {String(idx + 1).padStart(2, "0")}
-                              </span>
-
-                              <p className="text-sm leading-7 text-slate-400 transition-colors duration-200 group-hover:text-slate-200 sm:text-[15px]">
-                                {responsibility}
-                              </p>
-                            </div>
-                          ))}
-                        </div>
+                        <span className="text-[11px] font-medium text-[#92948B]">
+                          {String(item.responsibilities.length).padStart(
+                            2,
+                            "0",
+                          )}{" "}
+                          Areas of Contribution
+                        </span>
                       </div>
-                    )}
 
-                    {/* Skills */}
-                    {item.skills?.length > 0 && (
-                      <div className="border-t border-white/[0.08] pt-6">
-                        <h4 className="text-xs font-bold uppercase tracking-[0.16em] text-slate-300">
-                          Skills & Technologies
-                        </h4>
-
-                        <div className="mt-4 flex flex-wrap gap-2">
-                          {item.skills.map((skill, idx) => (
-                            <span
-                              key={idx}
-                              className="rounded-lg border border-white/[0.08] bg-white/[0.035] px-3 py-1.5 text-xs font-medium text-slate-300 transition-colors duration-200 hover:border-blue-400/30 hover:bg-blue-400/[0.07] hover:text-blue-200"
-                            >
-                              {skill}
+                      <div className="mt-5 grid gap-x-7 gap-y-5 sm:grid-cols-2">
+                        {item.responsibilities.map((responsibility, idx) => (
+                          <div key={idx} className="flex items-start gap-3">
+                            <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#F3EDE7] text-[#A45F45]">
+                              <FaCheck className="text-[9px]" />
                             </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                  </div>
 
-                  {/* Divider between experiences */}
-                  {index !== experience.length - 1 && (
-                    <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/30 via-white/[0.08] to-transparent" />
+                            <p className="text-[13px] leading-6 text-[#62665D] sm:text-sm">
+                              {responsibility}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   )}
-                </article>
-              </Reveal>
+
+                  {/* Skills */}
+                  {item.skills?.length > 0 && (
+                    <div className="border-t border-[#EAE7DF] pt-6">
+                      <h4 className="text-xs font-bold uppercase tracking-[0.15em] text-[#454A40]">
+                        Skills & Technologies
+                      </h4>
+
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {item.skills.map((skill, idx) => (
+                          <span
+                            key={idx}
+                            className="rounded-md border border-[#E5E2D9] bg-[#F8F7F3] px-3 py-1.5 text-xs font-medium text-[#555A50] transition-all duration-200 hover:border-[#C99A83] hover:bg-[#F3EDE7] hover:text-[#8F503A]"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </motion.article>
             ))
           ) : (
-            <p className="py-10 text-center text-sm text-slate-400">
+            <p className="rounded-xl border border-[#E6E3DA] bg-white py-10 text-center text-sm text-[#62665D]">
               Experience details will be added soon.
             </p>
           )}
         </div>
-
-        {/* Closing statement */}
-        <Reveal>
-          <div className="mt-16 border-t border-white/[0.08] pt-8">
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <p className="max-w-2xl text-sm leading-7 text-slate-400">
-                Every experience is an opportunity to learn, contribute, and
-                grow into a better professional.
-              </p>
-
-              <a
-                href="#contact"
-                className="inline-flex w-fit items-center gap-2 text-sm font-semibold text-blue-300 transition-colors hover:text-cyan-300"
-              >
-                Let's work together
-                <FaArrowRight className="text-xs" />
-              </a>
-            </div>
-          </div>
-        </Reveal>
       </div>
     </section>
   );

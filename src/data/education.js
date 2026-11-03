@@ -1,10 +1,15 @@
 const education = [
   {
+    eyebrow: "EDUCATION",
+    heading: "Academic Background",
+    subheading:
+      "My academic foundation in software engineering, information systems, and data management.",
+
     institution: "Universitas Dian Nuswantoro",
     shortName: "UDINUS",
 
     degree: "Bachelor of Computer Science",
-    field: "Informatics Engineering - Software Engineering and Data (RPLD)",
+    field: "Informatics Engineering — Software Engineering and Data (RPLD)",
 
     type: "Undergraduate",
 
@@ -15,7 +20,7 @@ const education = [
     status: "Graduated",
 
     description:
-      "Completed an undergraduate degree in Informatics Engineering with an academic focus on software engineering, data, web application development, database management, and information systems.",
+      "Studied software engineering and data-oriented concepts, with practical experience in designing and developing web-based applications, managing relational databases, analyzing system requirements, and implementing information systems. Built a foundation in application development, database management, and structured problem-solving through academic coursework and project-based learning.",
 
     highlights: [
       "Software & Web Development",

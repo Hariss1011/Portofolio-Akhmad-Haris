@@ -4,38 +4,19 @@ const ToolBadge = ({ tool }) => {
   return (
     <div
       className="
-        flex
-        items-center
-        gap-3
-
-        px-5
-        py-3
-
-        rounded-xl
-
-        bg-white/[0.06]
-        border
-        border-white/10
-
-        shadow-sm
-
-        text-slate-200
-        font-medium
-
-        transition-all
-        duration-300
-
-        hover:-translate-y-1
-        hover:shadow-lg
-        hover:border-blue-500
-        hover:text-blue-300
-
-        cursor-default
+        flex min-h-[48px] items-center gap-2.5
+        rounded-xl border border-[#EAE9E2]
+        bg-[#FAFAF7] px-3 py-2.5
+        transition-all duration-200
+        hover:border-[#D7B9A6]
+        hover:bg-[#F3EDE7]
       "
     >
-      {Icon && <Icon className="text-lg" />}
+      {Icon && <Icon className="shrink-0 text-base text-[#8A796B]" />}
 
-      <span>{tool.name}</span>
+      <span className="text-xs font-semibold leading-5 text-[#50554C]">
+        {tool.name}
+      </span>
     </div>
   );
 };

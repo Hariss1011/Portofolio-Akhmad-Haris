@@ -1,75 +1,91 @@
-import SectionTitle from "../../common/SectionTitle";
+import { motion } from "framer-motion";
 import SkillCard from "./SkillCard";
 import ToolBadge from "./ToolBadge";
-import Reveal from "../../common/Reveal";
-import { StaggerContainer, StaggerItem } from "../../common/Stagger";
-
 import { skillCategories, tools } from "../../../data/skills";
 
 const Skills = () => {
   return (
-    <section
-      id="skills"
-      className="relative overflow-hidden bg-[#070a14] py-24 sm:py-28"
-    >
-      {/* Background Decoration */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -left-40 top-40 h-80 w-80 rounded-full bg-blue-500/[0.06] blur-[100px]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-40 bottom-20 h-80 w-80 rounded-full bg-cyan-500/[0.05] blur-[100px]"
-      />
+    <section id="skills" className="bg-[#F8F7F3] py-16 sm:py-20">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+        {/* SECTION HEADING */}
+        <div className="mb-9 sm:mb-11">
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#A45F45]">
+            TECHNICAL SKILLS
+          </p>
 
-      <div className="relative mx-auto max-w-7xl px-6">
-        {/* Section Heading */}
-        <Reveal>
-          <SectionTitle
-            subtitle="My Skills"
-            title="Technologies & Tools I Work With"
-            description="Technologies and tools I use to develop web applications, work with databases, and support data-driven solutions."
-          />
-        </Reveal>
+          <div className="mt-3 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
+            <h2 className="text-3xl font-bold tracking-tight text-[#242722] sm:text-4xl">
+              Skills & Technologies
+            </h2>
 
-        {/* Skill Categories */}
-        <StaggerContainer
-          className="mt-14 grid gap-6 lg:mt-16 lg:grid-cols-2 lg:gap-7"
-          stagger={0.12}
-        >
-          {skillCategories.map((category) => (
-            <StaggerItem key={category.title} className="h-full">
-              <SkillCard category={category} />
-            </StaggerItem>
+            <p className="max-w-md text-sm leading-6 text-[#62665D]">
+              Technical knowledge and tools I use to build web applications,
+              manage databases, and support data-related tasks.
+            </p>
+          </div>
+        </div>
+
+        {/* SKILL CATEGORIES */}
+        <div className="grid gap-4 lg:grid-cols-2 lg:gap-5">
+          {skillCategories.map((category, index) => (
+            <motion.div
+              key={category.title}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.12 }}
+              transition={{
+                duration: 0.45,
+                delay: index * 0.07,
+              }}
+            >
+              <SkillCard category={category} index={index} />
+            </motion.div>
           ))}
-        </StaggerContainer>
+        </div>
 
-        {/* Development Tools */}
-        <div className="mt-20 border-t border-white/[0.08] pt-16 sm:mt-24 sm:pt-20">
-          <Reveal className="mx-auto mb-10 max-w-2xl text-center">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-400">
-              My Workspace
-            </p>
+        {/* DEVELOPMENT TOOLS */}
+        <div className="mt-8 overflow-hidden rounded-2xl border border-[#E4E3DC] bg-white">
+          <div className="flex flex-col gap-5 p-5 sm:p-7 lg:flex-row lg:items-center lg:gap-10">
+            {/* TOOLS INTRO */}
+            <div className="shrink-0 lg:w-64">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#EEE5DF] text-[#A45F45]">
+                  <span className="text-lg font-bold">&lt;/&gt;</span>
+                </div>
 
-            <h3 className="mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl">
-              Development Tools
-            </h3>
+                <div>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.17em] text-[#A45F45]">
+                    WORKSPACE
+                  </p>
+                  <h3 className="mt-0.5 text-lg font-bold tracking-tight text-[#242722]">
+                    Development Tools
+                  </h3>
+                </div>
+              </div>
 
-            <p className="mt-4 text-sm leading-7 text-slate-400 sm:text-base">
-              Software and tools that support my daily development workflow.
-            </p>
-          </Reveal>
+              <p className="mt-2 text-xs leading-5 text-[#74776E]">
+                Tools supporting my development and testing workflow.
+              </p>
+            </div>
 
-          <StaggerContainer
-            className="flex flex-wrap justify-center gap-3 sm:gap-4"
-            stagger={0.04}
-          >
-            {tools.map((tool) => (
-              <StaggerItem key={tool} y={12}>
-                <ToolBadge tool={tool} />
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
+            {/* TOOL LIST */}
+            <div className="grid flex-1 grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
+              {tools.map((tool, index) => (
+                <motion.div
+                  key={tool.name}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.35,
+                    delay: index * 0.05,
+                  }}
+                >
+                  <ToolBadge tool={tool} />
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

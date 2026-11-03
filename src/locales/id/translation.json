@@ -1,0 +1,334 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "about": "Tentang Saya",
+    "education": "Pendidikan",
+    "skills": "Keahlian",
+    "experience": "Pengalaman",
+    "certificates": "Sertifikat",
+    "projects": "Proyek",
+    "contact": "Kontak",
+    "downloadCv": "Unduh CV"
+  },
+  "common": {
+    "viewProjects": "Lihat Proyek",
+    "viewDetails": "Lihat Detail",
+    "viewGithub": "Lihat GitHub",
+    "liveDemo": "Demo Langsung",
+    "learnMore": "Selengkapnya",
+    "completed": "Selesai",
+    "inDevelopment": "Dalam Pengembangan",
+    "portfolioProject": "Proyek Portofolio",
+    "technologyStack": "Teknologi yang Digunakan",
+    "keyFeatures": "Fitur Utama",
+    "projectOverview": "Gambaran Proyek",
+    "developmentProcess": "Proses Pengembangan",
+    "challenges": "Tantangan",
+    "solutions": "Solusi",
+    "applicationShowcase": "Tampilan Aplikasi",
+    "backToProjects": "Kembali ke Proyek",
+    "contactMe": "Hubungi Saya",
+    "downloadCV": "Unduh CV",
+    "allRightsReserved": "Hak cipta dilindungi."
+  },
+  "hero": {
+    "greeting": "Halo, saya",
+    "role": "Pengembangan Web & Pengelolaan Data",
+    "description": "Lulusan Teknik Informatika yang memiliki minat pada pengembangan web, sistem informasi, pengelolaan basis data, dan analisis data. Tertarik membangun solusi digital yang bermanfaat serta terus mengembangkan kemampuan teknis.",
+    "availability": "Terbuka untuk peluang",
+    "availabilityDescription": "Tersedia untuk pekerjaan penuh waktu, program magang, dan kolaborasi profesional."
+  },
+  "about": {
+    "eyebrow": "Kenali Saya Lebih Dekat",
+    "title": "Tentang Saya",
+    "description": "Saya merupakan lulusan Teknik Informatika yang memiliki minat dalam pengembangan aplikasi berbasis web dan sistem informasi. Saya senang mempelajari bagaimana teknologi dan data dapat membantu menyelesaikan permasalahan di dunia nyata.",
+    "experienceTitle": "Pengalaman Magang",
+    "experienceDescription": "Selama menjalani magang di BAPPERIDA, saya mendukung operasional TI, administrasi data, serta pengembangan dan pemeliharaan aplikasi berbasis web.",
+    "capabilitiesTitle": "Kemampuan Utama",
+    "interestsTitle": "Bidang yang Diminati"
+  },
+  "education": {
+    "eyebrow": "Latar Belakang Akademik",
+    "title": "Pendidikan",
+    "degree": "Sarjana Teknik Informatika",
+    "university": "Universitas Dian Nuswantoro",
+    "focusTitle": "Fokus Akademik",
+    "focus": [
+      "Rekayasa Perangkat Lunak",
+      "Pengembangan Aplikasi Web",
+      "Manajemen Basis Data",
+      "Sistem Informasi"
+    ],
+    "gpa": "IPK"
+  },
+  "skills": {
+    "eyebrow": "Keahlian Teknis",
+    "title": "Keahlian",
+    "description": "Teknologi dan perangkat yang pernah saya gunakan dalam kegiatan akademik, magang, dan proyek pribadi.",
+    "frontend": "Pengembangan Frontend",
+    "backend": "Pengembangan Backend",
+    "database": "Manajemen Basis Data",
+    "tools": "Tools dan Teknologi"
+  },
+  "experience": {
+    "eyebrow": "Perjalanan Profesional",
+    "title": "Pengalaman",
+    "position": "IT Support Intern",
+    "organization": "BAPPERIDA",
+    "description": "Mendukung operasional teknologi informasi dan kegiatan administrasi, termasuk instalasi perangkat lunak, pemecahan masalah, pengelolaan data, serta pengembangan dan pemeliharaan aplikasi berbasis web."
+  },
+  "certificates": {
+    "eyebrow": "Pembelajaran dan Pengakuan",
+    "title": "Sertifikat",
+    "bnsp": "Sertifikasi BNSP Pengembang Web",
+    "toefl": "Sertifikat TOEFL",
+    "workshop": "Sertifikat Workshop"
+  },
+  "projects": {
+    "eyebrow": "Karya Pilihan",
+    "title": "Proyek",
+    "description": "Kumpulan aplikasi dan sistem informasi yang saya kembangkan untuk menerapkan kemampuan teknis dan menyelesaikan permasalahan praktis.",
+    "featured": "Proyek Unggulan",
+    "moreProjects": "Proyek Lainnya",
+    "allProjects": "Semua Proyek",
+    "detail": {
+      "overview": "Gambaran Proyek",
+      "technologies": "Teknologi yang Digunakan",
+      "features": "Fitur Utama",
+      "process": "Proses Pengembangan",
+      "showcase": "Tampilan Aplikasi",
+      "challengeDescription": "Permasalahan yang dihadapi selama proses pengembangan.",
+      "solutionDescription": "Pendekatan yang diterapkan untuk mengatasi tantangan tersebut."
+    },
+    "items": {
+      "stockwise": {
+        "subtitle": "Sistem Manajemen Stok Barang",
+        "category": "Manajemen Inventaris",
+        "overview": "Sistem manajemen inventaris berbasis web yang dirancang untuk mengelola data produk, memantau pergerakan stok, mengelola pemasok, dan menghasilkan laporan inventaris.",
+        "description": "StockWise merupakan aplikasi manajemen inventaris yang dikembangkan menggunakan Laravel, PHP, dan MySQL. Sistem ini membantu admin dan staf dalam mengelola informasi produk, mencatat transaksi stok, memantau jumlah persediaan, serta menghasilkan laporan. Sistem juga menerapkan validasi data untuk menjaga konsistensi stok dan mencegah jumlah persediaan menjadi negatif.",
+        "features": [
+          "Manajemen Produk, Kategori, dan Pemasok",
+          "Transaksi Barang Masuk dan Keluar",
+          "Penyesuaian Stok",
+          "Perhitungan Stok Otomatis",
+          "Pencegahan Stok Negatif",
+          "Laporan Riwayat Stok",
+          "Ekspor Laporan CSV",
+          "Impor Produk dari Excel",
+          "Manajemen Hak Akses Admin dan Staf",
+          "Log Aktivitas"
+        ],
+        "challenges": [
+          "Menjaga keakuratan jumlah stok pada berbagai transaksi inventaris.",
+          "Mencegah ketidakkonsistenan data stok ketika beberapa transaksi diproses.",
+          "Menangani proses impor produk dan validasi data spreadsheet."
+        ],
+        "solutions": [
+          "Menerapkan perhitungan stok berdasarkan stok awal dan transaksi yang tercatat.",
+          "Menggunakan transaksi database dan penguncian baris untuk menjaga konsistensi stok.",
+          "Menambahkan validasi untuk duplikasi SKU, data produk, dan transaksi inventaris."
+        ],
+        "screenshots": [
+          "Dashboard",
+          "Manajemen Produk",
+          "Transaksi Stok",
+          "Laporan Inventaris",
+          "Impor Produk Excel"
+        ]
+      },
+      "opstrack": {
+        "subtitle": "Sistem Pemantauan Kinerja Operasional",
+        "category": "Manajemen Operasional",
+        "overview": "Sistem pemantauan operasional yang membantu organisasi mengelola tugas, melacak progres pekerjaan, memantau tenggat waktu, memverifikasi penyelesaian tugas, dan mengevaluasi kinerja operasional.",
+        "description": "OpsTrack merupakan aplikasi pemantauan kinerja operasional berbasis web yang dikembangkan menggunakan Laravel dan MySQL. Sistem ini menyediakan pengelolaan tugas terpusat, pelacakan progres, riwayat status, verifikasi tugas, dan pelaporan melalui dashboard. Hak akses berbasis peran digunakan untuk mengatur tanggung jawab Admin, Manager, dan Staff.",
+        "features": [
+          "Dashboard Operasional",
+          "Manajemen Tugas dan Tenggat Waktu",
+          "Penugasan Tugas",
+          "Pembaruan Progres",
+          "Riwayat Status Tugas",
+          "Verifikasi Penyelesaian Tugas",
+          "Hak Akses Admin, Manager, dan Staff",
+          "Pemantauan KPI",
+          "Laporan Operasional",
+          "Notifikasi Aktivitas"
+        ],
+        "challenges": [
+          "Merancang alur kerja terstruktur mulai dari penugasan hingga verifikasi penyelesaian tugas.",
+          "Menjaga riwayat perubahan status tugas agar dapat diandalkan.",
+          "Menyajikan indikator kinerja operasional dalam satu dashboard terpusat."
+        ],
+        "solutions": [
+          "Menerapkan alur kerja tugas berbasis peran untuk Admin, Manager, dan Staff.",
+          "Mencatat perubahan status tugas untuk mendukung pelacakan progres dan akuntabilitas.",
+          "Mengembangkan indikator dashboard dan laporan untuk mendukung pemantauan operasional."
+        ],
+        "screenshots": [
+          "Dashboard Operasional",
+          "Manajemen Tugas",
+          "Detail Progres Tugas",
+          "Laporan Kinerja",
+          "Manajemen Departemen"
+        ]
+      },
+      "peoplecore": {
+        "subtitle": "Sistem Informasi Kepegawaian",
+        "category": "Manajemen Sumber Daya Manusia",
+        "overview": "Sistem informasi kepegawaian yang mengintegrasikan data karyawan, informasi organisasi, kehadiran, pengelolaan cuti, dan laporan HR dalam satu platform.",
+        "description": "PeopleCore merupakan aplikasi HRIS yang dikembangkan menggunakan Laravel dan MySQL untuk mendukung administrasi kepegawaian secara terstruktur. Sistem ini mengintegrasikan data karyawan, departemen, jabatan, riwayat hubungan kerja, kehadiran, pengajuan cuti, saldo cuti, dan laporan HR. Hak akses berbasis peran diterapkan untuk pengguna Admin, HR, dan Employee.",
+        "features": [
+          "Manajemen Data Karyawan",
+          "Manajemen Departemen dan Jabatan",
+          "Riwayat Status Kepegawaian",
+          "Manajemen Kehadiran",
+          "Pengajuan Cuti",
+          "Alur Persetujuan Cuti",
+          "Manajemen Saldo Cuti",
+          "Laporan HR",
+          "Ekspor Laporan CSV",
+          "Hak Akses Admin, HR, dan Employee",
+          "Validasi Input dan Konsistensi Data"
+        ],
+        "challenges": [
+          "Merancang struktur data relasional untuk informasi karyawan dan organisasi.",
+          "Mengelola pengajuan, persetujuan, dan saldo cuti secara konsisten.",
+          "Menerapkan pembatasan akses berdasarkan peran pengguna."
+        ],
+        "solutions": [
+          "Menerapkan struktur database relasional yang menghubungkan karyawan, departemen, dan jabatan.",
+          "Mengembangkan alur pengelolaan cuti yang dilengkapi persetujuan dan pelacakan saldo.",
+          "Menerapkan validasi dan otorisasi berbasis peran untuk menjaga konsistensi data dan kontrol akses."
+        ],
+        "screenshots": [
+          "Dashboard HR",
+          "Manajemen Karyawan",
+          "Detail Karyawan",
+          "Manajemen Kehadiran",
+          "Pengajuan Cuti",
+          "Persetujuan Cuti",
+          "Saldo Cuti"
+        ]
+      },
+      "bengtix": {
+        "subtitle": "Sistem Manajemen Tiket Acara",
+        "category": "Manajemen Acara",
+        "overview": "Sistem manajemen tiket berbasis web yang dirancang untuk mengelola informasi acara, kategori tiket, lokasi, pesanan, dan aktivitas administrasi.",
+        "description": "BengTix merupakan aplikasi manajemen tiket acara yang dikembangkan menggunakan Laravel, PHP, dan MySQL. Sistem ini berfokus pada pengelolaan data acara dan mendukung alur kerja administrasi melalui pengelolaan terpusat untuk acara, jenis tiket, kategori, lokasi, dan data terkait tiket.",
+        "features": [
+          "Manajemen Acara",
+          "Manajemen Jenis Tiket",
+          "Manajemen Kategori",
+          "Manajemen Lokasi",
+          "Halaman Acara untuk Pengguna",
+          "Manajemen Pesanan",
+          "Dashboard Administrasi",
+          "Pencatatan Aktivitas dan Riwayat"
+        ],
+        "challenges": [
+          "Mengorganisasi informasi acara dan tiket ke dalam aplikasi yang terstruktur.",
+          "Menjaga konsistensi hubungan antara acara, lokasi, kategori, dan jenis tiket.",
+          "Meningkatkan kemudahan penggunaan dan konsistensi visual antarmuka administrasi."
+        ],
+        "solutions": [
+          "Mengorganisasi data terkait acara melalui modul pengelolaan yang terpisah.",
+          "Menggunakan struktur database relasional untuk menghubungkan informasi acara dan data tiket.",
+          "Meningkatkan antarmuka melalui komponen yang dapat digunakan kembali dan sistem desain yang konsisten."
+        ],
+        "screenshots": [
+          "Dashboard Admin",
+          "Daftar Acara",
+          "Detail Acara",
+          "Halaman Utama Pengguna",
+          "Manajemen Acara",
+          "Manajemen Tiket",
+          "Pemesanan Tiket",
+          "Riwayat Pesanan"
+        ]
+      },
+      "sismenkes": {
+        "subtitle": "Sistem Manajemen Kesehatan",
+        "category": "Sistem Informasi Kesehatan",
+        "overview": "Sistem manajemen kesehatan yang memusatkan pendaftaran pasien, informasi dokter, jadwal pemeriksaan, dan inventaris obat.",
+        "description": "SISMENKES merupakan sistem informasi kesehatan berbasis web yang dikembangkan menggunakan Laravel dan MySQL. Sistem ini mendukung administrasi layanan kesehatan melalui pengelolaan data pasien, informasi dokter, pengaturan jadwal, dan inventaris obat. Aplikasi menyediakan antarmuka terintegrasi untuk mengelola informasi terkait layanan kesehatan.",
+        "features": [
+          "Pendaftaran Pasien",
+          "Manajemen Data Pasien",
+          "Manajemen Data Dokter",
+          "Manajemen Jadwal Dokter",
+          "Manajemen Inventaris Obat",
+          "Dashboard Administrasi"
+        ],
+        "challenges": [
+          "Menghubungkan informasi pasien, dokter, jadwal, dan obat dalam database relasional.",
+          "Mengorganisasi berbagai modul administrasi layanan kesehatan.",
+          "Meningkatkan antarmuka agar sistem lebih mudah digunakan."
+        ],
+        "solutions": [
+          "Merancang struktur database relasional untuk informasi terkait layanan kesehatan.",
+          "Mengorganisasi fungsi aplikasi ke dalam modul pengelolaan khusus.",
+          "Meningkatkan antarmuka dan pengalaman pendaftaran agar penggunaan sistem lebih konsisten."
+        ],
+        "screenshots": [
+          "Halaman Landing",
+          "Dashboard Admin",
+          "Dashboard Dokter",
+          "Dashboard Pasien",
+          "Manajemen Pasien",
+          "Manajemen Dokter",
+          "Pendaftaran Poli",
+          "Pemeriksaan Medis"
+        ]
+      },
+      "sistem-pengajuan-surat-desa": {
+        "subtitle": "Sistem Informasi Administrasi Desa",
+        "category": "Sistem Informasi Pelayanan Publik",
+        "overview": "Sistem administrasi desa berbasis web yang memungkinkan warga mengajukan permohonan surat secara online dan membantu perangkat desa mengelola layanan administrasi.",
+        "description": "Aplikasi ini dikembangkan sebagai proyek tugas akhir menggunakan Laravel dan MySQL. Sistem mendigitalisasi proses pengajuan surat desa serta mendukung kegiatan administrasi melalui pengelolaan data warga, pengajuan online, pembuatan dokumen, dan pemantauan administrasi.",
+        "features": [
+          "Autentikasi Multi-pengguna",
+          "Manajemen Data Warga",
+          "Pengajuan Surat Online",
+          "Pembuatan Dokumen PDF",
+          "Dashboard Administrasi",
+          "Manajemen Berita"
+        ],
+        "challenges": [
+          "Merancang struktur database yang efisien untuk administrasi desa.",
+          "Menerapkan autentikasi dan kontrol akses berbasis peran.",
+          "Menghasilkan dokumen PDF administrasi secara dinamis."
+        ],
+        "solutions": [
+          "Merancang tabel MySQL relasional untuk aplikasi.",
+          "Menerapkan autentikasi dan middleware untuk mengatur hak akses pengguna.",
+          "Mengintegrasikan pembuatan PDF untuk mendukung pemrosesan dokumen administrasi."
+        ],
+        "screenshots": [
+          "Halaman Login",
+          "Dashboard Desa",
+          "Daftar Pengajuan",
+          "Pengajuan Surat"
+        ]
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Mari Terhubung",
+    "title": "Kontak",
+    "information": "Informasi Kontak",
+    "getInTouch": "Hubungi saya secara langsung",
+    "headline": "Saya senang menerima pesan dari Anda.",
+    "description": "Jika Anda seorang recruiter, calon pemberi kerja, atau rekan kolaborasi, silakan hubungi saya melalui salah satu kanal berikut.",
+    "opportunity": "Peluang Profesional",
+    "opportunityHeadline": "Siap berkontribusi, belajar, dan berkembang.",
+    "opportunityDescription": "Sebagai lulusan Teknik Informatika, saya memiliki dasar kemampuan dalam pengembangan web, manajemen basis data, sistem informasi, dan pengolahan data. Saya ingin menerapkan kemampuan tersebut, berkontribusi dalam tim, dan terus berkembang melalui tantangan di dunia kerja.",
+    "findOnline": "Temukan Saya Secara Online",
+    "profiles": "Profil Profesional",
+    "profilesDescription": "Lihat karya saya dan terhubung melalui platform berikut."
+  },
+  "footer": {
+    "brand": "Membangun solusi digital yang bermanfaat melalui teknologi dan pembelajaran berkelanjutan.",
+    "explore": "Jelajahi",
+    "contact": "Kontak",
+    "copyright": "Dirancang dan dikembangkan oleh Akhmad Haris."
+  }
+}

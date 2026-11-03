@@ -1,0 +1,334 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "education": "Education",
+    "skills": "Skills",
+    "experience": "Experience",
+    "certificates": "Certificates",
+    "projects": "Projects",
+    "contact": "Contact",
+    "downloadCv": "Download CV"
+  },
+  "common": {
+    "viewProjects": "View Projects",
+    "viewDetails": "View Details",
+    "viewGithub": "View GitHub",
+    "liveDemo": "Live Demo",
+    "learnMore": "Learn More",
+    "completed": "Completed",
+    "inDevelopment": "In Development",
+    "portfolioProject": "Portfolio Project",
+    "technologyStack": "Technology Stack",
+    "keyFeatures": "Key Features",
+    "projectOverview": "Project Overview",
+    "developmentProcess": "Development Process",
+    "challenges": "Challenges",
+    "solutions": "Solutions",
+    "applicationShowcase": "Application Showcase",
+    "backToProjects": "Back to Projects",
+    "contactMe": "Contact Me",
+    "downloadCV": "Download CV",
+    "allRightsReserved": "All rights reserved."
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "role": "Web Development & Data Management Enthusiast",
+    "description": "An Informatics Engineering graduate interested in web development, information systems, database management, and data analysis. Passionate about building useful digital solutions and continuously improving technical skills.",
+    "availability": "Open to opportunities",
+    "availabilityDescription": "Available for full-time roles, internships, and professional collaborations."
+  },
+  "about": {
+    "eyebrow": "Get to Know Me",
+    "title": "About Me",
+    "description": "I am an Informatics Engineering graduate with an interest in developing web-based applications and information systems. I enjoy understanding how technology and data can help solve real-world problems.",
+    "experienceTitle": "Internship Experience",
+    "experienceDescription": "During my internship at BAPPERIDA, I supported IT operations, data administration, and the development and maintenance of web-based applications.",
+    "capabilitiesTitle": "Core Capabilities",
+    "interestsTitle": "Areas of Interest"
+  },
+  "education": {
+    "eyebrow": "Academic Background",
+    "title": "Education",
+    "degree": "Bachelor of Informatics Engineering",
+    "university": "Universitas Dian Nuswantoro",
+    "focusTitle": "Academic Focus",
+    "focus": [
+      "Software Engineering",
+      "Web Application Development",
+      "Database Management",
+      "Information Systems"
+    ],
+    "gpa": "GPA"
+  },
+  "skills": {
+    "eyebrow": "Technical Expertise",
+    "title": "Skills",
+    "description": "Technologies and tools I have used throughout my academic, internship, and personal projects.",
+    "frontend": "Frontend Development",
+    "backend": "Backend Development",
+    "database": "Database Management",
+    "tools": "Tools & Technologies"
+  },
+  "experience": {
+    "eyebrow": "Professional Journey",
+    "title": "Experience",
+    "position": "IT Support Intern",
+    "organization": "BAPPERIDA",
+    "description": "Supported information technology operations and administrative activities, including software installation, troubleshooting, data management, and web application development and maintenance."
+  },
+  "certificates": {
+    "eyebrow": "Learning & Recognition",
+    "title": "Certificates",
+    "bnsp": "BNSP Web Developer Certification",
+    "toefl": "TOEFL Certificate",
+    "workshop": "Workshop Certificate"
+  },
+  "projects": {
+    "eyebrow": "Selected Works",
+    "title": "Projects",
+    "description": "A selection of applications and information systems I have developed to apply my technical skills and solve practical problems.",
+    "featured": "Featured Projects",
+    "moreProjects": "More Projects",
+    "allProjects": "All Projects",
+    "detail": {
+      "overview": "Project Overview",
+      "technologies": "Technology Stack",
+      "features": "Key Features",
+      "process": "Development Process",
+      "showcase": "Application Showcase",
+      "challengeDescription": "Problems encountered during development.",
+      "solutionDescription": "Approaches implemented to address those challenges."
+    },
+    "items": {
+      "stockwise": {
+        "subtitle": "Inventory Management System",
+        "category": "Inventory Management",
+        "overview": "A web-based inventory management system designed to organize product data, monitor stock movements, manage suppliers, and generate inventory reports.",
+        "description": "StockWise is an inventory management application developed using Laravel, PHP, and MySQL. The system helps administrators and staff manage product information, record stock transactions, monitor inventory levels, and generate reports. It also implements data validation to maintain stock consistency and prevent negative inventory.",
+        "features": [
+          "Product, Category, and Supplier Management",
+          "Stock In and Stock Out Transactions",
+          "Stock Adjustment",
+          "Automatic Stock Calculation",
+          "Negative Stock Prevention",
+          "Historical Stock Reports",
+          "CSV Report Export",
+          "Excel Product Import",
+          "Admin and Staff Role Management",
+          "Activity Logs"
+        ],
+        "challenges": [
+          "Maintaining accurate stock quantities across multiple inventory transactions.",
+          "Preventing inconsistent stock data when multiple transactions are processed.",
+          "Handling product imports and validating spreadsheet data."
+        ],
+        "solutions": [
+          "Implemented stock calculations based on initial stock and recorded transactions.",
+          "Used database transactions and row locking to protect stock consistency.",
+          "Added validation for SKU duplication, product data, and inventory transactions."
+        ],
+        "screenshots": [
+          "Dashboard",
+          "Product Management",
+          "Stock Transactions",
+          "Inventory Reports",
+          "Excel Product Import"
+        ]
+      },
+      "opstrack": {
+        "subtitle": "Operational Performance Monitoring System",
+        "category": "Operational Management",
+        "overview": "An operational monitoring system that helps organizations manage tasks, track work progress, monitor deadlines, verify task completion, and evaluate operational performance.",
+        "description": "OpsTrack is a web-based operational performance monitoring application developed using Laravel and MySQL. The system provides centralized task management, progress tracking, status history, task verification, and dashboard reporting. It uses role-based access control to organize responsibilities between Admin, Manager, and Staff.",
+        "features": [
+          "Operational Dashboard",
+          "Task and Deadline Management",
+          "Task Assignment",
+          "Progress Updates",
+          "Task Status History",
+          "Task Completion Verification",
+          "Admin, Manager, and Staff Roles",
+          "KPI Monitoring",
+          "Operational Reports",
+          "Activity Notifications"
+        ],
+        "challenges": [
+          "Designing a structured workflow from task assignment to completion verification.",
+          "Maintaining a reliable history of task status changes.",
+          "Presenting operational performance indicators in a centralized dashboard."
+        ],
+        "solutions": [
+          "Implemented role-based task workflows for Admin, Manager, and Staff.",
+          "Recorded task status changes to support progress tracking and accountability.",
+          "Developed dashboard indicators and reports to support operational monitoring."
+        ],
+        "screenshots": [
+          "Operational Dashboard",
+          "Task Management",
+          "Task Progress Details",
+          "Performance Reports",
+          "Department Management"
+        ]
+      },
+      "peoplecore": {
+        "subtitle": "Human Resource Information System",
+        "category": "Human Resource Management",
+        "overview": "A human resource information system that integrates employee records, organizational data, attendance, leave management, and HR reporting in one platform.",
+        "description": "PeopleCore is an HRIS application developed using Laravel and MySQL to support structured employee administration. The system integrates employee records, departments, positions, employment history, attendance, leave requests, leave balances, and HR reports. Role-based access is implemented for Admin, HR, and Employee users.",
+        "features": [
+          "Employee Data Management",
+          "Department and Position Management",
+          "Employment Status History",
+          "Attendance Management",
+          "Leave Request Submission",
+          "Leave Approval Workflow",
+          "Leave Balance Management",
+          "HR Reports",
+          "CSV Report Export",
+          "Admin, HR, and Employee Roles",
+          "Input Validation and Data Consistency"
+        ],
+        "challenges": [
+          "Designing relational data structures for employee and organizational information.",
+          "Managing leave requests, approvals, and leave balances consistently.",
+          "Applying access restrictions based on user roles."
+        ],
+        "solutions": [
+          "Implemented relational database structures connecting employees, departments, and positions.",
+          "Developed leave management workflows with approval and balance tracking.",
+          "Applied validation and role-based authorization to maintain data consistency and access control."
+        ],
+        "screenshots": [
+          "HR Dashboard",
+          "Employee Management",
+          "Employee Details",
+          "Attendance Management",
+          "Leave Request",
+          "Leave Approval",
+          "Leave Balance"
+        ]
+      },
+      "bengtix": {
+        "subtitle": "Event Ticket Management System",
+        "category": "Event Management",
+        "overview": "A web-based ticket management system designed to organize event information, ticket categories, locations, orders, and administrative activities.",
+        "description": "BengTix is an event ticket management application developed using Laravel, PHP, and MySQL. The system focuses on organizing event data and supporting administrative workflows through centralized management of events, ticket types, categories, locations, and ticket-related records.",
+        "features": [
+          "Event Management",
+          "Ticket Type Management",
+          "Category Management",
+          "Location Management",
+          "User Event Pages",
+          "Order Management",
+          "Administrative Dashboard",
+          "Activity and History Records"
+        ],
+        "challenges": [
+          "Organizing event and ticket information into a structured application.",
+          "Maintaining consistent relationships between events, locations, categories, and ticket types.",
+          "Improving the usability and visual consistency of administrative interfaces."
+        ],
+        "solutions": [
+          "Organized event-related data through separate management modules.",
+          "Used relational database structures to connect event information and ticket records.",
+          "Improved the interface through reusable components and a consistent design system."
+        ],
+        "screenshots": [
+          "Admin Dashboard",
+          "Event List",
+          "Event Details",
+          "User Homepage",
+          "Event Management",
+          "Ticket Management",
+          "Ticket Booking",
+          "Order History"
+        ]
+      },
+      "sismenkes": {
+        "subtitle": "Healthcare Management System",
+        "category": "Healthcare Information System",
+        "overview": "A healthcare management system that centralizes patient registration, doctor information, medical schedules, and medicine inventory.",
+        "description": "SISMENKES is a web-based healthcare information system developed using Laravel and MySQL. It supports healthcare administration through patient data management, doctor information, schedule management, and medicine inventory. The application provides an integrated interface for managing healthcare-related information.",
+        "features": [
+          "Patient Registration",
+          "Patient Data Management",
+          "Doctor Data Management",
+          "Doctor Schedule Management",
+          "Medicine Inventory Management",
+          "Administrative Dashboard"
+        ],
+        "challenges": [
+          "Connecting patient, doctor, schedule, and medicine information in a relational database.",
+          "Organizing different healthcare administration modules.",
+          "Improving the interface to make the system easier to use."
+        ],
+        "solutions": [
+          "Designed relational database structures for healthcare-related information.",
+          "Organized application functionality into dedicated management modules.",
+          "Improved the interface and registration experience to provide a more consistent user experience."
+        ],
+        "screenshots": [
+          "Landing Page",
+          "Admin Dashboard",
+          "Doctor Dashboard",
+          "Patient Dashboard",
+          "Patient Management",
+          "Doctor Management",
+          "Clinic Registration",
+          "Medical Examination"
+        ]
+      },
+      "sistem-pengajuan-surat-desa": {
+        "subtitle": "Village Administration Information System",
+        "category": "Public Service Information System",
+        "overview": "A web-based village administration system that enables residents to submit certificate requests online and helps village staff manage administrative services.",
+        "description": "This application was developed as an undergraduate final project using Laravel and MySQL. It digitizes the village certificate submission process and supports administrative activities through resident management, online submissions, document generation, and administrative monitoring.",
+        "features": [
+          "Multi-user Authentication",
+          "Resident Management",
+          "Online Certificate Submission",
+          "PDF Document Generation",
+          "Administrative Dashboard",
+          "News Management"
+        ],
+        "challenges": [
+          "Designing an efficient database structure for village administration.",
+          "Implementing role-based authentication and access control.",
+          "Generating administrative PDF documents dynamically."
+        ],
+        "solutions": [
+          "Designed relational MySQL tables for the application.",
+          "Implemented authentication and middleware to manage user access.",
+          "Integrated PDF generation to support administrative document processing."
+        ],
+        "screenshots": [
+          "Login Page",
+          "Village Dashboard",
+          "Application List",
+          "Certificate Request"
+        ]
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Get in Touch",
+    "title": "Contact",
+    "information": "Contact Information",
+    "getInTouch": "Get in touch directly",
+    "headline": "I'd love to hear from you.",
+    "description": "Whether you're a recruiter, potential employer, or collaborator, feel free to reach out through any of the following channels.",
+    "opportunity": "Professional Opportunity",
+    "opportunityHeadline": "Ready to contribute, learn, and grow.",
+    "opportunityDescription": "As an Informatics Engineering graduate, I have a foundation in web development, database management, information systems, and data processing. I'm eager to apply these skills, contribute to a team, and develop through real-world challenges.",
+    "findOnline": "Find Me Online",
+    "profiles": "Professional Profiles",
+    "profilesDescription": "Explore my work and connect with me through these platforms."
+  },
+  "footer": {
+    "brand": "Building useful digital solutions through technology and continuous learning.",
+    "explore": "Explore",
+    "contact": "Contact",
+    "copyright": "Designed and developed by Akhmad Haris."
+  }
+}

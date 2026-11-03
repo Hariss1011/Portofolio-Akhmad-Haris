@@ -1,364 +1,191 @@
 import education from "../../../data/education";
-
-import SectionTitle from "../../common/SectionTitle";
-import Card from "../../common/Card";
-import Badge from "../../common/Badge";
-import Reveal from "../../common/Reveal";
-import { StaggerContainer, StaggerItem } from "../../common/Stagger";
-
+import { motion } from "framer-motion";
 import {
   FaGraduationCap,
-  FaCode,
-  FaDatabase,
-  FaLayerGroup,
-  FaCheckCircle,
   FaCalendarAlt,
   FaAward,
+  FaExternalLinkAlt,
+  FaCode,
+  FaDatabase,
+  FaProjectDiagram,
 } from "react-icons/fa";
 
-const academicIcons = [FaCode, FaDatabase, FaLayerGroup, FaGraduationCap];
+const academicIcons = [FaCode, FaDatabase, FaProjectDiagram, FaGraduationCap];
 
 const Education = () => {
-  const educationItem = education[0];
+  const item = education[0];
 
   return (
-    <section
-      id="education"
-      className="
-        relative overflow-hidden
-        bg-[#080e1a]
-        py-20 sm:py-24 lg:py-28
-      "
-    >
-      {/* BACKGROUND */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 overflow-hidden"
-      >
-        <div className="absolute -left-48 top-20 h-80 w-80 rounded-full bg-blue-600/[0.08] blur-[120px]" />
-        <div className="absolute -right-48 bottom-10 h-80 w-80 rounded-full bg-cyan-500/[0.06] blur-[120px]" />
-      </div>
+    <section id="education" className="bg-[#F8F7F3] py-16 sm:py-20">
+      <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
+        {/* SECTION HEADING */}
+        <div className="mb-9 flex flex-col gap-3 sm:mb-11">
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#A45F45]">
+            {item.eyebrow}
+          </p>
 
-      {/* CONTENT */}
-      <div
-        className="
-          relative mx-auto w-full max-w-7xl
-          px-5 sm:px-8 lg:px-10
-        "
-      >
-        {/* SECTION TITLE */}
-        <Reveal>
-          <SectionTitle
-            subtitle="Education"
-            title="The foundation behind my technical journey."
-            description="My academic background has shaped my understanding of software development, information systems, databases, and analytical problem solving."
-          />
-        </Reveal>
+          <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
+            <h2 className="text-3xl font-bold tracking-tight text-[#242722] sm:text-4xl">
+              {item.heading}
+            </h2>
+
+            <p className="max-w-md text-sm leading-6 text-[#62665D]">
+              {item.subheading}
+            </p>
+          </div>
+        </div>
 
         {/* EDUCATION CONTENT */}
-        <Reveal y={20} className="mx-auto mt-12 max-w-6xl lg:mt-16">
-          <Card
-            hover={false}
-            className="
-              relative overflow-hidden
-              border-white/[0.08]
-              bg-[#0c1423]
-              p-0
-            "
-          >
-            {/* TOP ACCENT */}
-            <div className="h-1 w-full bg-linear-to-r from-blue-500 via-cyan-400 to-blue-500" />
-
-            {/* MAIN GRID */}
-            <div className="grid lg:grid-cols-[0.25fr_0.64fr]">
-              {/* UNIVERSITY PANEL */}
-              <div
-                className="
-    relative flex flex-col justify-between
-    overflow-hidden
-    border-b border-white/[0.08]
-    bg-gradient-to-br from-blue-500/[0.08] via-white/[0.025] to-transparent
-    p-6 sm:p-8
-    lg:border-b-0 lg:border-r
-    lg:p-9
-  "
-              >
-                {/* DECORATIVE GLOW */}
-                <div
-                  aria-hidden="true"
-                  className="
-      pointer-events-none absolute
-      -right-20 -top-20
-      h-64 w-64 rounded-full
-      bg-blue-500/[0.10] blur-[80px]
-    "
-                />
-
-                <div
-                  aria-hidden="true"
-                  className="
-      pointer-events-none absolute
-      -bottom-24 -left-20
-      h-52 w-52 rounded-full
-      bg-cyan-500/[0.06] blur-[70px]
-    "
-                />
-
-                <div className="relative">
-                  {/* UNIVERSITY ICON */}
-                  <div
-                    className="
-        flex h-16 w-16 items-center
-        justify-center rounded-2xl
-        border border-blue-400/20
-        bg-blue-400/10
-        text-blue-300
-        shadow-lg shadow-blue-950/20
-      "
-                  >
-                    <FaGraduationCap size={30} />
-                  </div>
-
-                  {/* UNIVERSITY LABEL */}
-                  <div className="mt-8">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-blue-400 sm:text-xs">
-                      University
-                    </p>
-
-                    <h3 className="mt-3 text-3xl font-black tracking-tight text-white sm:text-4xl">
-                      {educationItem.shortName}
-                    </h3>
-
-                    <p className="mt-3 max-w-xs text-sm leading-6 text-slate-400">
-                      {educationItem.institution}
-                    </p>
-                  </div>
-
-                  {/* STATUS */}
-                  <div className="mt-7">
-                    <Badge color="blue">
-                      <span className="flex items-center gap-2">
-                        <FaCheckCircle className="text-emerald-400" />
-                        {educationItem.status}
-                      </span>
-                    </Badge>
-                  </div>
+        <motion.article
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+          className="overflow-hidden rounded-2xl border border-[#E4E3DC] bg-white"
+        >
+          {/* MAIN EDUCATION */}
+          <div className="grid lg:grid-cols-[0.25fr_0.75fr]">
+            {/* LEFT INFORMATION */}
+            <div className="flex flex-col justify-between gap-8 bg-[#34382F] p-6 text-white sm:p-8 lg:p-9">
+              <div>
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 text-[#D9A48B]">
+                  <FaGraduationCap size={23} />
                 </div>
 
-                {/* STUDY PERIOD */}
-                <div className="relative mt-10 border-t border-white/[0.10] pt-6">
-                  <div className="flex items-center gap-3">
-                    <div
-                      className="
-          flex h-10 w-10 shrink-0 items-center
-          justify-center rounded-xl
-          border border-white/[0.06]
-          bg-white/[0.05]
-          text-blue-300
-        "
-                    >
-                      <FaCalendarAlt size={16} />
-                    </div>
+                <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.2em] text-[#C5B6A9]">
+                  University
+                </p>
 
-                    <div>
-                      <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-slate-500">
-                        Study Period
-                      </p>
+                <h3 className="mt-2 text-3xl font-bold tracking-tight">
+                  {item.shortName}
+                </h3>
 
-                      <p className="mt-1 text-sm font-semibold text-slate-200">
-                        {educationItem.period}
-                      </p>
-                    </div>
-                  </div>
+                <p className="mt-2 max-w-xs text-sm leading-6 text-[#D5D5CC]">
+                  {item.institution}
+                </p>
 
-                  <div className="mt-6 flex items-center gap-2 text-xs text-slate-500">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                    <span>Academic Background</span>
-                  </div>
-                </div>
+                <span className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#A7B79B]/30 bg-[#A7B79B]/10 px-3 py-1.5 text-xs font-semibold text-[#D7E1D0]">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#A7B79B]" />
+                  {item.status}
+                </span>
               </div>
 
-              {/* ACADEMIC DETAILS */}
-              <div className="p-6 sm:p-8 lg:p-10">
-                {/* DEGREE */}
+              <div className="grid grid-cols-2 gap-4 border-t border-white/15 pt-6">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-400">
-                    {educationItem.type}
-                  </p>
-
-                  <h2
-                    className="
-                      mt-3 text-2xl font-bold
-                      leading-tight tracking-tight
-                      text-white sm:text-3xl
-                    "
-                  >
-                    {educationItem.degree}
-                  </h2>
-
-                  <p className="mt-2 text-base font-medium text-slate-300">
-                    {educationItem.field}
-                  </p>
-                </div>
-
-                {/* GPA */}
-                <div
-                  className="
-                    mt-7 flex flex-wrap items-center
-                    justify-between gap-4
-                    rounded-xl border border-blue-400/15
-                    bg-blue-400/[0.06]
-                    px-5 py-4
-                  "
-                >
-                  <div className="flex items-center gap-3">
-                    <div
-                      className="
-                        flex h-10 w-10 items-center
-                        justify-center rounded-xl
-                        bg-blue-400/10 text-blue-300
-                      "
-                    >
-                      <FaAward size={17} />
-                    </div>
-
-                    <div>
-                      <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-slate-500">
-                        Grade Point Average
-                      </p>
-
-                      <p className="mt-1 text-sm font-semibold text-slate-200">
-                        Academic Achievement
-                      </p>
-                    </div>
+                  <div className="flex items-center gap-2 text-[#C5B6A9]">
+                    <FaCalendarAlt size={12} />
+                    <span className="text-[10px] font-bold uppercase tracking-wider">
+                      Period
+                    </span>
                   </div>
-
-                  <p className="text-2xl font-black tracking-tight text-white sm:text-3xl">
-                    {educationItem.gpa}
+                  <p className="mt-2 text-sm font-semibold text-white">
+                    {item.period}
                   </p>
                 </div>
 
-                {/* DESCRIPTION */}
-                <div className="mt-8">
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
-                    Academic Overview
-                  </p>
-
-                  <p className="mt-3 text-sm leading-7 text-slate-400 sm:text-[15px] sm:leading-8">
-                    {educationItem.description}
-                  </p>
-                </div>
-
-                {/* ACADEMIC FOUNDATION */}
-                <div className="mt-8">
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
-                    Academic Foundation
-                  </p>
-
-                  <StaggerContainer
-                    className="mt-4 grid gap-3 sm:grid-cols-2"
-                    staggerChildren={0.08}
-                  >
-                    {educationItem.highlights.map((highlight, index) => {
-                      const Icon = academicIcons[index] || FaGraduationCap;
-
-                      return (
-                        <StaggerItem
-                          key={highlight}
-                          y={12}
-                          className="
-                            flex items-center gap-3
-                            rounded-xl border border-white/[0.07]
-                            bg-white/[0.025]
-                            px-4 py-3
-                            transition-colors duration-300
-                            hover:border-blue-400/20
-                            hover:bg-blue-400/[0.05]
-                          "
-                        >
-                          <div
-                            className="
-                              flex h-9 w-9 shrink-0
-                              items-center justify-center
-                              rounded-lg bg-blue-400/10
-                              text-blue-300
-                            "
-                          >
-                            <Icon size={14} />
-                          </div>
-
-                          <span className="text-xs font-medium leading-5 text-slate-300 sm:text-sm">
-                            {highlight}
-                          </span>
-                        </StaggerItem>
-                      );
-                    })}
-                  </StaggerContainer>
-                </div>
-
-                {/* FINAL PROJECT */}
-                <div className="mt-8 border-t border-white/[0.08] pt-7">
-                  <div className="flex items-start gap-4">
-                    <div
-                      className="
-                        flex h-10 w-10 shrink-0
-                        items-center justify-center
-                        rounded-xl border border-cyan-400/15
-                        bg-cyan-400/[0.08]
-                        text-cyan-300
-                      "
-                    >
-                      <FaCode size={16} />
-                    </div>
-
-                    <div className="min-w-0">
-                      <p className="text-xs font-bold uppercase tracking-[0.16em] text-cyan-400">
-                        Final Academic Project
-                      </p>
-
-                      <p className="mt-2 text-sm leading-7 text-slate-400">
-                        {educationItem.project}
-                      </p>
-                    </div>
+                <div>
+                  <div className="flex items-center gap-2 text-[#C5B6A9]">
+                    <FaAward size={12} />
+                    <span className="text-[10px] font-bold uppercase tracking-wider">
+                      GPA
+                    </span>
                   </div>
+                  <p className="mt-2 text-sm font-semibold text-white">
+                    {item.gpa}
+                  </p>
                 </div>
               </div>
             </div>
-          </Card>
-        </Reveal>
 
-        {/* CLOSING STATEMENT */}
-        <Reveal y={14} className="mx-auto mt-5 max-w-6xl">
-          <div
-            className="
-              flex items-center gap-4
-              rounded-2xl border border-white/[0.07]
-              bg-white/[0.025]
-              px-5 py-5 sm:px-7
+            {/* RIGHT INFORMATION */}
+            <div className="p-6 sm:p-8 lg:p-9">
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#A45F45]">
+                  {item.type}
+                </p>
+
+                <h3 className="mt-3 text-2xl font-bold leading-tight tracking-tight text-[#242722] sm:text-3xl">
+                  {item.degree}
+                </h3>
+
+                <p className="mt-2 text-sm font-semibold leading-6 text-[#62665D]">
+                  {item.field}
+                </p>
+
+                <p className="mt-5 text-[14px] leading-[1.85] text-[#50554C] sm:text-[15px]">
+                  {item.description}
+                </p>
+              </div>
+
+              {/* ACADEMIC FOUNDATION */}
+              <div className="mt-8">
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#777B70]">
+                  Academic Foundation
+                </p>
+
+                <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                  {item.highlights.map((highlight, index) => {
+                    const Icon = academicIcons[index] || FaGraduationCap;
+
+                    return (
+                      <motion.div
+                        key={highlight}
+                        initial={{ opacity: 0, y: 12 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{
+                          duration: 0.4,
+                          delay: index * 0.08,
+                        }}
+                        className="
+            flex items-center gap-3
+            rounded-xl border border-[#E6E3DA]
+            bg-[#F8F7F3]
+            px-4 py-3
+            transition-all duration-300
+            hover:border-[#C99A83]
+            hover:bg-[#F3EDE7]
+          "
+                      >
+                        <div
+                          className="
+              flex h-9 w-9 shrink-0
+              items-center justify-center
+              rounded-lg bg-[#EEE5DF]
+              text-[#A45F45]
             "
-          >
-            <div
-              className="
-                flex h-10 w-10 shrink-0 items-center
-                justify-center rounded-xl
-                bg-blue-400/10 text-blue-300
-              "
-            >
-              <FaLayerGroup size={16} />
-            </div>
+                        >
+                          <Icon size={14} />
+                        </div>
 
-            <div>
-              <p className="text-sm font-semibold text-slate-200">
-                Learning beyond the classroom.
-              </p>
+                        <span className="text-xs font-medium leading-5 text-[#454A40] sm:text-sm">
+                          {highlight}
+                        </span>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              </div>
 
-              <p className="mt-1 text-xs leading-6 text-slate-500 sm:text-sm">
-                Applying academic knowledge through personal projects, practical
-                experience, and continuous learning.
-              </p>
+              {/* ACADEMIC PROJECT */}
+              <div className="mt-7 rounded-xl border border-[#E5E4DC] bg-[#F8F7F3] p-4 sm:p-5">
+                <div className="flex items-center gap-2">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#EEE5DF] text-[#A45F45]">
+                    <FaExternalLinkAlt size={13} />
+                  </div>
+
+                  <h4 className="text-xs font-bold uppercase tracking-[0.13em] text-[#34382F]">
+                    Academic Project
+                  </h4>
+                </div>
+
+                <p className="mt-3 text-[13px] leading-[1.8] text-[#62665D] sm:text-sm">
+                  {item.project}
+                </p>
+              </div>
             </div>
           </div>
-        </Reveal>
+        </motion.article>
       </div>
     </section>
   );

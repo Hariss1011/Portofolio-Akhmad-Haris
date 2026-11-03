@@ -1,13 +1,12 @@
 import { useNavigate } from "react-router-dom";
 
-import SectionTitle from "../../common/SectionTitle";
 import ProjectCard from "./ProjectCard";
-import Reveal from "../../common/Reveal";
 import { StaggerContainer, StaggerItem } from "../../common/Stagger";
+import Reveal from "../../common/Reveal";
 
 import projects from "../../../data/projects";
 
-import { FaArrowRight, FaLayerGroup } from "react-icons/fa";
+import { FaArrowRight, FaLayerGroup, FaRegFolderOpen } from "react-icons/fa";
 
 const Projects = () => {
   const navigate = useNavigate();
@@ -28,136 +27,99 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="
-        relative isolate overflow-hidden
-        bg-[#070a14]
-        py-20 sm:py-24 lg:py-28
-      "
+      className="relative overflow-hidden bg-[#F8F7F3] py-20 sm:py-24 lg:py-28"
     >
-      {/* BACKGROUND */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div
-          className="
-            absolute -left-48 top-20
-            h-[420px] w-[420px]
-            rounded-full bg-blue-600/10
-            blur-[120px]
-          "
-        />
-
-        <div
-          className="
-            absolute -right-48 top-[45%]
-            h-[420px] w-[420px]
-            rounded-full bg-cyan-500/[0.08]
-            blur-[120px]
-          "
-        />
-
-        <div
-          className="
-            absolute inset-0 opacity-[0.025]
-            [background-image:linear-gradient(#64748b_1px,transparent_1px),linear-gradient(90deg,#64748b_1px,transparent_1px)]
-            [background-size:48px_48px]
-          "
-        />
-
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
-      </div>
-
-      <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
+      <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
         {/* SECTION INTRO */}
         <Reveal>
-          <div className="max-w-3xl">
-            <SectionTitle
-              subtitle="Portfolio / Selected Work"
-              title="Projects that turn ideas into solutions."
-              description="
-                A collection of web applications and information
-                systems I've developed, focusing on practical
-                functionality, structured data, and user-oriented
-                solutions.
-              "
-            />
+          <div className="grid gap-8 lg:grid-cols-[1.4fr_0.6fr] lg:items-end">
+            <div className="max-w-3xl">
+              <div className="mb-5 flex items-center gap-3">
+                <span className="h-px w-8 bg-[#A45F45]" />
+                <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#A45F45]">
+                  Portfolio / Selected Work
+                </span>
+              </div>
+
+              <h2 className="max-w-3xl text-4xl font-bold leading-[1.12] tracking-tight text-[#242722] sm:text-5xl lg:text-[3.5rem]">
+                Building solutions
+                <br className="hidden sm:block" /> through meaningful projects.
+              </h2>
+
+              <p className="mt-6 max-w-2xl text-sm leading-7 text-[#62665D] sm:text-base">
+                A collection of web applications and information systems
+                developed through practical experience, academic work, and
+                continuous learning. Each project reflects my approach to
+                solving problems through technology.
+              </p>
+            </div>
+
+            <div className="flex items-center gap-5 border-t border-[#DCDDD5] pt-5 lg:justify-end lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
+              <div>
+                <p className="text-4xl font-bold tracking-tight text-[#242722]">
+                  {String(projects.length).padStart(2, "0")}
+                </p>
+                <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#85877E]">
+                  Total Projects
+                </p>
+              </div>
+
+              <div className="h-11 w-px bg-[#DCDDD5]" />
+
+              <div>
+                <p className="text-4xl font-bold tracking-tight text-[#242722]">
+                  2025<span className="text-[#A45F45]">—</span>26
+                </p>
+                <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#85877E]">
+                  Development Period
+                </p>
+              </div>
+            </div>
           </div>
         </Reveal>
 
-        {/* PROJECT OVERVIEW */}
+        {/* PROJECT COLLECTION LABEL */}
         <Reveal delay={0.1}>
-          <div
-            className="
-              mt-10 flex flex-col gap-5
-              border-y border-white/[0.08]
-              py-5
-              sm:flex-row sm:items-center sm:justify-between
-            "
-          >
+          <div className="mt-14 flex items-center justify-between border-y border-[#DCDDD5] py-4 sm:mt-16">
             <div className="flex items-center gap-3">
-              <div
-                className="
-                  flex h-10 w-10 items-center justify-center
-                  rounded-xl border border-blue-400/15
-                  bg-blue-500/10 text-blue-300
-                "
-              >
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#EAEAE2] text-[#A45F45]">
                 <FaLayerGroup className="text-sm" />
               </div>
 
               <div>
-                <p className="text-sm font-semibold text-white">
-                  Selected Projects
+                <p className="text-sm font-bold text-[#292D27]">
+                  Project Showcase
                 </p>
-                <p className="mt-0.5 text-xs text-slate-500">
-                  A closer look at my development work
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-6 sm:gap-8">
-              <div>
-                <p className="text-2xl font-bold tracking-tight text-white">
-                  {String(projects.length).padStart(2, "0")}
-                </p>
-                <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
-                  Projects
-                </p>
-              </div>
-
-              <div className="h-9 w-px bg-white/10" />
-
-              <div>
-                <p className="text-2xl font-bold tracking-tight text-white">
-                  2025–26
-                </p>
-                <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
-                  Development
+                <p className="mt-0.5 text-xs text-[#85877E]">
+                  Selected development work
                 </p>
               </div>
             </div>
+
+            <span className="hidden text-xs font-medium text-[#85877E] sm:block">
+              Explore my work and implementations
+            </span>
           </div>
         </Reveal>
 
         {/* FEATURED PROJECTS */}
         {featuredProjects.length > 0 && (
-          <div className="mt-16 sm:mt-20">
+          <div className="mt-14 sm:mt-16">
             <Reveal>
-              <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+              <div className="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                 <div>
-                  <div className="mb-3 flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-blue-400" />
-                    <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-blue-300">
-                      Featured Work
-                    </p>
-                  </div>
+                  <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.18em] text-[#A45F45]">
+                    01 / Featured Collection
+                  </p>
 
-                  <h3 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
-                    Selected Projects
+                  <h3 className="text-2xl font-bold tracking-tight text-[#242722] sm:text-3xl">
+                    Featured Projects
                   </h3>
                 </div>
 
-                <p className="max-w-sm text-sm leading-6 text-slate-500 sm:text-right">
-                  A selection of projects that highlight my experience in
-                  building web-based systems and managing application data.
+                <p className="max-w-md text-sm leading-6 text-[#73766D] sm:text-right">
+                  Core projects showcasing my experience in application
+                  development, database management, and information systems.
                 </p>
               </div>
             </Reveal>
@@ -178,27 +140,24 @@ const Projects = () => {
           </div>
         )}
 
-        {/* OTHER PROJECTS */}
+        {/* ADDITIONAL PROJECTS */}
         {otherProjects.length > 0 && (
-          <div className="mt-20 sm:mt-24">
+          <div className="mt-16 sm:mt-20">
             <Reveal>
-              <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+              <div className="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                 <div>
-                  <div className="mb-3 flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
-                    <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-cyan-300">
-                      Additional Work
-                    </p>
-                  </div>
+                  <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.18em] text-[#788B70]">
+                    02 / Additional Collection
+                  </p>
 
-                  <h3 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                  <h3 className="text-2xl font-bold tracking-tight text-[#242722] sm:text-3xl">
                     More Projects
                   </h3>
                 </div>
 
-                <p className="max-w-sm text-sm leading-6 text-slate-500 sm:text-right">
-                  Other applications developed through academic work and
-                  continuous learning.
+                <p className="max-w-md text-sm leading-6 text-[#73766D] sm:text-right">
+                  Other applications and systems built through academic projects
+                  and independent development.
                 </p>
               </div>
             </Reveal>
@@ -221,9 +180,12 @@ const Projects = () => {
 
         {/* EMPTY STATE */}
         {projects.length === 0 && (
-          <div className="mt-12 rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-12 text-center">
-            <FaLayerGroup className="mx-auto text-3xl text-slate-600" />
-            <p className="mt-4 text-sm text-slate-400">
+          <div className="mt-12 rounded-2xl border border-[#DCDDD5] bg-white px-6 py-16 text-center">
+            <FaRegFolderOpen className="mx-auto text-3xl text-[#A45F45]" />
+            <p className="mt-4 text-sm font-semibold text-[#292D27]">
+              No projects available yet.
+            </p>
+            <p className="mt-1 text-xs text-[#85877E]">
               Projects will be displayed here soon.
             </p>
           </div>
@@ -231,31 +193,21 @@ const Projects = () => {
 
         {/* BOTTOM CTA */}
         <Reveal>
-          <div className="mt-20 border-t border-white/[0.08] pt-8 sm:mt-24">
+          <div className="mt-16 border-t border-[#DCDDD5] pt-7 sm:mt-20 sm:pt-8">
             <a
               href="#contact"
-              className="
-                group flex flex-col gap-4
-                sm:flex-row sm:items-center sm:justify-between
-              "
+              className="group flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
             >
               <div>
-                <p className="text-sm font-semibold text-white transition-colors group-hover:text-blue-300">
+                <p className="text-base font-bold text-[#292D27] transition-colors group-hover:text-[#A45F45]">
                   Have a project or opportunity in mind?
                 </p>
-                <p className="mt-1 text-sm text-slate-500">
-                  Let's discuss how we can build something meaningful.
+                <p className="mt-1 text-sm text-[#73766D]">
+                  I would be glad to discuss how I can contribute.
                 </p>
               </div>
 
-              <span
-                className="
-                  inline-flex w-fit items-center gap-3
-                  text-sm font-semibold text-blue-300
-                  transition-all duration-300
-                  group-hover:gap-4
-                "
-              >
+              <span className="inline-flex w-fit items-center gap-3 text-sm font-bold text-[#A45F45] transition-all duration-300 group-hover:gap-5">
                 Get in touch
                 <FaArrowRight className="text-xs" />
               </span>

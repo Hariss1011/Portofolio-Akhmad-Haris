@@ -1,293 +1,235 @@
+import { motion } from "framer-motion";
+import { FaCode, FaDatabase, FaLightbulb, FaBriefcase } from "react-icons/fa";
+
 import about from "../../../data/about";
 
-import SectionTitle from "../../common/SectionTitle";
-import Card from "../../common/Card";
-import Badge from "../../common/Badge";
-import Reveal from "../../common/Reveal";
-import { StaggerContainer, StaggerItem } from "../../common/Stagger";
+const capabilityIcons = [FaCode, FaDatabase, FaLightbulb];
 
-import { FaLightbulb, FaChartLine, FaCode, FaArrowRight } from "react-icons/fa";
-
-const highlightIcons = [FaLightbulb, FaChartLine, FaCode];
-
-const highlightAccents = [
-  {
-    icon: "border-blue-400/20 bg-blue-400/10 text-blue-300",
-    line: "bg-blue-400",
+const reveal = {
+  hidden: { opacity: 0, y: 16 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" },
   },
-  {
-    icon: "border-cyan-400/20 bg-cyan-400/10 text-cyan-300",
-    line: "bg-cyan-400",
-  },
-  {
-    icon: "border-violet-400/20 bg-violet-400/10 text-violet-300",
-    line: "bg-violet-400",
-  },
-];
+};
 
 const About = () => {
   return (
     <section
       id="about"
-      className="
-        relative overflow-hidden
-        bg-[#070a14]
-        py-20 sm:py-24 lg:py-28
-      "
+      className="relative overflow-hidden bg-[#F8F7F3] py-16 text-[#34382F] sm:py-20 lg:py-24"
     >
-      {/* BACKGROUND */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 overflow-hidden"
-      >
-        <div className="absolute -left-48 top-24 h-80 w-80 rounded-full bg-blue-600/[0.09] blur-[120px]" />
-        <div className="absolute -right-48 bottom-10 h-80 w-80 rounded-full bg-cyan-500/[0.07] blur-[120px]" />
-      </div>
+        className="pointer-events-none absolute -right-40 top-10 h-96 w-96 rounded-full bg-[#E9D8CB]/25 blur-[110px]"
+      />
 
-      {/* CONTENT */}
-      <div
-        className="
-          relative mx-auto w-full max-w-7xl
-          px-5 sm:px-8 lg:px-10
-        "
-      >
-        {/* SECTION TITLE */}
-        <Reveal>
-          <SectionTitle
-            subtitle={about.subtitle}
-            title={about.title}
-            description={about.description}
-          />
-        </Reveal>
-
-        {/* ABOUT LAYOUT */}
-        <div
-          className="
-            mt-12 grid items-stretch gap-5
-            lg:mt-16
-            lg:grid-cols-[1.2fr_0.8fr]
-          "
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+        {/* SECTION HEADING */}
+        <motion.div
+          variants={reveal}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mb-9 flex flex-wrap items-end justify-between gap-4 border-b border-[#DEDAD0] pb-5 sm:mb-11"
         >
-          {/* MAIN STORY */}
-          <Reveal x={-20} y={0}>
-            <Card
-              hover={false}
-              className="
-                relative h-full overflow-hidden
-                border-white/[0.08]
-                bg-[#0c1423]
-                p-6 sm:p-8 lg:p-9
-              "
-            >
-              {/* TOP ACCENT */}
-              <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-blue-500 via-cyan-400 to-transparent" />
+          <div>
+            <div className="mb-3 flex items-center gap-3">
+              <span className="h-px w-8 bg-[#B66E4E]" />
+              <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#A35F43]">
+                {about.eyebrow}
+              </span>
+            </div>
 
-              <div className="relative">
-                {/* CARD LABEL */}
-                <div className="flex items-center gap-3">
-                  <div
-                    className="
-                      flex h-11 w-11 shrink-0 items-center
-                      justify-center rounded-xl
-                      border border-blue-400/20
-                      bg-blue-400/10 text-blue-300
-                    "
-                  >
-                    <FaLightbulb size={17} />
-                  </div>
-
-                  <div>
-                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-400 sm:text-xs">
-                      Professional Profile
-                    </p>
-                    <h3 className="mt-1 text-lg font-bold text-white sm:text-xl">
-                      A little about me
-                    </h3>
-                  </div>
-                </div>
-
-                {/* STORY */}
-                <div className="mt-8 space-y-5">
-                  {about.paragraphs.map((paragraph, index) => (
-                    <p
-                      key={index}
-                      className="
-                        text-sm leading-7 text-slate-400
-                        sm:text-[15px] sm:leading-8
-                      "
-                    >
-                      {paragraph}
-                    </p>
-                  ))}
-                </div>
-
-                {/* PROFESSIONAL FOCUS */}
-                <div className="mt-9 border-t border-white/[0.08] pt-7">
-                  <div className="flex flex-wrap items-center justify-between gap-3">
-                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
-                      Areas of Interest
-                    </p>
-
-                    <span className="text-[10px] font-medium text-slate-600">
-                      Professional Focus
-                    </span>
-                  </div>
-
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {about.focus.map((item, index) => (
-                      <Badge
-                        key={item}
-                        color={index % 2 === 0 ? "blue" : "cyan"}
-                      >
-                        {item}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </Card>
-          </Reveal>
-
-          {/* PROFESSIONAL HIGHLIGHTS */}
-          <div className="flex flex-col gap-5">
-            <Reveal y={16}>
-              <div className="mb-1">
-                <p className="text-xs font-bold uppercase tracking-[0.18em] text-blue-400">
-                  What Defines Me
-                </p>
-
-                <h3 className="mt-2 text-xl font-bold tracking-tight text-white sm:text-2xl">
-                  My Professional Strengths
-                </h3>
-
-                <p className="mt-2 max-w-md text-sm leading-6 text-slate-500">
-                  The principles I bring when approaching projects,
-                  collaborating, and learning new things.
-                </p>
-              </div>
-            </Reveal>
-
-            <StaggerContainer
-              className="flex flex-1 flex-col gap-3"
-              staggerChildren={0.1}
-            >
-              {about.highlights.map((item, index) => {
-                const Icon = highlightIcons[index] || FaLightbulb;
-                const accent =
-                  highlightAccents[index % highlightAccents.length];
-
-                return (
-                  <StaggerItem key={item.title} y={16}>
-                    <Card
-                      hover={false}
-                      className="
-                        group relative overflow-hidden
-                        border-white/[0.08]
-                        bg-[#0c1423]
-                        p-5 sm:p-6
-                        transition-all duration-300
-                        hover:border-white/[0.14]
-                        hover:bg-[#101b2d]
-                      "
-                    >
-                      <div className="flex items-start gap-4">
-                        {/* ICON */}
-                        <div
-                          className={`
-                            flex h-11 w-11 shrink-0
-                            items-center justify-center
-                            rounded-xl border
-                            ${accent.icon}
-                          `}
-                        >
-                          <Icon size={17} />
-                        </div>
-
-                        {/* TEXT */}
-                        <div className="min-w-0 flex-1">
-                          <div className="flex items-center justify-between gap-3">
-                            <h4 className="text-base font-bold text-white">
-                              {item.title}
-                            </h4>
-
-                            <span className="text-[10px] font-semibold tracking-widest text-slate-600">
-                              0{index + 1}
-                            </span>
-                          </div>
-
-                          <p className="mt-2 text-sm leading-6 text-slate-500">
-                            {item.description}
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* BOTTOM ACCENT */}
-                      <div
-                        className={`
-                          absolute bottom-0 left-0 h-px w-0
-                          transition-all duration-500
-                          group-hover:w-full
-                          ${accent.line}
-                        `}
-                      />
-                    </Card>
-                  </StaggerItem>
-                );
-              })}
-            </StaggerContainer>
+            <h2 className="text-2xl font-semibold tracking-tight text-[#292D27] sm:text-3xl lg:text-4xl">
+              Background & Professional Experience
+            </h2>
           </div>
-        </div>
 
-        {/* BOTTOM STATEMENT */}
-        <Reveal y={16} className="mt-5">
-          <div
-            className="
-              flex flex-col gap-4
-              rounded-2xl
-              border border-blue-400/15
-              bg-gradient-to-r
-              from-blue-500/[0.09]
-              via-[#0c1423]
-              to-cyan-500/[0.06]
-              p-6 sm:flex-row sm:items-center
-              sm:justify-between sm:p-7
-            "
+          <span className="text-xs font-medium text-[#77796F]">
+            Profile / 01
+          </span>
+        </motion.div>
+
+        {/* PROFILE AND EXPERIENCE */}
+        <div className="grid items-start gap-8 lg:grid-cols-[1.4fr_0.8fr] lg:gap-10">
+          {/* PROFILE STORY */}
+          <motion.div
+            variants={reveal}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
           >
-            <div className="flex items-start gap-4">
-              <div
-                className="
-                  flex h-10 w-10 shrink-0 items-center
-                  justify-center rounded-xl
-                  border border-blue-400/20
-                  bg-blue-400/10 text-blue-300
-                "
-              >
-                <FaArrowRight size={15} />
-              </div>
+            <div className="mb-5 flex items-center gap-3">
+              <span className="h-8 w-1 rounded-full bg-[#B66E4E]" />
 
               <div>
-                <p className="text-sm font-bold text-white sm:text-base">
-                  Ready to turn knowledge into meaningful contributions.
+                <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#A35F43]">
+                  {about.profile.label}
                 </p>
-
-                <p className="mt-1 text-xs leading-6 text-slate-400 sm:text-sm">
-                  Interested in contributing to real projects while continuing
-                  to grow as a technology professional.
-                </p>
+                <h3 className="mt-0.5 text-xl font-semibold text-[#34382F] sm:text-2xl">
+                  {about.profile.title}
+                </h3>
               </div>
             </div>
 
-            <span
-              className="
-                flex shrink-0 items-center gap-2
-                text-xs font-semibold text-emerald-300
-              "
-            >
-              <span className="h-2 w-2 rounded-full bg-emerald-400" />
-              Open to Opportunities
-            </span>
+            <div className="space-y-4">
+              {about.profile.paragraphs.map((paragraph, index) => (
+                <p
+                  key={index}
+                  className={`text-[15px] leading-[1.85] sm:text-base sm:leading-[1.9] ${
+                    index === 0
+                      ? "font-medium text-[#454A40]"
+                      : "text-[#5F635A]"
+                  }`}
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* INTERNSHIP HIGHLIGHT */}
+          <motion.aside
+            variants={reveal}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="rounded-2xl border border-[#DDD8CE] bg-[#F0EEE7] p-5 sm:p-6"
+          >
+            <div className="flex items-center justify-between">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#B66E4E]/10 text-[#A35F43]">
+                <FaBriefcase size={16} />
+              </div>
+
+              <span className="rounded-full border border-[#788B70]/25 bg-[#788B70]/10 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-[#667C5D]">
+                {about.experienceNote.type}
+              </span>
+            </div>
+
+            <p className="mt-6 text-xs font-bold uppercase tracking-[0.15em] text-[#A35F43]">
+              Practical Experience
+            </p>
+
+            <h3 className="mt-2 text-xl font-semibold leading-snug text-[#34382F] sm:text-2xl">
+              {about.experienceNote.organization}
+            </h3>
+
+            <p className="mt-2 text-sm font-medium text-[#788B70]">
+              {about.experienceNote.title}
+            </p>
+
+            <div className="my-5 h-px bg-[#DCD6CA]" />
+
+            <p className="text-sm leading-7 text-[#5F635A]">
+              {about.experienceNote.description}
+            </p>
+          </motion.aside>
+        </div>
+
+        {/* CORE CAPABILITIES */}
+        <motion.div
+          variants={reveal}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mt-10 overflow-hidden rounded-2xl bg-[#34382F] text-[#F8F7F3] sm:mt-12"
+        >
+          <div className="flex flex-col gap-3 border-b border-white/10 px-5 py-6 sm:flex-row sm:items-end sm:justify-between sm:px-8">
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#D9A58D]">
+                {about.capabilities.eyebrow}
+              </p>
+
+              <h3 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
+                {about.capabilities.title}
+              </h3>
+            </div>
+
+            <p className="max-w-md text-sm leading-6 text-[#D0D0C7]">
+              {about.capabilities.description}
+            </p>
           </div>
-        </Reveal>
+
+          <div className="grid md:grid-cols-3">
+            {about.capabilities.items.map((item, index) => {
+              const Icon = capabilityIcons[index] || FaLightbulb;
+
+              return (
+                <article
+                  key={item.number}
+                  className={`px-5 py-6 sm:px-8 sm:py-7 ${
+                    index > 0
+                      ? "border-t border-white/10 md:border-l md:border-t-0"
+                      : ""
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-bold tracking-widest text-[#D9A58D]">
+                      {item.number}
+                    </span>
+
+                    <Icon className="text-[#D9A58D]" size={18} />
+                  </div>
+
+                  <h4 className="mt-4 text-lg font-semibold text-[#F8F7F3]">
+                    {item.title}
+                  </h4>
+
+                  <p className="mt-2 text-sm leading-6 text-[#D0D0C7]">
+                    {item.description}
+                  </p>
+
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {item.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-md border border-white/15 bg-white/[0.04] px-2.5 py-1.5 text-xs text-[#E1E0D7]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </motion.div>
+
+        {/* AREAS OF INTEREST */}
+        <motion.div
+          variants={reveal}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mt-8 grid gap-4 sm:grid-cols-[0.65fr_1.35fr] sm:items-center sm:gap-8"
+        >
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#A35F43]">
+              {about.interests.eyebrow}
+            </p>
+
+            <h3 className="mt-1 text-lg font-semibold text-[#34382F] sm:text-xl">
+              Professional Focus
+            </h3>
+          </div>
+
+          <div className="flex flex-wrap gap-2">
+            {about.interests.items.map((item, index) => (
+              <span
+                key={item}
+                className={`rounded-full border px-3.5 py-2 text-xs font-medium sm:text-sm ${
+                  index % 2 === 0
+                    ? "border-[#B66E4E]/25 bg-[#B66E4E]/[0.06] text-[#965A41]"
+                    : "border-[#788B70]/30 bg-[#788B70]/[0.07] text-[#63785B]"
+                }`}
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
